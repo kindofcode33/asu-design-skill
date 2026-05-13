@@ -171,9 +171,15 @@ You can also invoke it explicitly:
 - Works with any frontend stack (React, Vue, Svelte, plain HTML, etc.)
 - Optimized for Tailwind CSS v4 projects
 
+## Author
+
+Joel Longie — Sr. UX Designer, AI Acceleration Team at Arizona State University.
+
+For questions, bugs, or feature requests, [open an issue](https://github.com/kindofcode33/asu-design-skill/issues). ASU folks can also reach me on ASU Slack channels.
+
 ## Contributing
 
-To improve or extend the design system references, edit the markdown files in `skills/asu-design/references/` and submit a pull request.
+Found a bug or have a suggestion? [Open an issue](https://github.com/kindofcode33/asu-design-skill/issues).
 
 ## License
 
