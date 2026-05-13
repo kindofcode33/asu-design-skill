@@ -1,5 +1,11 @@
 # ASU Design System Plugin for Claude Code
 
+> **Proof of Concept / v1** — This plugin is a first version and is not fully complete. It does not yet include all UDS design components. The full ASU Unity Design System UI Kit can be found at: https://zeroheight.com/9f0b32a56/p/5072ce-asu-unity-design-system-ui-kit
+>
+> This is meant for quick prototyping and is under active development. Expect improvements and bug fixes over time. If you find issues, please [open an issue](https://github.com/kindofcode33/asu-design-skill/issues).
+
+---
+
 A Claude Code plugin that provides the ASU Unity Design System as an AI-assistive skill. When active, Claude Code automatically applies ASU brand standards — colors, typography, spacing, component specs, and writing style — to any UI work.
 
 ## What it does
@@ -59,6 +65,55 @@ Or add it as a git submodule for version tracking:
 
 ```bash
 git submodule add https://github.com/kindofcode33/asu-design-skill.git .claude/plugins/asu-design
+```
+
+---
+
+## Setup after installation
+
+### Step 1: Map design tokens to your CSS
+
+After installing the plugin, ask Claude to remap all ASU design tokens to your project's CSS framework. For Tailwind CSS projects this is streamlined — use a prompt like:
+
+```
+Load the ASU design skill and remap all design tokens to Tailwind. Read every reference
+file and make sure all asu-* class names from the component markup resolve. Comprehensively
+map ALL tokens across all references.
+```
+
+This generates your Tailwind theme config (or CSS custom properties) so that ASU color, spacing, and typography tokens work throughout your project.
+
+### Step 2: Copy brand images to your project
+
+The header, footer, favicon, and ASU backgrounds rely on images bundled in this plugin's `images/` folder. Copy them into your project's public directory:
+
+```bash
+cp -r ~/.claude/plugins/asu-design-plugin/images/* ./public/images/
+```
+
+Then let Claude know where you placed them so component markup points to the correct paths:
+
+```
+The ASU brand images (logos, backgrounds, favicon) are in /public/images/
+```
+
+### Step 3 (optional): Use a free image API for placeholders
+
+For hero backgrounds, card thumbnails, or other non-brand imagery during prototyping, you can use a free stock photo API instead of placeholder boxes:
+
+- **Unsplash** — https://unsplash.com/developers (free API, high-quality photos)
+- **Pexels** — https://www.pexels.com/api/ (free API, no attribution required on many plans)
+
+Tell Claude which service you prefer:
+
+```
+Use Unsplash for placeholder images. My access key is <YOUR_KEY>.
+```
+
+Or for quick prototyping without an API key, use Unsplash's source URL format directly:
+
+```
+Use https://images.unsplash.com/photo-<id>?w=800 for placeholder images.
 ```
 
 ---
