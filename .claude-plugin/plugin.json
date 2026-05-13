@@ -1,0 +1,12 @@
+{
+  "name": "asu-design",
+  "version": "1.0.0",
+  "description": "ASU Unity Design System skill for Claude Code. Provides brand tokens, component specs, and implementation guidance for building ASU-branded interfaces.",
+  "skills": [
+    {
+      "name": "asu-design",
+      "description": "Use when building, styling, or reviewing UI that should follow ASU (Arizona State University) brand standards. Triggers on any mention of ASU branding, ASU design system, ASU colors, ASU components, or when creating web pages/components that need to follow the ASU Unity Design System.",
+      "path": "skills/asu-design/SKILL.md"
+    }
+  ]
+}
