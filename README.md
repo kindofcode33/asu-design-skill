@@ -57,13 +57,23 @@ Or use any existing project that already has Tailwind v4 installed.
 
 Pick one. **Options A, B, and D install both skills automatically** (recommended). Option C requires you to copy both skill folders manually.
 
-#### Option A — Plugin install (recommended)
+#### Option A — Plugin install via marketplace (recommended)
+
+In a Claude Code session, run these two commands:
 
 ```
-/plugin install https://github.com/kindofcode33/asu-design-skill.git
+/plugin marketplace add https://github.com/kindofcode33/asu-design-skill.git
+/plugin install asu-design@kindofcode33-asu-design-skill
 ```
 
-Installs from the Claude Code CLI/app. Updates pull automatically when the plugin refreshes.
+Or from a regular terminal:
+
+```bash
+claude plugin marketplace add https://github.com/kindofcode33/asu-design-skill.git
+claude plugin install asu-design@kindofcode33-asu-design-skill
+```
+
+Updates pull automatically when the plugin refreshes.
 
 #### Option B — Clone to your local plugins directory
 

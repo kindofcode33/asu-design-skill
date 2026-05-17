@@ -1,0 +1,10 @@
+{
+  "name": "kindofcode33-asu-design-skill",
+  "description": "ASU Unity Design System plugins for Claude Code",
+  "plugins": [
+    {
+      "name": "asu-design",
+      "path": "."
+    }
+  ]
+}
