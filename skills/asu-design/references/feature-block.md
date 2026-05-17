@@ -61,7 +61,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 - 1-2 short paragraphs max
 
 ### CTA Button
-- Gold pill button: `bg-asu-gold text-asu-gray-1 font-bold rounded-full px-6 py-3`
+- Gold pill button: `bg-asu-gold text-asu-gray-1 font-bold rounded-full px-asu-3 py-asu-2`
 - Specific, descriptive label (never "Learn more" or "Click here")
 
 ---
@@ -106,11 +106,11 @@ export default function FeatureBlock({
       </div>
       <div className="w-full md:w-1/2 p-asu-5">
         <h3 className="text-[40px] font-bold text-asu-gray-1 leading-tight">{heading}</h3>
-        <p className="text-asu-body text-asu-gray-2 mt-4">{body}</p>
+        <p className="text-asu-body text-asu-gray-2 mt-asu-2">{body}</p>
         {ctaLabel && ctaHref && (
           <a
             href={ctaHref}
-            className="inline-block mt-6 bg-asu-gold text-asu-gray-1 font-bold rounded-full px-6 py-3 no-underline hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2"
+            className="inline-block mt-asu-3 bg-asu-gold text-asu-gray-1 font-bold rounded-full px-asu-3 py-asu-2 no-underline hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2"
           >
             {ctaLabel}
           </a>

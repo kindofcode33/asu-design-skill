@@ -27,7 +27,7 @@ A Content Card is a simple bordered container with a heading, short description,
 | Background | `bg-white` |
 | Border | `border border-asu-gray-4` |
 | Border radius | `rounded-none` (always) |
-| Padding | `p-8` (32px, matching UDS card-child-padding) |
+| Padding | `p-asu-4` |
 | Height | `h-full` (fills grid row for equal-height cards) |
 | Layout | `flex flex-col` (heading top, body middle, button bottom) |
 
@@ -40,7 +40,7 @@ A Content Card is a simple bordered container with a heading, short description,
 - 1-3 sentences max, keep concise
 
 ### CTA Button
-- Maroon pill: `bg-asu-maroon text-white font-bold rounded-full px-6 py-3`
+- Maroon pill: `bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2`
 - Positioned at bottom: use `mt-auto` to push to card bottom
 - Specific, descriptive label (never "Learn more" or "Click here")
 - Width: `inline-block` (button only as wide as label)
@@ -59,19 +59,19 @@ interface ContentCardProps {
 
 export default function ContentCard({ heading, body, ctaLabel, ctaHref }: ContentCardProps) {
   return (
-    <div className="bg-white border border-asu-gray-4 rounded-none p-8 flex flex-col h-full">
+    <div className="bg-white border border-asu-gray-4 rounded-none p-asu-4 flex flex-col h-full">
       <h3 className="text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight">
         {heading}
       </h3>
-      <p className="text-asu-body text-asu-gray-2 mt-4">
+      <p className="text-asu-body text-asu-gray-2 mt-asu-2">
         {body}
       </p>
       {ctaLabel && ctaHref && (
         <a
           href={ctaHref}
-          className="inline-block mt-auto pt-6 self-start"
+          className="inline-block mt-auto pt-asu-3 self-start"
         >
-          <span className="bg-asu-maroon text-white font-bold rounded-full px-6 py-3 inline-block hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2">
+          <span className="bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2 inline-block hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2">
             {ctaLabel}
           </span>
         </a>
