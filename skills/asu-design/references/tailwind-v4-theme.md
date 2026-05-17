@@ -189,76 +189,80 @@ Copy this entire block into the `@theme inline` section of your CSS file:
 
 ## shadcn Semantic Token Overrides (`:root` block)
 
-These map shadcn's semantic tokens to ASU values. Place in `:root` after the `@theme inline` block:
+These map shadcn's semantic tokens to ASU values via `var()` references — so every shadcn component (`<Card>`, `<Button>`, `<Dialog>`, `<DropdownMenu>`, `<Sidebar>`, `<Chart>`, etc.) automatically picks up ASU brand values without per-component overrides. Place in `:root` after the `@theme inline` block:
 
 ```css
+/* Every shadcn semantic token resolves through a var() reference to a canonical
+   asu-* token defined in @theme inline above. Update a value once there;
+   every shadcn-themed component picks it up. Never reintroduce hex literals here. */
+
 :root {
-    --background: #FFFFFF;
-    --foreground: #191919;
-    --card: #FFFFFF;
-    --card-foreground: #191919;
-    --popover: #FFFFFF;
-    --popover-foreground: #191919;
-    --primary: #FFC627;
-    --primary-foreground: #191919;
-    --secondary: #8C1D40;
-    --secondary-foreground: #FFFFFF;
-    --muted: #E8E8E8;
-    --muted-foreground: #747474;
-    --accent: #FAFAFA;
-    --accent-foreground: #191919;
-    --destructive: #CC2F2F;
-    --border: #BFBFBF;
-    --input: #BFBFBF;
-    --ring: #FFC627;
-    --chart-1: #8C1D40;
-    --chart-2: #FFC627;
-    --chart-3: #191919;
-    --chart-4: #747474;
-    --chart-5: #E8E8E8;
+    --background: var(--color-asu-white);
+    --foreground: var(--color-asu-gray-1);
+    --card: var(--color-asu-white);
+    --card-foreground: var(--color-asu-gray-1);
+    --popover: var(--color-asu-white);
+    --popover-foreground: var(--color-asu-gray-1);
+    --primary: var(--color-asu-gold);
+    --primary-foreground: var(--color-asu-gray-1);
+    --secondary: var(--color-asu-maroon);
+    --secondary-foreground: var(--color-asu-white);
+    --muted: var(--color-asu-gray-6);
+    --muted-foreground: var(--color-asu-gray-3);
+    --accent: var(--color-asu-gray-7);
+    --accent-foreground: var(--color-asu-gray-1);
+    --destructive: var(--color-asu-error);
+    --border: var(--color-asu-gray-4);
+    --input: var(--color-asu-gray-4);
+    --ring: var(--color-asu-gold);
+    --chart-1: var(--color-asu-maroon);
+    --chart-2: var(--color-asu-gold);
+    --chart-3: var(--color-asu-gray-1);
+    --chart-4: var(--color-asu-gray-3);
+    --chart-5: var(--color-asu-gray-6);
     --radius: 0rem;
-    --sidebar: #FAFAFA;
-    --sidebar-foreground: #191919;
-    --sidebar-primary: #8C1D40;
-    --sidebar-primary-foreground: #FFFFFF;
-    --sidebar-accent: #E8E8E8;
-    --sidebar-accent-foreground: #191919;
-    --sidebar-border: #BFBFBF;
-    --sidebar-ring: #FFC627;
+    --sidebar: var(--color-asu-gray-7);
+    --sidebar-foreground: var(--color-asu-gray-1);
+    --sidebar-primary: var(--color-asu-maroon);
+    --sidebar-primary-foreground: var(--color-asu-white);
+    --sidebar-accent: var(--color-asu-gray-6);
+    --sidebar-accent-foreground: var(--color-asu-gray-1);
+    --sidebar-border: var(--color-asu-gray-4);
+    --sidebar-ring: var(--color-asu-gold);
 }
 
 .dark {
-    --background: #191919;
-    --foreground: #FAFAFA;
-    --card: #484848;
-    --card-foreground: #FAFAFA;
-    --popover: #484848;
-    --popover-foreground: #FAFAFA;
-    --primary: #FFC627;
-    --primary-foreground: #191919;
-    --secondary: #8C1D40;
-    --secondary-foreground: #FFFFFF;
-    --muted: #484848;
-    --muted-foreground: #BFBFBF;
-    --accent: #484848;
-    --accent-foreground: #FAFAFA;
-    --destructive: #FF7B8E;
-    --border: #747474;
-    --input: #747474;
-    --ring: #FFC627;
-    --chart-1: #FFC627;
-    --chart-2: #8C1D40;
-    --chart-3: #FAFAFA;
-    --chart-4: #BFBFBF;
-    --chart-5: #747474;
-    --sidebar: #484848;
-    --sidebar-foreground: #FAFAFA;
-    --sidebar-primary: #FFC627;
-    --sidebar-primary-foreground: #191919;
-    --sidebar-accent: #747474;
-    --sidebar-accent-foreground: #FAFAFA;
-    --sidebar-border: #747474;
-    --sidebar-ring: #FFC627;
+    --background: var(--color-asu-gray-1);
+    --foreground: var(--color-asu-gray-7);
+    --card: var(--color-asu-gray-2);
+    --card-foreground: var(--color-asu-gray-7);
+    --popover: var(--color-asu-gray-2);
+    --popover-foreground: var(--color-asu-gray-7);
+    --primary: var(--color-asu-gold);
+    --primary-foreground: var(--color-asu-gray-1);
+    --secondary: var(--color-asu-maroon);
+    --secondary-foreground: var(--color-asu-white);
+    --muted: var(--color-asu-gray-2);
+    --muted-foreground: var(--color-asu-gray-4);
+    --accent: var(--color-asu-gray-2);
+    --accent-foreground: var(--color-asu-gray-7);
+    --destructive: var(--color-asu-error-text-dark);
+    --border: var(--color-asu-gray-3);
+    --input: var(--color-asu-gray-3);
+    --ring: var(--color-asu-gold);
+    --chart-1: var(--color-asu-gold);
+    --chart-2: var(--color-asu-maroon);
+    --chart-3: var(--color-asu-gray-7);
+    --chart-4: var(--color-asu-gray-4);
+    --chart-5: var(--color-asu-gray-3);
+    --sidebar: var(--color-asu-gray-2);
+    --sidebar-foreground: var(--color-asu-gray-7);
+    --sidebar-primary: var(--color-asu-gold);
+    --sidebar-primary-foreground: var(--color-asu-gray-1);
+    --sidebar-accent: var(--color-asu-gray-3);
+    --sidebar-accent-foreground: var(--color-asu-gray-7);
+    --sidebar-border: var(--color-asu-gray-3);
+    --sidebar-ring: var(--color-asu-gold);
 }
 ```
 
@@ -373,4 +377,5 @@ If a project uses `tailwind.config.js` (v3), these are the key differences:
 - ❌ Never reintroduce `--color-asu-maroon` / `--color-asu-gold` / `--color-asu-gray-1` — those names were dual aliases and have been collapsed into the canonical `--color-asu-*` namespace.
 - ❌ Never override Tailwind's default gray scale by defining `--color-gray-50` through `--color-gray-700` — keep Tailwind defaults intact so `text-gray-500` (etc.) resolves to standard Tailwind, not ASU. Use `asu-gray-*` explicitly when ASU grays are needed.
 - ❌ Never leave shadcn's default `--radius` — set to `0rem` for ASU (sharp containers).
-- ❌ Never leave shadcn's default `--ring` — set to `#FFC627` (ASU Gold) for all focus rings.
+- ❌ Never leave shadcn's default `--ring` — set via `var(--color-asu-gold)` for all focus rings.
+- ❌ Never reintroduce hex literals inside the `:root` or `.dark` blocks — every shadcn semantic token must resolve through a `var(--color-asu-*)` reference so values flow from `@theme inline`. One source, no drift.
