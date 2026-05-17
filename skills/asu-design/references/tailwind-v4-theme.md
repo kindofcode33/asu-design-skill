@@ -102,6 +102,10 @@ Copy this entire block into the `@theme inline` section of your CSS file:
     --font-asu: "Neue Haas Grotesk", Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
 
     /* Heading scale */
+    --text-asu-h1-hero: clamp(36px, 5vw, 56px);
+    --text-asu-h1-hero--line-height: 1.1;
+    --text-asu-h1-hero--letter-spacing: -0.02em;
+
     --text-asu-h1: 4rem;
     --text-asu-h1--line-height: 4.25rem;
     --text-asu-h1--letter-spacing: -0.035em;

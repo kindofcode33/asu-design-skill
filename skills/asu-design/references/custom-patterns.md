@@ -18,7 +18,7 @@ A horizontal navigation trail showing the user's position within the site hierar
 
 ### Placement
 
-Breadcrumbs appear directly below the hero or header section, inside the standard content container (`max-w-[1200px] mx-auto px-6 md:px-8`), above the main content sections.
+Breadcrumbs appear directly below the hero or header section, inside the standard content container (`max-w-asu-content mx-auto px-6 md:px-8`), above the main content sections.
 
 ### Tailwind Class Reference
 
@@ -62,9 +62,9 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 ### Anatomy
 
 - **Section container:** Full width, `py-12 md:py-24`, with optional repeating background image
-- **Content container:** `max-w-[1200px] mx-auto px-6 md:px-8`
+- **Content container:** `max-w-asu-content mx-auto px-6 md:px-8`
 - **Eyebrow label:** `text-sm font-bold text-asu-gray-1 mb-4` — sentence case, never `uppercase` or `tracking-wider`
-- **Quote text:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1` — Hero H1 scale (display moment, see "Semantic structure first" in SKILL.md)
+- **Quote text:** `text-asu-h1-hero font-black text-asu-gray-1` — Hero H1 scale (display moment, see "Semantic structure first" in SKILL.md)
 - **Gold highlights:** Key phrases wrapped in `<span class="bg-asu-gold px-1">` — draws attention to the most important words
 - **Attribution:** `text-sm text-asu-gray-3 mt-6` — source with optional link
 
@@ -81,9 +81,9 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 <!-- Block Quote — Light mode with optional background texture -->
 <section class="py-12 md:py-24"
   style="background-image: url(/backgrounds/topographic-texture.png); background-repeat: repeat;">
-  <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+  <div class="max-w-asu-content mx-auto px-6 md:px-8">
     <p class="text-sm font-bold text-asu-gray-1 mb-4">The ASU difference:</p>
-    <h2 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1">
+    <h2 class="text-asu-h1-hero font-black text-asu-gray-1">
       We are measured not by whom we exclude, but by
       <span class="bg-asu-gold px-1">whom we include</span> and
       <span class="bg-asu-gold px-1">how they succeed</span>

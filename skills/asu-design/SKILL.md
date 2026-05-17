@@ -184,7 +184,7 @@ Tailwind defaults for non-color utilities (`w-`, `h-`, `flex`, `grid`, `items-`,
 
 | Token | Role |
 |---|---|
-| Hero H1 (`clamp`-based scale) | Page-level heading — one per page only |
+| `text-asu-h1-hero` | Page-level heading and explicit display-quote/set-piece moments. Bundles the clamp scale, line-height (1.1), and letter-spacing. Pair with `font-black`. One per page only. |
 | `text-asu-h1` | Article H1 desktop |
 | `text-asu-h1-article` | Long article headlines |
 | `text-asu-h1-mobile` | H1 on mobile viewports |
@@ -215,7 +215,7 @@ Tailwind defaults for non-color utilities (`w-`, `h-`, `flex`, `grid`, `items-`,
 
 ## Spacing Tokens
 
-**Base unit: 8px.** All spacing maps to the `asu-1` through `asu-9` scale via tokens. No arbitrary values.
+**Base unit: 8px.** Layout-level spacing maps to the `asu-1` through `asu-9` scale via tokens. Component-internal padding may use Tailwind's default 4px-step scale (`p-3`, `py-1.5`, `gap-2`, etc.) when finer granularity than 8px is needed. **Never** use arbitrary values like `p-[7px]` or `mt-[19px]`.
 
 ### Spacing Scale
 
@@ -313,7 +313,7 @@ Load the appropriate reference file when the task involves these components:
 
 **Typography:** No italics. No Roboto. No all-caps (includes eyebrow labels, context labels — never use `uppercase`). No underline on non-links. No text highlights on body text. All text and content must be left-aligned — never use `text-center`, centered text, or `mx-auto` on text containers.
 
-**Spacing:** No arbitrary values — always use spacing tokens (`asu-1` through `asu-9`). Section spacing minimum via `py-asu-9` desktop / `py-asu-6` mobile.
+**Spacing:** `asu-*` tokens for layout-level spacing (sections, content padding, grid gutters, component-to-component gaps). Tailwind's default 4px-step scale (`p-3`, `py-1.5`, `gap-2`, etc.) is acceptable for component-internal padding only. Section spacing minimum via `py-asu-9` desktop / `py-asu-6` mobile. Never use arbitrary `p-[Xpx]` values.
 
 **Shapes:** Cards, containers, and form inputs = `rounded-none` (sharp edges). Buttons = `rounded-full` (pill-shaped). No exceptions.
 

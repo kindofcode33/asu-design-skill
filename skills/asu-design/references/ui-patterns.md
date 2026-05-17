@@ -11,7 +11,7 @@ The standard page header pattern used at the top of content pages (below the glo
 ### Anatomy
 
 - **Context label (eyebrow):** `text-sm font-bold text-asu-maroon mb-2` — sentence case, never `uppercase`
-- **Page title:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1 mb-4`
+- **Page title:** `text-asu-h1-hero font-black text-asu-gray-1 mb-4`
 - **Supporting description:** `text-lg text-asu-gray-1/70 max-w-xl`
 
 ### Tailwind Class Reference
@@ -21,7 +21,7 @@ The standard page header pattern used at the top of content pages (below the glo
   <p class="text-sm font-bold text-asu-maroon mb-2">
     Context label
   </p>
-  <h1 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1 mb-4">
+  <h1 class="text-asu-h1-hero font-black text-asu-gray-1 mb-4">
     Page title
   </h1>
   <p class="text-lg text-asu-gray-1/70 max-w-xl">
@@ -62,7 +62,7 @@ A fixed gold bar at the bottom of the viewport, used for persistent navigation o
 
 ```html
 <div class="fixed bottom-0 left-0 right-0 h-20 bg-asu-gold">
-  <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
+  <div class="max-w-asu-content mx-auto px-6 h-full flex items-center justify-between">
     <!-- Logo and links -->
   </div>
 </div>
