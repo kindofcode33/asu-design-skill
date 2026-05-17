@@ -21,6 +21,8 @@ When you ask Claude Code to build or modify UI, the plugin ensures output follow
 
 The plugin ships **two skills** — one for knowledge (auto-loads when discussing UI), one for setup (a slash command).
 
+**Live demo of all components:** https://kindofcode33.github.io/030-design-skill-examples/
+
 ---
 
 ## Recommended project stack
