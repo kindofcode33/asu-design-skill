@@ -31,7 +31,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 | Gap | none (image and text sit flush within the border) |
 | Image width | `md:w-1/2` (50% on desktop) |
 | Text width | `md:w-1/2` (50% on desktop) |
-| Text padding | `p-asu-3` |
+| Text padding | `p-asu-5` |
 | Background (text area) | `bg-white` |
 | Vertical alignment | `items-stretch` (text aligns to top) |
 
@@ -104,7 +104,7 @@ export default function FeatureBlock({
           </div>
         )}
       </div>
-      <div className="w-full md:w-1/2 p-asu-3">
+      <div className="w-full md:w-1/2 p-asu-5">
         <h3 className="text-[40px] font-bold text-asu-gray-1 leading-tight">{heading}</h3>
         <p className="text-asu-body text-asu-gray-2 mt-4">{body}</p>
         {ctaLabel && ctaHref && (
