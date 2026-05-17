@@ -41,6 +41,8 @@ A Content Card is a simple bordered container with a heading, short description,
 
 ### CTA Button
 - Maroon pill: `bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2`
+- Hover: `hover:scale-105 transition-transform` (5% scale up, no color change)
+- Disabled: `disabled:opacity-50`
 - Positioned at bottom: use `mt-auto` to push to card bottom
 - Specific, descriptive label (never "Learn more" or "Click here")
 - Width: `inline-block` (button only as wide as label)
@@ -71,7 +73,7 @@ export default function ContentCard({ heading, body, ctaLabel, ctaHref }: Conten
           href={ctaHref}
           className="inline-block mt-auto pt-asu-3 self-start"
         >
-          <span className="bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2 inline-block hover:shadow-lg transition-shadow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2">
+          <span className="bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2 inline-block hover:scale-105 transition-transform disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2">
             {ctaLabel}
           </span>
         </a>
