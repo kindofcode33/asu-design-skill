@@ -71,8 +71,8 @@ Three states for the tabbed panel component.
 ## Sizing and Placement
 
 ### Desktop
-- Tabbed panels can span a **max of 7 columns (690px)** wide — required to meet typography line length guidelines
-- **Minimum width: 3 columns (282px)** — required to meet typography guidelines
+- Tabbed panels can span a **max of 7 columns (688px)** wide — required to meet typography line length guidelines
+- **Minimum width: 3 columns (280px)** — required to meet typography guidelines
 - Shadow exists as indication of additional tabs to the right when overflowing
 - On hover, icon buttons appear to aid desktop navigation — nav buttons move the carousel one tab item at a time
 - Minimum 2 tabs; maximum 9 recommended
@@ -103,7 +103,7 @@ Three states for the tabbed panel component.
 
 ```html
 <!-- ASU Tabbed Panel -->
-<div class="w-full max-w-[690px] min-w-[282px]">
+<div class="w-full max-w-asu-tab-max min-w-asu-tab-min">
 
   <!-- Tab list -->
   <div class="relative flex border-b border-asu-gray-4 overflow-x-auto">
@@ -135,7 +135,7 @@ Three states for the tabbed panel component.
 </div>
 
 <!-- Dark background variant — Gray1 -->
-<div class="w-full max-w-[690px] min-w-[282px] bg-asu-gray-1 p-4">
+<div class="w-full max-w-asu-tab-max min-w-asu-tab-min bg-asu-gray-1 p-4">
   <div class="relative flex border-b border-asu-gray-3 overflow-x-auto">
     <button class="px-4 py-3 text-asu-body font-asu text-white whitespace-nowrap
                    border-b-2 border-transparent">Tab One</button>
@@ -164,7 +164,7 @@ When adding a tabbed panel to a design:
 2. **Count the tabs** → Minimum 2, maximum 9; if more than 9, reconsider the information architecture
 3. **Write tab titles** → 1–2 words, descriptive, sentence case, never all caps
 4. **Select background context** → White / Gray7 / Gray6 = light styling; Gray1 = dark/inverted styling
-5. **Size correctly** → Desktop: min 282px (3 cols), max 690px (7 cols); Mobile: full 4 columns
+5. **Size correctly** → Desktop: min 280px (3 cols), max 688px (7 cols); Mobile: full 4 columns
 6. **Put the most important content in the first tab** — users are least likely to open subsequent tabs
 7. **Organize body content consistently** — parallel structure across all tabs
 8. **Handle overflow** → Shadow appears right; nav buttons appear on hover; mobile scrolls on swipe
@@ -181,8 +181,8 @@ When adding a tabbed panel to a design:
 - ❌ Never use tabs when users need to compare content across panels
 - ❌ Never use all caps in tab labels
 - ❌ Never make tab labels longer than necessary — 1–2 words target
-- ❌ Never let tabbed panels exceed 690px (7 columns) on desktop
-- ❌ Never let tabbed panels fall below 282px (3 columns) on desktop
+- ❌ Never let tabbed panels exceed 688px (7 columns) on desktop
+- ❌ Never let tabbed panels fall below 280px (3 columns) on desktop
 
 ---
 

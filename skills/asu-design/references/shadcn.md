@@ -71,9 +71,9 @@ const buttonVariants = cva(
         link:        "text-asu-maroon underline hover:no-underline",
       },
       size: {
-        default: "px-6 py-3 min-w-[112px]",
-        sm:      "px-4 py-2 min-w-[80px]",
-        xs:      "px-3 py-1.5 min-w-[64px] text-sm",
+        default: "px-6 py-3 min-w-28",
+        sm:      "px-4 py-2 min-w-20",
+        xs:      "px-3 py-1.5 min-w-16 text-sm",
         icon:    "h-10 w-10",
       },
     },

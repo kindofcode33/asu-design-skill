@@ -162,10 +162,22 @@ Copy this entire block into the `@theme inline` section of your CSS file:
     --spacing-asu-8: 72px;
     --spacing-asu-9: 96px;
 
+    /* ===== ASU Component-Specific Dimensions =====
+       UDS-specified component dimensions, all aligned to the 8px grid.
+       Use h-asu-hero-{lg,md,sm} for hero heights;
+       use max-w-asu-alert / max-w-asu-tab-max / min-w-asu-tab-min for component containers. */
+    --spacing-asu-hero-lg: 648px;   /* 81×8 — large hero, default */
+    --spacing-asu-hero-md: 512px;   /* 64×8 — medium hero */
+    --spacing-asu-hero-sm: 352px;   /* 44×8 — small hero */
+
     /* ===== ASU Layout (max-widths) ===== */
     /* CRITICAL: Use --container-* NOT --max-w-* for Tailwind v4 */
     --container-asu-content: 1200px;
     --container-asu-max: 1920px;
+    --container-asu-alert: 704px;     /* 88×8 — system alert max-w */
+    --container-asu-modal: 704px;     /* 88×8 — modal content block max-w */
+    --container-asu-tab-max: 688px;   /* 86×8 — tabbed-panel max-w (honors body line-length ≤700px) */
+    --container-asu-tab-min: 280px;   /* 35×8 — tabbed-panel min-w (honors body line-length ≥252px) */
 
     /* ===== ASU Animations ===== */
     --animate-fade-in: fade-in 0.1s linear;
@@ -325,6 +337,13 @@ After applying the theme above, the following classes are available:
 ### Layout
 `max-w-asu-content` (1200px — content area)
 `max-w-asu-max` (1920px — background maximum)
+`max-w-asu-alert` (704px — system alert width)
+`max-w-asu-modal` (704px — modal content block width)
+`max-w-asu-tab-max` (688px — tabbed-panel max-w)
+`min-w-asu-tab-min` (280px — tabbed-panel min-w)
+
+### Component Heights
+`h-asu-hero-lg` (648px), `h-asu-hero-md` (512px), `h-asu-hero-sm` (352px)
 
 ### Animations
 `animate-fade-in` (modal entry — 0.1s linear)

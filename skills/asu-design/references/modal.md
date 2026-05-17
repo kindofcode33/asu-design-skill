@@ -137,7 +137,7 @@ Two states for the modal component.
   <div class="absolute inset-0 bg-asu-gray-1 opacity-70"></div>
 
   <!-- Content block — desktop: 4-12 cols, mobile: full 4 cols -->
-  <div class="relative bg-white rounded shadow-lg w-full max-w-[700px] mx-4 p-8
+  <div class="relative bg-white rounded shadow-lg w-full max-w-asu-modal mx-4 p-8
               animate-[fadeIn_0.1s_linear]">
 
     <!-- Close button — top right, 50% opacity default -->
@@ -158,7 +158,7 @@ Two states for the modal component.
 
     <!-- CTA button (optional) -->
     <button class="bg-asu-maroon text-white font-bold rounded-full px-6 py-3
-                   min-w-[112px] hover:scale-105 transition-transform">
+                   min-w-28 hover:scale-105 transition-transform">
       Action label
     </button>
 

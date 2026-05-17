@@ -108,7 +108,7 @@ Both animations fire at the same time from the top of the page.
 ```html
 <!-- Alert / Warning — orange -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
-            w-full max-w-[700px] mx-4
+            w-full max-w-asu-alert mx-4
             bg-asu-warning-bg border border-asu-warning-text-light rounded-none px-4 py-3
             flex items-start gap-3
             animate-[slideAlert_0.5s_cubic-bezier(.19,1,.19,1)]">
@@ -121,7 +121,7 @@ Both animations fire at the same time from the top of the page.
 
 <!-- Information — blue -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
-            w-full max-w-[700px] mx-4
+            w-full max-w-asu-alert mx-4
             bg-asu-info-bg border border-asu-info rounded-none px-4 py-3
             flex items-start gap-3">
   <i class="fa fa-info-circle text-asu-info mt-0.5 flex-shrink-0"></i>
@@ -133,7 +133,7 @@ Both animations fire at the same time from the top of the page.
 
 <!-- Success — green -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
-            w-full max-w-[700px] mx-4
+            w-full max-w-asu-alert mx-4
             bg-asu-success-bg border border-asu-success rounded-none px-4 py-3
             flex items-start gap-3">
   <i class="fa fa-check-circle text-asu-success mt-0.5 flex-shrink-0"></i>
@@ -145,7 +145,7 @@ Both animations fire at the same time from the top of the page.
 
 <!-- Error — red -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
-            w-full max-w-[700px] mx-4
+            w-full max-w-asu-alert mx-4
             bg-asu-error-bg border border-asu-error rounded-none px-4 py-3
             flex items-start gap-3">
   <i class="fa fa-exclamation-triangle text-asu-error mt-0.5 flex-shrink-0"></i>
