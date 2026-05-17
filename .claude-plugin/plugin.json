@@ -7,6 +7,11 @@
       "name": "asu-design",
       "description": "Use when building, styling, or reviewing UI that should follow ASU (Arizona State University) brand standards. Triggers on any mention of ASU branding, ASU design system, ASU colors, ASU components, or when creating web pages/components that need to follow the ASU Unity Design System.",
       "path": "skills/asu-design/SKILL.md"
+    },
+    {
+      "name": "asu-design-init",
+      "description": "Bootstrap a project with the ASU Unity Design System by copying the canonical asu-theme.css into the project's CSS entry file (Next.js globals.css, Vite index.css, etc.). Use when initializing a new ASU project, setting up Tailwind v4 with ASU tokens, remapping all ASU design tokens, or when the user types /asu-design-init. Triggers on phrases like \"initialize ASU theme\", \"set up ASU tokens\", \"bootstrap ASU design\", \"install ASU design system\", \"set up ASU design\".",
+      "path": "skills/asu-design-init/SKILL.md"
     }
   ]
 }
