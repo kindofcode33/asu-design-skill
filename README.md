@@ -186,31 +186,39 @@ Neither skill is always loaded — both activate via description matching only. 
 
 ## What's included
 
-| Reference | Coverage |
-|-----------|----------|
-| Design philosophy | Brand intent, principles, hard rules |
-| Writing style | Voice, capitalization, formatting, dates |
-| Global header | Utility bar, logo, navigation |
-| Global footer | Endorsed row, gold bar, legal links |
-| Heroes | Large/medium/small hero sections |
-| Buttons | Sizes, colors, states, icon rules |
-| Cards | Container surfaces, stat blocks |
-| Typography | Full scale, highlights, constraints |
-| Colors | Tokens, combinations, prohibited pairings |
-| Spacing and layout | 8px grid, section spacing, max-widths |
-| UI patterns | Page headers, section headers, gold bars |
-| Custom patterns | Breadcrumbs, block quotes, branded statements |
-| Tabbed panels | Tab navigation, content panels |
-| Forms | Text inputs, checkboxes, validation |
-| Modals | Dialogs, overlays |
-| Tables | Data tables, sortable columns |
-| Icons | Sizing, color combinations |
-| Images | Sizing, alt text, captions |
-| Sidebar menu | Vertical navigation |
-| shadcn/ui | ASU overrides for shadcn components |
-| Tailwind v4 theme | Token registry documentation |
-| **Canonical CSS asset** | `skills/asu-design/assets/asu-theme.css` — single source of truth for all token values |
-| **Brand images** | `skills/asu-design/assets/images/` — logos, backgrounds, favicon (copied to project by `/asu-design-init`) |
+| Reference | File | Coverage |
+|-----------|------|----------|
+| Design philosophy | `guide-philosophy.md` | Brand intent, principles, hard rules |
+| Writing style | `guide-writing.md` | Voice, capitalization, formatting, dates |
+| Global header | `header-global.md` | Utility bar, logo, navigation |
+| Global footer | `footer-global.md` | Endorsed row, gold bar, legal links |
+| Heroes | `hero.md` | Large/medium/small hero sections |
+| Buttons | `button.md` | Sizes, colors, states, icon rules |
+| Cards | `card.md` | Container surfaces, stat blocks, icon cards |
+| Content cards | `card-content.md` | Text-only cards with icon, heading, body, CTA |
+| Image cards | `card-image.md` | Cards with top image, icon + heading, arrow link |
+| Card image overlay | `card-image-overlay.md` | Full-width bg image with gradient and overlaid card |
+| Section CTA | `section-cta.md` | Parallax bg image with card and multiple CTAs |
+| Feature block | `block-feature.md` | Side-by-side image + text content block |
+| Related links | `nav-related-links.md` | Bordered link list for sidebar/inline use |
+| Typography | `token-typography.md` | Full scale, highlights, constraints |
+| Colors | `token-color.md` | Tokens, combinations, prohibited pairings |
+| Spacing and layout | `token-spacing.md` | 8px grid, section spacing, max-widths |
+| Page patterns | `pattern-page.md` | Page headers, section headers, gold bars |
+| Custom patterns | `pattern-custom.md` | Breadcrumbs, block quotes, branded statements |
+| Tabbed panels | `tab-panel.md` | Tab navigation, content panels |
+| Forms | `form-text-input.md`, `form-checkbox.md` | Text inputs, checkboxes, validation |
+| Modals | `modal.md` | Dialogs, overlays |
+| Tables | `table.md` | Data tables, sortable columns |
+| System alerts | `alert-system.md` | Notifications, validation feedback |
+| Icons | `media-icon.md` | Sizing, color combinations |
+| Images | `media-image.md` | Sizing, alt text, placeholders, captions |
+| Inline links | `link-inline.md` | Text-embedded hyperlinks, external links |
+| Sidebar menu | `nav-sidebar.md` | Vertical navigation |
+| shadcn/ui | `config-shadcn.md` | ASU overrides for shadcn components |
+| Tailwind v4 theme | `token-tailwind-theme.md` | Token registry documentation |
+| **Canonical CSS asset** | `skills/asu-design/assets/asu-theme.css` | Single source of truth for all token values |
+| **Brand images** | `skills/asu-design/assets/images/` | Logos, backgrounds, favicon (copied by `/asu-design-init`) |
 
 ---
 
