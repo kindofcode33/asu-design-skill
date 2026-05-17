@@ -26,7 +26,7 @@ A Related Links block is a simple bordered container with a heading and a vertic
 | Container | `border border-asu-gray-4 rounded-none` |
 | Background | `bg-white` |
 | Heading | `text-asu-h4 font-bold text-asu-gray-1 p-asu-3 border-b border-asu-gray-4` |
-| Link container | `p-asu-3 border-b border-asu-gray-4 last:border-b-0` |
+| Link container | `py-asu-3 px-asu-3 border-b border-asu-gray-4 last:border-b-0` |
 | Link style | `text-asu-body text-asu-maroon underline hover:no-underline` |
 | Width | Flexible, typically `w-full` in a sidebar or `max-w-sm` inline |
 
@@ -50,7 +50,7 @@ export default function RelatedLinks({ heading = "Related Links", links }: Relat
         {links.map((link, i) => (
           <div
             key={link.label}
-            className={`p-asu-3 ${i < links.length - 1 ? 'border-b border-asu-gray-4' : ''}`}
+            className={`py-asu-3 px-asu-3 ${i < links.length - 1 ? 'border-b border-asu-gray-4' : ''}`}
           >
             <a
               href={link.href}
