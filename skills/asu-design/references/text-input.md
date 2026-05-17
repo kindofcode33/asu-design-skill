@@ -8,7 +8,7 @@
 
 These are ASU project-level decisions that override the base UDS styling:
 
-- **Focus ring:** Use `focus:border-primary-gold focus:ring-2 focus:ring-primary-gold/10` (gold, not gray)
+- **Focus ring:** Use `focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10` (gold, not gray)
 - **Border radius:** `rounded-none` on all inputs — never rounded
 - **Native `<select>`:** Never use the native browser `<select>` dropdown. Always use the shadcn Select component (with ASU overrides from `shadcn.md`).
 
@@ -16,11 +16,11 @@ These are ASU project-level decisions that override the base UDS styling:
 
 ```html
 <div class="flex flex-col gap-1">
-  <label class="text-sm font-semibold text-primary-black">Label text</label>
+  <label class="text-sm font-semibold text-asu-gray-1">Label text</label>
   <input
     type="text"
     placeholder="Helper text"
-    class="w-full px-4 py-3 border border-gray-200 rounded-none text-base bg-white text-primary-black placeholder:text-gray-500 focus:outline-none focus:border-primary-gold focus:ring-2 focus:ring-primary-gold/10 disabled:bg-gray-100 disabled:text-gray-500 disabled:cursor-not-allowed"
+    class="w-full px-4 py-3 border border-asu-gray-5 rounded-none text-base bg-white text-asu-gray-1 placeholder:text-asu-gray-3 focus:outline-none focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10 disabled:bg-asu-gray-6 disabled:text-asu-gray-3 disabled:cursor-not-allowed"
   />
 </div>
 ```
@@ -29,17 +29,17 @@ These are ASU project-level decisions that override the base UDS styling:
 
 | State | Border | Ring |
 |---|---|---|
-| Default | `border-gray-200` | None |
-| Focus | `border-primary-gold` | `ring-2 ring-primary-gold/10` |
+| Default | `border-asu-gray-5` | None |
+| Focus | `border-asu-gold` | `ring-2 ring-asu-gold/10` |
 | Error | `border-error` | `ring-2 ring-error/10` |
-| Disabled | `border-gray-200 bg-gray-100` | None |
+| Disabled | `border-asu-gray-5 bg-asu-gray-6` | None |
 
 ### Textarea
 
 ```html
 <textarea
   placeholder="Add notes..."
-  class="w-full p-4 border border-gray-200 rounded-none text-base leading-relaxed resize-none focus:outline-none focus:border-primary-gold focus:ring-2 focus:ring-primary-gold/10 min-h-40"
+  class="w-full p-4 border border-asu-gray-5 rounded-none text-base leading-relaxed resize-none focus:outline-none focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10 min-h-40"
 ></textarea>
 ```
 
@@ -87,18 +87,18 @@ Colors for text input fields are **predetermined and cannot be altered**. Set ac
 | Background | Behavior |
 |---|---|
 | White | Default input styling |
-| Gray7 `#FAFAFA` | Default input styling |
-| Gray6 `#E8E8E8` | Default input styling |
-| Gray1 / Black `#191919` | Inverted input styling for dark backgrounds |
+| `bg-asu-gray-7` | Default input styling |
+| `bg-asu-gray-6` | Default input styling |
+| `bg-asu-gray-1` | Inverted input styling for dark backgrounds |
 
 ### State Colors
-| State | Visual |
+| State | Token |
 |---|---|
-| Focused border | Gray1 `#191919` |
-| Success bar | Green `#446012` — appears underneath the field |
-| Error bar | Red `#CC2135` — appears underneath the field |
-| Disabled background | Gray6 `#E8E8E8` |
-| Disabled label | Gray3 `#747474` (ASU Gray) |
+| Focused border | `border-asu-gold` (with gold focus ring) |
+| Success bar | `bg-asu-success` — appears underneath the field |
+| Error bar | `bg-asu-error` — appears underneath the field |
+| Disabled background | `bg-asu-gray-6` |
+| Disabled label | `text-asu-gray-3` (ASU Gray) |
 
 ---
 
@@ -204,10 +204,10 @@ Helper text appears inside the input field as placeholder guidance. Two uses:
   <input
     type="text"
     placeholder="Helper text"
-    class="w-full border border-asu-gray-4 rounded px-3 py-2
+    class="w-full border border-asu-gray-4 rounded-none px-3 py-2
            text-asu-gray-1 text-asu-body bg-white
            placeholder:text-asu-gray-3
-           focus:outline-none focus:border-2 focus:border-asu-gray-1
+           focus:outline-none focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10
            disabled:bg-asu-gray-6 disabled:text-asu-gray-3 disabled:cursor-not-allowed"
   />
 
@@ -231,9 +231,9 @@ Helper text appears inside the input field as placeholder guidance. Two uses:
     <input
       type="date"
       placeholder="Helper text"
-      class="w-full border border-asu-gray-4 rounded px-3 py-2 pr-10
+      class="w-full border border-asu-gray-4 rounded-none px-3 py-2 pr-10
              text-asu-gray-1 text-asu-body bg-white
-             focus:outline-none focus:border-2 focus:border-asu-gray-1"
+             focus:outline-none focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10"
     />
     <i class="fa fa-calendar absolute right-3 top-1/2 -translate-y-1/2 text-asu-gray-3 pointer-events-none"></i>
   </div>

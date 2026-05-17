@@ -1,6 +1,7 @@
 # ASU Global Header
 > Source: ASU Unity Design System (UDS) — Project Reference
 > Load this file when building the site header, navigation bar, utility bar, or logo placement.
+> **Color/spacing/typography token values are canonical in `SKILL.md`.** All examples here reference tokens by name.
 
 ---
 
@@ -16,10 +17,10 @@ The global header is a full-width, fixed-position component at the top of every 
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│ Grey utility bar (bg: #E8E8E8, height: 30px)                             │
+│ Grey utility bar (bg-asu-gray-6, height 30px)                            │
 │                          ASU Home   My ASU   Colleges and Schools   Sign In   Search 🔍 │
 ├──────────────────────────────────────────────────────────────────────────┤
-│ White main header (bg: #FFFFFF, border-bottom: 1px solid #D0D0D0)         │
+│ White main header (bg-white, border-b border-asu-gray-5)                 │
 │                                                                          │
 │  [ASU Logo]   Arizona State University                                   │
 │               🏠  link01   link02   link03   link04                       │
@@ -31,15 +32,15 @@ The global header is a full-width, fixed-position component at the top of every 
 
 ## Grey Utility Bar
 
-| Property | Value |
+| Property | Token / Value |
 |---|---|
-| Background | `#E8E8E8` |
-| Height | `30px` |
-| Content max-width | `1200px`, centered |
-| Padding | `0 24px` |
+| Background | `bg-asu-gray-6` |
+| Height | `h-[30px]` (UDS-specified, off the 8px scale) |
+| Content max-width | `max-w-asu-content`, centered |
+| Padding | `px-asu-3` |
 | Alignment | Right-aligned links + search button |
-| Link style | `font-size: 12px`, `color: #484848`, no underline |
-| Gap between items | `24px` |
+| Link style | `text-asu-body-xs text-asu-gray-2 no-underline` |
+| Gap between items | `gap-asu-3` |
 
 **Links:** "ASU Home" (href: https://asu.edu), "My ASU", "Colleges and Schools", "Sign In"
 
@@ -49,37 +50,36 @@ The global header is a full-width, fixed-position component at the top of every 
 
 ## White Main Header
 
-| Property | Value |
+| Property | Token / Value |
 |---|---|
-| Background | `#FFFFFF` |
-| Border bottom | `1px solid #D0D0D0` |
-| Content max-width | `1200px`, centered |
-| Padding | `0 24px` |
-| Layout | Flex row, `align-items: stretch` |
+| Background | `bg-white` |
+| Border bottom | `border-b border-asu-gray-5` |
+| Content max-width | `max-w-asu-content`, centered |
+| Padding | `px-asu-3` |
+| Layout | `flex items-stretch` |
 
 ### Logo
 - ASU vertical logo (`/logos/logos/asu-vertical.svg`)
-- Height: `64px`, width: auto
+- `h-16` (64px), width auto
 - Links to `/` (home/index page)
-- `flex-shrink: 0`, `margin-right: 24px`
+- `flex-shrink-0 mr-asu-3`
 
 ### Title
 - Text: "Arizona State University"
-- Font size: `32px`, weight: `700`, color: `#191919`
-- Line height: `1.1`
+- `text-asu-h2-mobile font-bold text-asu-gray-1 leading-[1.1]`
 - Links to `/` (home/index page)
 - No underline by default; **black underline on hover**
 
 ### Navigation Row
-- Flex row, `gap: 24px`, aligned to stretch
+- `flex items-stretch gap-asu-3`
 - **Home icon (first item):** house SVG (16px) linking to `/`
-  - Gold underline (`5px solid #FFC627`) when no nav item is active (i.e., on the index page)
-  - Transparent underline otherwise
+  - Gold bottom border `border-b-[5px] border-asu-gold` when no nav item is active
+  - Transparent bottom border `border-b-[5px] border-transparent` otherwise
 - **Text items:** links to site pages
-  - Font size: `16px`, weight: `400`, color: `#484848`
-  - Active item: color `#191919`, gold bottom border (`5px solid #FFC627`)
-  - Inactive: transparent bottom border (`5px solid transparent`)
-  - Padding: `8px` top and bottom
+  - `text-asu-body font-normal text-asu-gray-2`
+  - Active item: `text-asu-gray-1 border-b-[5px] border-asu-gold`
+  - Inactive: `border-b-[5px] border-transparent`
+  - Padding: `py-asu-1`
 
 ---
 
@@ -117,52 +117,51 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
     <>
     <header className="w-full fixed top-0 left-0 right-0 z-50">
       {/* Grey utility bar */}
-      <div style={{ backgroundColor: '#E8E8E8', height: '30px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '24px' }}>
+      <div className="bg-asu-gray-6 h-[30px]">
+        <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-end gap-asu-3">
           {UTILITY_LINKS.map((item) => (
-            <a key={item.label} href={item.href} style={{ fontSize: '12px', color: '#484848', textDecoration: 'none' }}>
+            <a key={item.label} href={item.href} className="text-asu-body-xs text-asu-gray-2 no-underline">
               {item.label}
             </a>
           ))}
-          <button style={{ fontSize: '12px', color: '#484848', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
+          <button className="text-asu-body-xs text-asu-gray-2 bg-transparent border-none cursor-pointer flex items-center gap-1">
             Search
-            <Search style={{ width: '12px', height: '12px' }} />
+            <Search className="w-3 h-3" />
           </button>
         </div>
       </div>
 
       {/* White main header */}
-      <div style={{ backgroundColor: '#fff', borderBottom: '1px solid #D0D0D0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'stretch' }}>
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0, marginRight: '24px' }}>
-            <img src="/logos/logos/asu-vertical.svg" alt="ASU" style={{ height: '64px', width: 'auto' }} />
+      <div className="bg-white border-b border-asu-gray-5">
+        <div className="max-w-asu-content mx-auto px-asu-3 flex items-stretch">
+          <Link to="/" className="flex items-center flex-shrink-0 mr-asu-3">
+            <img src="/logos/logos/asu-vertical.svg" alt="ASU" className="h-16 w-auto" />
           </Link>
 
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <Link to="/" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '32px', fontWeight: 700, color: '#191919', lineHeight: 1.1, paddingTop: '16px' }}>
+          <div className="flex flex-col justify-center">
+            <Link to="/" className="text-asu-h2-mobile font-bold text-asu-gray-1 leading-[1.1] pt-asu-2 no-underline hover:[text-decoration:underline]">
               Arizona State University
             </Link>
 
             {nav.length > 0 && (
-              <nav style={{ display: 'flex', alignItems: 'stretch', gap: '24px' }}>
-                <Link to="/" style={{ color: '#484848', display: 'flex', alignItems: 'center', textDecoration: 'none', paddingTop: '8px', paddingBottom: '8px', borderBottom: !activeItem ? '5px solid #FFC627' : '5px solid transparent' }}>
+              <nav className="flex items-stretch gap-asu-3">
+                <Link
+                  to="/"
+                  className={`text-asu-gray-2 flex items-center no-underline py-asu-1 border-b-[5px] ${
+                    !activeItem ? 'border-asu-gold' : 'border-transparent'
+                  }`}
+                >
                   {/* Home icon SVG */}
                 </Link>
                 {nav.map((item) => (
                   <Link
                     key={item.label}
                     to={item.href || '#'}
-                    style={{
-                      fontSize: '16px',
-                      color: item.label === activeItem ? '#191919' : '#484848',
-                      fontWeight: 400,
-                      textDecoration: 'none',
-                      display: 'flex',
-                      alignItems: 'center',
-                      paddingTop: '8px',
-                      paddingBottom: '8px',
-                      borderBottom: item.label === activeItem ? '5px solid #FFC627' : '5px solid transparent',
-                    }}
+                    className={`text-asu-body font-normal no-underline flex items-center py-asu-1 border-b-[5px] ${
+                      item.label === activeItem
+                        ? 'text-asu-gray-1 border-asu-gold'
+                        : 'text-asu-gray-2 border-transparent'
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -205,11 +204,12 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
 
 - ❌ Never constrain the header with a max-width — always 100% viewport width
 - ❌ Never omit the utility bar
-- ❌ Never change the gold underline color on active nav items
+- ❌ Never change the gold underline color on active nav items (`border-asu-gold`)
 - ❌ Never use a different logo variant than the vertical ASU logo
 - ❌ Never make the header non-fixed — always `fixed top-0 left-0 right-0 z-50`
 - ❌ Never add `overflow` scroll/hidden to the header
 - ❌ Never forget the spacer div (`h-[110px]`) below the header to offset fixed positioning
+- ❌ Never hardcode hex/px — always reference tokens
 
 ---
 
@@ -218,3 +218,4 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
 - Footer component → load `global-footer.md`
 - Navigation patterns beyond the header → load `custom-patterns.md`
 - Logo usage rules → refer to ASU brand identity guide
+- Token values → see `SKILL.md`

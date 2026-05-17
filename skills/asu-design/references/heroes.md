@@ -6,23 +6,23 @@
 
 ## Hero Height Variants
 
-| Size | Height | Tailwind | Default? |
-|---|---|---|---|
-| Large | 648px | `h-[648px]` | Yes |
-| Medium | 512px | `h-[512px]` | |
-| Small | 350px | `h-[350px]` | |
+| Size | Tailwind token | Default? |
+|---|---|---|
+| Large | `h-asu-hero-lg` (648px = 81×8) | Yes |
+| Medium | `h-asu-hero-md` (512px = 64×8) | |
+| Small | `h-asu-hero-sm` (352px = 44×8) | |
 
-**Default is Large (648px)** unless a smaller size is explicitly requested.
+**Default is Large (`h-asu-hero-lg`)** unless a smaller size is explicitly requested. All three heights are aligned to the 8px grid; values are canonical in `tailwind-v4-theme.md`.
 
 ---
 
 ## Usage
 
-When the user specifies a hero size by name, apply the corresponding fixed height:
+When the user specifies a hero size by name, apply the corresponding token:
 
-- "large hero" or just "hero" → `h-[648px]`
-- "medium hero" → `h-[512px]`
-- "small hero" → `h-[350px]`
+- "large hero" or just "hero" → `h-asu-hero-lg`
+- "medium hero" → `h-asu-hero-md`
+- "small hero" → `h-asu-hero-sm`
 
 All hero sections use `flex items-end` to position content at the bottom of the hero. Content is always left-aligned and bottom-aligned within the content container.
 

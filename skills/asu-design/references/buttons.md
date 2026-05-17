@@ -23,16 +23,18 @@ Buttons are graphical elements meant to indicate a clickable or interactive area
 
 Three sizes are available. Minimum widths must always be respected.
 
-| Size | Min Width | Tailwind Approx | Use Case |
-|---|---|---|---|
-| Default | 112px | `min-w-28` | Primary CTAs; standard actions |
-| Small | 80px | `min-w-20` | Secondary actions; space-constrained contexts |
-| Extra Small | 64px | `min-w-16` | Tight UI contexts only |
+| Size | Tailwind utility | Use Case |
+|---|---|---|
+| Default | `min-w-28` (112px = 14×8) | Primary CTAs; standard actions |
+| Small | `min-w-20` (80px = 10×8) | Secondary actions; space-constrained contexts |
+| Extra Small | `min-w-16` (64px = 8×8) | Tight UI contexts only |
+
+All three min-widths align to the 8px grid via Tailwind's default `min-w-*` scale — no asu-* tokens needed for buttons.
 
 ### Size Rules
-- Default button size should **never be smaller than 112px wide**
-- Small button size should **never be smaller than 80px wide**
-- Extra small button size should **never be smaller than 64px wide**
+- Default button size should **never use min-w smaller than `min-w-28`** (112px)
+- Small button size should **never use min-w smaller than `min-w-20`** (80px)
+- Extra small button size should **never use min-w smaller than `min-w-16`** (64px)
 - Padding of **24–36px** is recommended on all sizes to ensure clickability
 - Button text content should **never wrap to two lines** — if text is too long, it will be truncated
 
@@ -42,12 +44,12 @@ Three sizes are available. Minimum widths must always be respected.
 
 Four color options are available to fit light or dark backgrounds. All combos must follow accessibility standards.
 
-| Color | Hex | Default Text | Use Case |
+| Color | Token | Default Text | Use Case |
 |---|---|---|---|
-| Maroon | `#8C1D40` | White | **Default color** — standard actions |
-| Gold | `#FFC627` | Gray1 `#191919` | **High-priority CTAs only** — use sparingly |
-| Black | `#191919` | White | Dark-themed contexts |
-| Gray | `#E8E8E8` | Gray1 `#191919` | Low-emphasis or secondary actions |
+| Maroon | `bg-asu-maroon` | White | **Default color** — standard actions |
+| Gold | `bg-asu-gold` | `text-asu-gray-1` | **High-priority CTAs only** — use sparingly |
+| Black | `bg-asu-gray-1` | White | Dark-themed contexts |
+| Gray | `bg-asu-gray-6` | `text-asu-gray-1` | Low-emphasis or secondary actions |
 
 ### Color Rules
 - **Maroon is the default color** — always start here unless there is a specific reason to deviate
@@ -104,10 +106,10 @@ Icons may be added to buttons under strict rules:
 ## Sizing and Placement
 
 ### Desktop
-- Padding: **24–36px** recommended for clickability
-- Default button: min **112px wide**
-- Small button: min **80px wide**
-- Extra small button: min **64px wide**
+- Padding: 24–36px recommended for clickability (component-internal — Tailwind defaults `px-6 py-3` etc. acceptable)
+- Default button: `min-w-28`
+- Small button: `min-w-20`
+- Extra small button: `min-w-16`
 - Only **one primary CTA per section** — each section should have one clear action
 - When multiple CTAs are needed: primary CTA = Gold button; secondary CTAs = text links
 
@@ -124,37 +126,37 @@ Icons may be added to buttons under strict rules:
 
 ```html
 <!-- Default button — Maroon -->
-<button class="bg-asu-maroon text-white font-bold rounded-full px-6 py-3 min-w-[112px] hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-maroon text-white font-bold rounded-full px-6 py-3 min-w-28 hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Default button — Gold (high-priority CTA only) -->
-<button class="bg-asu-gold text-asu-gray-1 font-bold rounded-full px-6 py-3 min-w-[112px] hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-gold text-asu-gray-1 font-bold rounded-full px-6 py-3 min-w-28 hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Default button — Black -->
-<button class="bg-asu-gray-1 text-white font-bold rounded-full px-6 py-3 min-w-[112px] hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-gray-1 text-white font-bold rounded-full px-6 py-3 min-w-28 hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Default button — Gray -->
-<button class="bg-asu-gray-6 text-asu-gray-1 font-bold rounded-full px-6 py-3 min-w-[112px] hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-gray-6 text-asu-gray-1 font-bold rounded-full px-6 py-3 min-w-28 hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Small button — Maroon -->
-<button class="bg-asu-maroon text-white font-bold rounded-full px-4 py-2 min-w-[80px] hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-maroon text-white font-bold rounded-full px-4 py-2 min-w-20 hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Extra small button — Maroon -->
-<button class="bg-asu-maroon text-white font-bold rounded-full px-3 py-1.5 min-w-[64px] text-sm hover:scale-105 transition-transform disabled:opacity-50">
+<button class="bg-asu-maroon text-white font-bold rounded-full px-3 py-1.5 min-w-16 text-sm hover:scale-105 transition-transform disabled:opacity-50">
   Button label
 </button>
 
 <!-- Default button with icon (left-positioned) -->
-<button class="bg-asu-maroon text-white font-bold rounded-full px-6 py-3 min-w-[112px] hover:scale-105 transition-transform disabled:opacity-50 flex items-center gap-2">
+<button class="bg-asu-maroon text-white font-bold rounded-full px-6 py-3 min-w-28 hover:scale-105 transition-transform disabled:opacity-50 flex items-center gap-2">
   <i class="fa fa-arrow-right"></i>  Button label
 </button>
 ```
@@ -180,7 +182,7 @@ When adding a button to a design:
 
 ## Hard Rules — Never Violate
 
-- ❌ Never make a button smaller than the minimum widths (112px / 80px / 64px)
+- ❌ Never make a button smaller than the minimum widths (`min-w-28` / `min-w-20` / `min-w-16`)
 - ❌ Never use Gold for a non-primary or low-priority action
 - ❌ Never use generic button text: "Learn more", "Read more", "See more", "Click here"
 - ❌ Never let button text wrap to two lines

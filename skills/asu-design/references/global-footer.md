@@ -1,6 +1,7 @@
 # ASU Global Footer
 > Source: ASU Unity Design System (UDS) — Project Reference
 > Load this file when building the site footer, colophon, social links, or legal/compliance bar.
+> **Color/spacing/typography token values are canonical in `SKILL.md`.** All examples here reference tokens by name.
 
 ---
 
@@ -14,13 +15,13 @@ The global footer is a full-width component at the bottom of every page. It cons
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
-│ Dark row (bg: #191919, height: 128px)                                    │
+│ Dark row (bg-asu-gray-1, height 128px)                                   │
 │  [ASU Logo white]                          [fb] [ig] [yt] [li]           │
 ├──────────────────────────────────────────────────────────────────────────┤
-│ Gold bar (bg: #FFC627, height: 100px)                                    │
+│ Gold bar (bg-asu-gold, height 100px)                                 │
 │  Maps and Locations  Jobs  Directory  Contact ASU  My ASU    [rank img]  │
 ├──────────────────────────────────────────────────────────────────────────┤
-│ Grey bar (bg: #E8E8E8, height: 56px)                                     │
+│ Grey bar (bg-asu-gray-6, height 56px)                                    │
 │  Copyright and Trademark  Accessibility  Privacy  Terms of Use  ...      │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
@@ -29,18 +30,18 @@ The global footer is a full-width component at the bottom of every page. It cons
 
 ## Dark Endorsed Row
 
-| Property | Value |
+| Property | Token / Value |
 |---|---|
-| Background | `#191919` |
-| Height | `128px` |
-| Content max-width | `1200px`, centered |
-| Padding | `0 24px` |
+| Background | `bg-asu-gray-1` |
+| Height | `h-32` (128px) |
+| Content max-width | `max-w-asu-content`, centered |
+| Padding | `px-asu-3` |
 
-- **Left:** ASU horizontal white logo (`/logos/logos/asu-horizontal-white.svg`), height `48px`, links to `https://www.asu.edu`
+- **Left:** ASU horizontal white logo (`/logos/logos/asu-horizontal-white.svg`), `h-12` (48px), links to `https://www.asu.edu`
 - **Right:** Social media icons
   - Container: `w-10 h-10` square, `bg-asu-gray-2`, no rounded corners
   - Icon: `w-7 h-7`, `fill="white"` (white SVG icon inside dark square)
-  - Gap between icons: `16px` (`gap-6`)
+  - Gap between icons: `gap-asu-3` (24px)
   - Icons: Facebook, Instagram, YouTube, LinkedIn (inline SVGs)
   - Each link requires `aria-label`
   - Hover: `hover:bg-white/20`
@@ -49,32 +50,31 @@ The global footer is a full-width component at the bottom of every page. It cons
 
 ## Gold Innovation Bar
 
-| Property | Value |
+| Property | Token / Value |
 |---|---|
-| Background | `#FFC627` |
-| Height | `100px` |
-| Content max-width | `1200px`, centered |
-| Padding | `0 24px` |
+| Background | `bg-asu-gold` |
+| Height | `h-[100px]` (UDS-specified) |
+| Content max-width | `max-w-asu-content`, centered |
+| Padding | `px-asu-3` |
 
 - **Left:** Utility navigation links
-  - Font size: `16px`, color: `#191919`, weight: `700` (bold)
-  - Gap: `16px`
+  - `text-asu-body text-asu-gray-1 font-bold`
+  - Gap: `gap-asu-2`
   - No underline by default; **underline on hover**
   - Links: "Maps and Locations", "Jobs", "Directory", "Contact ASU", "My ASU"
-- **Right:** Ranking badge image (`/logos/footer-rank.webp`), height `32px`, links to `https://www.asu.edu/rankings`
+- **Right:** Ranking badge image (`/logos/footer-rank.webp`), `h-8` (32px), links to `https://www.asu.edu/rankings`
 
 ---
 
 ## Grey Legal Bar (Colophon)
 
-| Property | Value |
+| Property | Token / Value |
 |---|---|
-| Background | `#E8E8E8` |
-| Height | `56px` |
-| Content max-width | `1200px`, centered |
-| Padding | `0 24px` |
-| Font size | `16px` |
-| Color | `#484848` |
+| Background | `bg-asu-gray-6` |
+| Height | `h-14` (56px) |
+| Content max-width | `max-w-asu-content`, centered |
+| Padding | `px-asu-3` |
+| Typography | `text-asu-body text-asu-gray-2` |
 
 - No underline by default; **underline on hover**
 - Links: "Copyright and Trademark", "Accessibility", "Privacy", "Terms of Use", "Emergency"
@@ -89,12 +89,12 @@ export default function GlobalFooter() {
   return (
     <footer className="w-full">
       {/* Endorsed footer — dark row with logo and social icons */}
-      <div style={{ backgroundColor: '#191919', height: '128px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div className="bg-asu-gray-1 h-32">
+        <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-between">
           <a href="https://www.asu.edu">
-            <img src="/logos/logos/asu-horizontal-white.svg" alt="Arizona State University." style={{ height: '48px', width: 'auto' }} />
+            <img src="/logos/logos/asu-horizontal-white.svg" alt="Arizona State University." className="h-12 w-auto" />
           </a>
-          <nav aria-label="Social Media" className="flex items-center gap-6">
+          <nav aria-label="Social Media" className="flex items-center gap-asu-3">
             <a href="#" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center bg-asu-gray-2 hover:bg-white/20 transition-colors">
               <svg className="w-7 h-7" fill="white" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
             </a>
@@ -112,31 +112,31 @@ export default function GlobalFooter() {
       </div>
 
       {/* Innovation footer — gold bar with utility links and ranking badge */}
-      <div style={{ backgroundColor: '#FFC627', height: '100px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <nav aria-label="University Services" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#191919', fontWeight: 700 }}>Maps and Locations</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#191919', fontWeight: 700 }}>Jobs</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#191919', fontWeight: 700 }}>Directory</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#191919', fontWeight: 700 }}>Contact ASU</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#191919', fontWeight: 700 }}>My ASU</a>
+      <div className="bg-asu-gold h-[100px]">
+        <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-between">
+          <nav aria-label="University Services" className="flex items-center gap-asu-2 flex-wrap">
+            <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">Maps and Locations</a>
+            <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">Jobs</a>
+            <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">Directory</a>
+            <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">Contact ASU</a>
+            <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">My ASU</a>
           </nav>
           <a href="https://www.asu.edu/rankings">
-            <img src="/logos/footer-rank.webp" alt="Repeatedly ranked #1 on 30+ lists in the last 3 years" style={{ height: '32px', width: 'auto' }} />
+            <img src="/logos/footer-rank.webp" alt="Repeatedly ranked #1 on 30+ lists in the last 3 years" className="h-8 w-auto" />
           </a>
         </div>
       </div>
 
       {/* Colophon — legal links */}
-      <div style={{ backgroundColor: '#E8E8E8', height: '56px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '100%', display: 'flex', alignItems: 'center' }}>
-          <nav aria-label="University Legal and Compliance" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848' }}>Copyright and Trademark</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848' }}>Accessibility</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848' }}>Privacy</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848' }}>Terms of Use</a>
-            <a href="#" className="no-underline hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848' }}>Emergency</a>
-            <button className="hover:[text-decoration:underline]" style={{ fontSize: '16px', color: '#484848', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>Manage my privacy settings</button>
+      <div className="bg-asu-gray-6 h-14">
+        <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center">
+          <nav aria-label="University Legal and Compliance" className="flex items-center gap-asu-2 flex-wrap">
+            <a href="#" className="text-asu-body text-asu-gray-2 no-underline hover:[text-decoration:underline]">Copyright and Trademark</a>
+            <a href="#" className="text-asu-body text-asu-gray-2 no-underline hover:[text-decoration:underline]">Accessibility</a>
+            <a href="#" className="text-asu-body text-asu-gray-2 no-underline hover:[text-decoration:underline]">Privacy</a>
+            <a href="#" className="text-asu-body text-asu-gray-2 no-underline hover:[text-decoration:underline]">Terms of Use</a>
+            <a href="#" className="text-asu-body text-asu-gray-2 no-underline hover:[text-decoration:underline]">Emergency</a>
+            <button className="text-asu-body text-asu-gray-2 bg-transparent border-none cursor-pointer p-0 hover:[text-decoration:underline]">Manage my privacy settings</button>
           </nav>
         </div>
       </div>
@@ -162,8 +162,9 @@ import GlobalFooter from '../components/GlobalFooter'
 
 - ❌ Never constrain the footer with a max-width — always 100% viewport width
 - ❌ Never omit any of the three rows
-- ❌ Never change the gold bar background color
+- ❌ Never change the gold bar background color (`bg-asu-gold`)
 - ❌ Never omit aria-labels on social media icon links
+- ❌ Never hardcode hex/px — always reference tokens
 
 ---
 
@@ -172,3 +173,4 @@ import GlobalFooter from '../components/GlobalFooter'
 - Header component → load `global-header.md`
 - Icon usage and sizing → load `iconography.md`
 - Link styling details → load `inline-links.md`
+- Token values → see `SKILL.md`

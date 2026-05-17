@@ -28,10 +28,10 @@ shadcn ships with its own defaults. Every one must be overridden on generation.
 |---|---|
 | `rounded-md` / `rounded-lg` on cards, dialogs, inputs | `rounded-none` — no exceptions on cards/containers |
 | `rounded-full` on badges/pills | Keep `rounded-full` only on **buttons** |
-| Blue focus ring (`ring-blue-500`) | `ring-primary-gold` — always |
+| Blue focus ring (`ring-blue-500`) | `ring-asu-gold` — always |
 | `font-sans` → Inter or system font | Override to Arial stack |
-| Neutral/zinc color tokens | Replace with ASU tokens (`primary-gold`, `primary-maroon`, `primary-black`) |
-| Default `Button` variant (gray/slate) | Primary = `bg-primary-gold text-primary-black`, Secondary = `bg-primary-maroon text-white` |
+| Neutral/zinc color tokens | Replace with ASU tokens (`asu-gold`, `asu-maroon`, `asu-gray-1`) |
+| Default `Button` variant (gray/slate) | Primary = `bg-asu-gold text-asu-gray-1`, Secondary = `bg-asu-maroon text-white` |
 
 ---
 
@@ -57,23 +57,23 @@ The full variant map with all colors, sizes, and hover behavior. Copy this into 
 
 ```tsx
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-bold rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-gold focus-visible:ring-offset-2",
+  "inline-flex items-center justify-center font-bold rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2",
   {
     variants: {
       variant: {
-        default:     "bg-gray-200 text-gray-700 hover:scale-105 hover:shadow-md",
-        gold:        "bg-primary-gold text-primary-black hover:scale-105 hover:shadow-md",
-        maroon:      "bg-primary-maroon text-white hover:scale-105 hover:shadow-md",
-        dark:        "bg-primary-black text-white hover:scale-105 hover:shadow-md",
-        outline:     "border border-gray-300 text-gray-700 hover:scale-105",
-        destructive: "border border-error text-error hover:scale-105",
-        ghost:       "text-primary-maroon hover:text-primary-black hover:bg-transparent",
-        link:        "text-primary-maroon underline hover:no-underline",
+        default:     "bg-asu-maroon text-white hover:scale-105 hover:shadow-md",
+        gold:        "bg-asu-gold text-asu-gray-1 hover:scale-105 hover:shadow-md",
+        maroon:      "bg-asu-maroon text-white hover:scale-105 hover:shadow-md",
+        dark:        "bg-asu-gray-1 text-white hover:scale-105 hover:shadow-md",
+        outline:     "border border-asu-gray-4 text-asu-gray-1 hover:scale-105",
+        destructive: "border border-asu-error text-asu-error hover:scale-105",
+        ghost:       "text-asu-maroon hover:text-asu-gray-1 hover:bg-transparent",
+        link:        "text-asu-maroon underline hover:no-underline",
       },
       size: {
-        default: "px-6 py-3 min-w-[112px]",
-        sm:      "px-4 py-2 min-w-[80px]",
-        xs:      "px-3 py-1.5 min-w-[64px] text-sm",
+        default: "px-6 py-3 min-w-28",
+        sm:      "px-4 py-2 min-w-20",
+        xs:      "px-3 py-1.5 min-w-16 text-sm",
         icon:    "h-10 w-10",
       },
     },
@@ -95,7 +95,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
     <div
       ref={ref}
       className={cn(
-        "bg-white border border-gray-200 rounded-none transition-all",
+        "bg-white border border-asu-gray-5 rounded-none transition-all",
         className
       )}
       {...props}
@@ -111,7 +111,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 ```tsx
 // Override DialogContent:
 // Replace: rounded-lg → rounded-none
-// Replace: ring-ring → ring-primary-gold
+// Replace: ring-ring → ring-asu-gold
 ```
 
 ---
@@ -121,7 +121,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 ```tsx
 // Override Input:
 // Replace: rounded-md → rounded-none
-// Replace: focus-visible:ring-ring → focus-visible:ring-primary-gold focus:border-primary-gold
+// Replace: focus-visible:ring-ring → focus-visible:ring-asu-gold focus:border-asu-gold
 ```
 
 ---
@@ -131,7 +131,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 After running `npx shadcn@latest add <component>`, verify and fix:
 
 1. **Border radius** — strip all `rounded-*` from containers/cards/dialogs/inputs. Keep `rounded-full` on buttons/badges/avatars only.
-2. **Focus ring** — replace `ring-ring`, `ring-blue-*`, or any default focus color with `ring-primary-gold`.
+2. **Focus ring** — replace `ring-ring`, `ring-blue-*`, or any default focus color with `ring-asu-gold`.
 3. **Color tokens** — replace shadcn's `primary`, `secondary`, `muted`, `accent` with ASU tokens.
 4. **Font** — ensure `font-sans` resolves to the Arial stack.
 5. **Button shape** — confirm all button variants use `rounded-full`.
@@ -140,7 +140,7 @@ After running `npx shadcn@latest add <component>`, verify and fix:
 
 ## Hard Rules
 
-- ❌ Never ship a shadcn component without overriding its focus ring to `ring-primary-gold`
+- ❌ Never ship a shadcn component without overriding its focus ring to `ring-asu-gold`
 - ❌ Never ship a shadcn component with `rounded-lg`, `rounded-md`, or `rounded-xl` on a card or container
 - ❌ Never let shadcn's default color tokens stand — replace with ASU tokens
 - ❌ Never use Inter or system font from shadcn defaults — Arial stack only

@@ -48,19 +48,19 @@ Colors for checkbox fields are **predetermined and cannot be altered**. They are
 | Background | Behavior |
 |---|---|
 | White | Default checkbox styling |
-| Gray7 `#FAFAFA` | Default checkbox styling |
-| Gray6 `#E8E8E8` | Default checkbox styling |
-| Gray1 / Black `#191919` | Inverted checkbox styling for dark backgrounds |
+| `bg-asu-gray-7` | Default checkbox styling |
+| `bg-asu-gray-6` | Default checkbox styling |
+| `bg-asu-gray-1` | Inverted checkbox styling for dark backgrounds |
 
 All four background contexts show the same state variations: default, selected, error, and success — the color system adjusts automatically per background.
 
 ### State Colors
-| State | Label / Message Color |
+| State | Token |
 |---|---|
-| Error message | ASU Error Red `#CC2135` with warning icon |
-| Success message | ASU Success Green `#446012` with checkmark icon |
-| Disabled text | Gray3 `#747474` (ASU Gray) |
-| Disabled selector | Gray6 `#E8E8E8` background |
+| Error message | `text-asu-error` with warning icon |
+| Success message | `text-asu-success` with checkmark icon |
+| Disabled text | `text-asu-gray-3` (ASU Gray) |
+| Disabled selector | `bg-asu-gray-6` background |
 
 ---
 
@@ -157,8 +157,8 @@ Six states cover the full interaction lifecycle.
   <label class="flex items-start gap-2 cursor-pointer text-asu-gray-1 text-asu-body">
     <input
       type="checkbox"
-      class="mt-0.5 w-4 h-4 border border-asu-gray-2 rounded-sm
-             focus:ring-2 focus:ring-asu-gray-1 focus:ring-offset-1
+      class="mt-0.5 w-4 h-4 border border-asu-gray-2 rounded-none
+             focus:ring-2 focus:ring-asu-gold focus:ring-offset-1
              checked:bg-asu-gray-1 checked:border-asu-gray-1
              disabled:opacity-50 disabled:cursor-not-allowed"
     />
