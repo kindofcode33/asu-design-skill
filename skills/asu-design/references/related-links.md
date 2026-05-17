@@ -24,7 +24,7 @@ A Related Links block is a simple bordered container with a heading and a vertic
 | Property | Token / Value |
 |---|---|
 | Wrapper | No border, `rounded-none bg-white` |
-| Heading | `text-asu-h4 font-bold text-asu-gray-1 pb-asu-2` (sits above the bordered list) |
+| Heading | `text-asu-h3 font-bold text-asu-gray-1 pb-asu-2` (sits above the bordered list) |
 | Nav container | `border border-asu-gray-4 rounded-none` (border on all four sides around the link list) |
 | Link item | `py-asu-3 px-asu-3 border-b border-asu-gray-4 last:border-b-0` |
 | Link style | `text-asu-body text-asu-gray-1 no-underline hover:underline` |
@@ -43,7 +43,7 @@ interface RelatedLinksProps {
 export default function RelatedLinks({ heading = "Related Links", links }: RelatedLinksProps) {
   return (
     <div className="rounded-none bg-white">
-      <h3 className="text-asu-h4 font-bold text-asu-gray-1 pb-asu-2">
+      <h3 className="text-asu-h3 font-bold text-asu-gray-1 pb-asu-2">
         {heading}
       </h3>
       <nav aria-label={heading} className="border border-asu-gray-4 rounded-none">
