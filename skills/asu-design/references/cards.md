@@ -54,6 +54,29 @@ Number leads, label follows. Number is the headline, not the supporting copy —
 </div>
 ```
 
+### Stats / Impact Bar
+
+Full-width bar for showcasing key numbers (faculty count, funding, enrollment). Always uses gold background with dark text — never maroon background with gold or white text.
+
+```html
+<div class="w-full bg-asu-gold py-asu-5">
+  <div class="max-w-asu-content mx-auto grid grid-cols-2 md:grid-cols-4 gap-asu-3">
+    <div class="text-center">
+      <div class="text-asu-h2 font-black text-asu-gray-1">200+</div>
+      <div class="text-asu-body font-bold text-asu-gray-1">Faculty researchers</div>
+    </div>
+    <!-- repeat for each stat -->
+  </div>
+</div>
+```
+
+**Stats bar rules:**
+- Background: `bg-asu-gold` — never `bg-asu-maroon`
+- Numbers: `text-asu-gray-1 font-black` — never white or gold text
+- Labels: `text-asu-gray-1 font-bold`
+- ❌ Never use `bg-asu-maroon` + `text-asu-gold` (fails WCAG contrast)
+- ❌ Never use `bg-asu-maroon` + `text-white` for stats (use gold bg instead)
+
 ---
 
 ## Hard Rules

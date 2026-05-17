@@ -59,7 +59,7 @@ Secondary colors should be used **sparingly in digital use**. They must **not** 
 | `asu-gray-7` | `asu-gray-1` | ✅ Do |
 | `asu-gray-6` | `asu-gray-1` | ✅ Do |
 | `asu-gray-1` (Black) | `asu-gray-7` | ✅ Do |
-| `asu-gold` | `asu-gray-1` | ✅ Do |
+| `asu-gold` | `asu-gray-1` | ✅ Do (stats bars, impact numbers, labels) |
 | `asu-maroon` | White | ✅ Do |
 
 For inline link colors → ASU Maroon (`asu-maroon`) on light backgrounds; ASU Gold (`asu-gold`) on dark backgrounds.
@@ -71,10 +71,12 @@ For inline link colors → ASU Maroon (`asu-maroon`) on light backgrounds; ASU G
 | Background | Text | Reason |
 |---|---|---|
 | White | `asu-gold` | ❌ Insufficient contrast |
-| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast |
+| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast — never use for stats bars or impact numbers |
 | `asu-maroon` | White | ❌ Insufficient contrast (per UDS — confirm with brand if questioned) |
 | `asu-gold` | `asu-maroon` | ❌ Insufficient contrast |
 | `asu-gold` | White | ❌ Insufficient contrast |
+
+**Stats bars / impact bars:** Always use `bg-asu-gold` + `text-asu-gray-1`. Never use `bg-asu-maroon` with gold or white text for number displays.
 
 ### Black vs Gray Contrast Rule
 Always use `asu-gray-1` rather than `asu-rich-black` for body text. Rich Black creates contrast that is too high and fails the brand standard.

@@ -185,10 +185,12 @@ Tailwind defaults for non-color utilities (`w-`, `h-`, `flex`, `grid`, `items-`,
 | Background | Text | ✅/❌ |
 |---|---|---|
 | White | `asu-gray-1` / `asu-maroon` | ✅ |
-| `asu-gold` | `asu-gray-1` | ✅ |
+| `asu-gold` | `asu-gray-1` | ✅ (stats bars, impact numbers, labels) |
 | `asu-maroon` | White | ✅ |
+| `asu-gray-1` (black) | White / `asu-gold` | ✅ |
 | White | `asu-gold` | ❌ Insufficient contrast |
-| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast |
+| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast — never use for stats/impact bars |
+| `asu-maroon` | `asu-white` numbers | ❌ Use gold bg instead for stats bars |
 
 ---
 
@@ -327,7 +329,7 @@ Load the appropriate reference file when the task involves these components:
 
 **Tokens:** Never hardcode hex, px, or rem values in generated code. Always reference tokens by name. Values live in `tailwind-v4-theme.md` only.
 
-**Colors:** No gold text on white. No secondary colors without gold/maroon present. No system colors used decoratively. Never apply Maroon (light bg) or Gold (dark bg) to non-link text for emphasis — these colors are link semantics.
+**Colors:** No gold text on white. No maroon background with gold text (fails WCAG contrast). No secondary colors without gold/maroon present. No system colors used decoratively. Never apply Maroon (light bg) or Gold (dark bg) to non-link text for emphasis — these colors are link semantics. For stats bars and impact numbers, use `bg-asu-gold` with `text-asu-gray-1` (black on gold) — never maroon+gold or maroon+white.
 
 **Typography:** No italics. No Roboto. No all-caps (includes eyebrow labels, context labels — never use `uppercase`). No underline on non-links. No text highlights on body text. All text and content must be left-aligned — never use `text-center`, centered text, or `mx-auto` on text containers.
 
