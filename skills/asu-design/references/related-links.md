@@ -23,10 +23,10 @@ A Related Links block is a simple bordered container with a heading and a vertic
 
 | Property | Token / Value |
 |---|---|
-| Container | `border border-asu-gray-4 rounded-none` |
+| Container | No outer border, `rounded-none bg-white` |
 | Background | `bg-white` |
-| Heading | `text-asu-h4 font-bold text-asu-gray-1 p-asu-3` (no border) |
-| Link container | `py-asu-3 px-asu-3 border-b border-asu-gray-4 last:border-b-0` |
+| Heading | `text-asu-h4 font-bold text-asu-gray-1 pb-asu-2` (no border, no container border) |
+| Link container | `py-asu-3 px-asu-3 border-t border-asu-gray-4` |
 | Link style | `text-asu-body text-asu-gray-1 no-underline hover:underline` |
 | Width | Flexible, typically `w-full` in a sidebar or `max-w-sm` inline |
 
@@ -42,15 +42,15 @@ interface RelatedLinksProps {
 
 export default function RelatedLinks({ heading = "Related Links", links }: RelatedLinksProps) {
   return (
-    <div className="border border-asu-gray-4 rounded-none bg-white">
-      <h3 className="text-asu-h4 font-bold text-asu-gray-1 p-asu-3">
+    <div className="rounded-none bg-white">
+      <h3 className="text-asu-h4 font-bold text-asu-gray-1 pb-asu-2 px-asu-3">
         {heading}
       </h3>
       <nav aria-label={heading}>
-        {links.map((link, i) => (
+        {links.map((link) => (
           <div
             key={link.label}
-            className={`py-asu-3 px-asu-3 ${i < links.length - 1 ? 'border-b border-asu-gray-4' : ''}`}
+            className="py-asu-3 px-asu-3 border-t border-asu-gray-4"
           >
             <a
               href={link.href}
@@ -103,11 +103,12 @@ export default function RelatedLinks({ heading = "Related Links", links }: Relat
 ## Hard Rules
 
 - ❌ Never use rounded corners (`rounded-none` always)
+- ❌ Never add an outer border to the container (no `border border-asu-gray-4` on the wrapper)
 - ❌ Never use generic link text ("Click here", "Read more")
 - ❌ Never use dashes in link labels
 - ❌ Never omit the `<nav>` wrapper with `aria-label` for accessibility
 - ❌ Never use maroon or gold for link text in this component (use black/gray-1)
-- ❌ Never remove the border separators between links
+- ❌ Never remove the `border-t` separators between links
 
 ---
 
