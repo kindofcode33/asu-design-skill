@@ -18,7 +18,7 @@ A Section CTA is a full-width, full-bleed parallax background image with a white
 | Content card | Yes | White card positioned left, overlaid on image |
 | Heading | Yes | H2 scale, bold, sentence case |
 | Body text | Yes | 1-2 paragraphs with optional inline bold links |
-| CTA buttons | Yes | Row of 2-3 buttons (maroon default, gold for primary) |
+| CTA buttons | Yes | Row of 2 buttons (maroon default, gold for primary) |
 
 ---
 
@@ -26,9 +26,10 @@ A Section CTA is a full-width, full-bleed parallax background image with a white
 
 | Property | Token / Value |
 |---|---|
-| Section | Full-width, `overflow-hidden relative` |
+| Section | Full-width, `relative overflow-hidden rounded-none` |
 | Section padding | `py-16` (64px top and bottom) |
-| Background image | `absolute inset-0 bg-cover bg-top` with parallax scroll effect |
+| Background image | `<img>` element with `absolute inset-0 w-full h-full object-cover will-change-transform` |
+| Parallax effect | Scroll-driven translateY (300px travel) + scale(1.3) via JS |
 | Card background | `bg-white` |
 | Card padding | `p-asu-4` |
 | Card border radius | `rounded-none` (always) |
@@ -55,9 +56,30 @@ A Section CTA is a full-width, full-bleed parallax background image with a white
 
 ---
 
+## Parallax Behavior
+
+The background uses a scroll-driven parallax effect via a `useEffect` scroll listener. The image translates vertically and scales as the user scrolls past the section, creating a smooth depth effect.
+
+**Parameters:**
+- Travel distance: `scrollProgress * 300` (300px total vertical movement)
+- Scale: `1.3` (30% oversized to prevent edge gaps during translation)
+- Scroll progress formula: `-rect.top / (rect.height + window.innerHeight)`
+
+**Performance:**
+- Uses `will-change-transform` on the image for GPU compositing
+- Scroll listener registered with `{ passive: true }` for smooth scrolling
+- Uses `useRef` to avoid React re-renders on every scroll frame
+
+**Mobile:**
+- The same JS-based parallax works on all devices including iOS (unlike `background-attachment: fixed`)
+
+---
+
 ## Reference Implementation
 
 ```tsx
+import { useEffect, useRef } from 'react'
+
 interface SectionCtaButton {
   label: string
   href: string
@@ -79,14 +101,30 @@ export default function SectionCta({
   body,
   buttons,
 }: SectionCtaProps) {
+  const sectionRef = useRef<HTMLElement>(null)
+  const imgRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    function handleScroll() {
+      if (!sectionRef.current || !imgRef.current) return
+      const rect = sectionRef.current.getBoundingClientRect()
+      const scrollProgress = -rect.top / (rect.height + window.innerHeight)
+      const translateY = scrollProgress * 300
+      imgRef.current.style.transform = `translateY(${translateY}px) scale(1.3)`
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <section className="relative overflow-hidden py-16 rounded-none">
+    <section ref={sectionRef} className="relative overflow-hidden py-16 rounded-none">
       {imageSrc ? (
-        <div
-          className="absolute inset-0 bg-cover bg-top"
-          role="img"
-          aria-label={imageAlt}
-          style={{ backgroundImage: `url(${imageSrc})` }}
+        <img
+          ref={imgRef}
+          src={imageSrc}
+          alt={imageAlt}
+          className="absolute inset-0 w-full h-full object-cover will-change-transform"
         />
       ) : (
         <div className="absolute inset-0 bg-asu-gray-6 flex items-center justify-center">
@@ -129,25 +167,23 @@ export default function SectionCta({
 
 ```tsx
 <SectionCta
-  imageSrc="/path/to/carve-your-path.jpg"
-  imageAlt="Students putting up pitchforks together"
-  heading="Carve your path"
+  imageSrc="/path/to/field-research.jpg"
+  imageAlt="Students conducting field research in the Sonoran Desert"
+  heading="Experience biology in the field"
   body={
     <p>
-      At Arizona State University, you'll join a community that will help you
-      explore your interests and learn new skills. Through quality academics,
-      enrichment opportunities and support from friends and faculty, you'll
-      graduate prepared to accomplish your goals throughout your life.{" "}
-      <a href="/find-experience" className="font-bold text-asu-maroon underline hover:no-underline">
-        Find the experience
+      Our students access 2,400 acres of dedicated research stations across
+      Arizona. Field courses let you collect real data alongside faculty
+      mentors and contribute to{" "}
+      <a href="/conservation" className="font-bold text-asu-maroon underline hover:no-underline">
+        active conservation projects
       </a>{" "}
-      that fits you.
+      that protect threatened species and ecosystems.
     </p>
   }
   buttons={[
-    { label: "Visit ASU", href: "https://visit.asu.edu" },
-    { label: "Request information", href: "https://admission.asu.edu/contact/request-info" },
-    { label: "Apply now", href: "https://admission.asu.edu/apply", variant: "gold" },
+    { label: "Browse field courses", href: "/courses/field" },
+    { label: "Apply now", href: "/apply", variant: "gold" },
   ]}
 />
 
@@ -161,17 +197,8 @@ export default function SectionCta({
     { label: "Apply now", href: "/apply", variant: "gold" },
   ]}
 />
+/>
 ```
-
----
-
-## Parallax Behavior
-
-The background image uses a parallax scroll effect on desktop. In Tailwind/React this can be achieved with:
-- CSS: `background-attachment: fixed` (simple parallax)
-- Or a scroll-based transform on the image element for smoother performance
-
-On mobile, parallax is disabled and the image is static (`bg-fixed` does not work on iOS).
 
 ---
 
@@ -182,9 +209,11 @@ On mobile, parallax is disabled and the image is static (`bg-fixed` does not wor
 - ❌ Never use generic CTA labels ("Learn more", "Click here", "Read more")
 - ❌ Never use dashes in heading or body copy
 - ❌ Never use more than one gold button (gold = single most important action)
-- ❌ Never exceed 3 CTA buttons total
+- ❌ Never exceed 2 CTA buttons total
 - ❌ Never make the card wider than 50% on desktop
-- ❌ Never omit alt text / aria-label for the background image
+- ❌ Never omit alt text on the background image
+- ❌ Never use `background-attachment: fixed` (breaks on iOS, use JS parallax instead)
+- ❌ Never reduce parallax travel below 300px or scale below 1.3 (produces a static feel)
 
 ---
 
