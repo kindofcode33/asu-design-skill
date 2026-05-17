@@ -59,21 +59,21 @@ Pick one. **Options A, B, and D install both skills automatically** (recommended
 
 #### Option A — Plugin install via marketplace (recommended)
 
-In a Claude Code session, run these two commands:
-
-```
-/plugin marketplace add https://github.com/kindofcode33/asu-design-skill.git
-/plugin install asu-design@kindofcode33-asu-design-skill
-```
-
-Or from a regular terminal:
+From a terminal, run these two commands:
 
 ```bash
 claude plugin marketplace add https://github.com/kindofcode33/asu-design-skill.git
 claude plugin install asu-design@kindofcode33-asu-design-skill
 ```
 
-Updates pull automatically when the plugin refreshes.
+Or from inside a running Claude Code session:
+
+```
+/plugin marketplace add https://github.com/kindofcode33/asu-design-skill.git
+/plugin install asu-design@kindofcode33-asu-design-skill
+```
+
+The first command registers the repo as a plugin source (one-time). The second installs the plugin. Both skills become available immediately in all Claude Code sessions.
 
 #### Option B — Clone to your local plugins directory
 
