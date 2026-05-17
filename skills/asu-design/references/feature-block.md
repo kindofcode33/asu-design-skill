@@ -33,7 +33,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 | Text width | `md:w-1/2` (50% on desktop) |
 | Text padding | `p-asu-3` |
 | Background (text area) | `bg-white` |
-| Vertical alignment | `items-center` (image and text vertically centered) |
+| Vertical alignment | `items-stretch` (text aligns to top) |
 
 ### Image-first vs Text-first
 
@@ -53,7 +53,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 - If no real image available, use the grey placeholder box (see `images.md`)
 
 ### Heading
-- `text-asu-h3 font-bold text-asu-gray-1`
+- `text-[40px] font-bold text-asu-gray-1 leading-tight`
 - Sentence case, no dashes
 
 ### Body Copy
@@ -89,7 +89,7 @@ export default function FeatureBlock({
   imageRight = false,
 }: FeatureBlockProps) {
   return (
-    <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center border-2 border-asu-gray-5 rounded-none`}>
+    <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-stretch border-2 border-asu-gray-5 rounded-none`}>
       <div className="w-full md:w-1/2">
         {imageSrc ? (
           <img
@@ -105,7 +105,7 @@ export default function FeatureBlock({
         )}
       </div>
       <div className="w-full md:w-1/2 p-asu-3">
-        <h3 className="text-asu-h3 font-bold text-asu-gray-1">{heading}</h3>
+        <h3 className="text-[40px] font-bold text-asu-gray-1 leading-tight">{heading}</h3>
         <p className="text-asu-body text-asu-gray-2 mt-4">{body}</p>
         {ctaLabel && ctaHref && (
           <a
