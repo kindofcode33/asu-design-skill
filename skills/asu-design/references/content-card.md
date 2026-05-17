@@ -14,6 +14,7 @@ A Content Card is a simple bordered container with a heading, short description,
 
 | Element | Required | Description |
 |---|---|---|
+| Icon | Optional | 32x32, ASU black, positioned above heading |
 | Heading | Yes | H3, bold, sentence case |
 | Body text | Yes | Short description (1-3 sentences) |
 | CTA button | Optional | Maroon pill button |
@@ -30,6 +31,12 @@ A Content Card is a simple bordered container with a heading, short description,
 | Padding | `p-asu-4` |
 | Height | `h-full` (fills grid row for equal-height cards) |
 | Layout | `flex flex-col` (heading top, body middle, button bottom) |
+
+### Icon (optional)
+- Size: `w-8 h-8` (32px x 32px)
+- Color: `text-asu-gray-1` (ASU black)
+- Position: top of card, before the heading, with `mb-asu-2` spacing
+- `aria-hidden="true"` (decorative)
 
 ### Heading
 - `text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight`
@@ -53,15 +60,21 @@ A Content Card is a simple bordered container with a heading, short description,
 
 ```tsx
 interface ContentCardProps {
+  icon?: React.ReactNode
   heading: string
   body: string
   ctaLabel?: string
   ctaHref?: string
 }
 
-export default function ContentCard({ heading, body, ctaLabel, ctaHref }: ContentCardProps) {
+export default function ContentCard({ icon, heading, body, ctaLabel, ctaHref }: ContentCardProps) {
   return (
     <div className="bg-white border border-asu-gray-4 rounded-none p-asu-4 flex flex-col h-full">
+      {icon && (
+        <div className="mb-asu-2 text-asu-gray-1 [&>svg]:w-8 [&>svg]:h-8">
+          {icon}
+        </div>
+      )}
       <h3 className="text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight">
         {heading}
       </h3>
