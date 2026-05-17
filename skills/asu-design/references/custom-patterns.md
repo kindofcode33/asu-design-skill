@@ -72,8 +72,8 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 
 | Variant | Background | Background Image | Text Color | Link Color |
 |---|---|---|---|---|
-| Light (default) | White | `/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` (repeating) | `text-asu-gray-1` | `text-asu-gray-3` |
-| Dark | `bg-asu-gray-1` | `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` (repeating) | `text-white` | `text-asu-gray-5` |
+| Light (default) | White | `/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` (repeating) | `text-asu-gray-1` | Eyebrow: `text-asu-gray-1` |
+| Dark | `bg-asu-gray-1` | `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` (repeating) | `text-white` | Eyebrow: `text-asu-gold` |
 
 Both variants use a topographic line texture as a repeating background pattern by default.
 
@@ -91,7 +91,7 @@ Both variants use a topographic line texture as a repeating background pattern b
       <span class="bg-asu-gold px-1">how they succeed</span>
     </h2>
     <p class="text-sm text-asu-gray-3 mt-6">
-      — Excerpt from
+      Excerpt from
       <a href="#" class="text-asu-gray-3 underline hover:text-asu-gray-1 transition-colors">ASU charter</a>
     </p>
   </div>
@@ -101,14 +101,14 @@ Both variants use a topographic line texture as a repeating background pattern b
 <section class="py-12 md:py-24 bg-asu-gray-1"
   style="background-image: url(/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png); background-repeat: repeat;">
   <div class="max-w-asu-content mx-auto px-6 md:px-8">
-    <p class="text-sm font-bold text-white mb-4">The ASU difference:</p>
+    <p class="text-sm font-bold text-asu-gold mb-4">The ASU difference:</p>
     <h2 class="text-asu-h1-hero font-black text-white">
       We are measured not by whom we exclude, but by
       <span class="bg-asu-gold text-asu-gray-1 px-1">whom we include</span> and
       <span class="bg-asu-gold text-asu-gray-1 px-1">how they succeed</span>
     </h2>
     <p class="text-sm text-asu-gray-5 mt-6">
-      — Excerpt from
+      Excerpt from
       <a href="#" class="text-asu-gray-5 underline hover:text-white transition-colors">ASU charter</a>
     </p>
   </div>
@@ -117,11 +117,13 @@ Both variants use a topographic line texture as a repeating background pattern b
 
 ### Rules
 
-- Gold highlights should only be applied to 1–3 key phrases — never the entire quote
-- Attribution always uses an em dash prefix
-- The quote itself should never be wrapped in quotation marks — the typography and scale signal it is a quote
-- Use the same type scale as Hero H1 — this is a display-level element
-- Background texture is the default — always include the repeating topographic pattern (`/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` for light, `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` for dark)
+- Gold highlights should only be applied to 1–3 key phrases, never the entire quote
+- ❌ Never use em dashes (—), en dashes (–), or hyphens (-) as prefixes in attribution or anywhere in generated copy
+- Attribution is plain text (e.g., "Excerpt from ASU charter"), no dash prefix
+- Dark mode eyebrow text uses `text-asu-gold` (not white)
+- The quote itself should never be wrapped in quotation marks, the typography and scale signal it is a quote
+- Use the same type scale as Hero H1, this is a display-level element
+- Background texture is the default, always include the repeating topographic pattern (`/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` for light, `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` for dark)
 
 ---
 

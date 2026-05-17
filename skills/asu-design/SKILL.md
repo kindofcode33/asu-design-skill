@@ -331,7 +331,9 @@ Load the appropriate reference file when the task involves these components:
 
 **Colors:** No gold text on white. No maroon background with gold text (fails WCAG contrast). No secondary colors without gold/maroon present. No system colors used decoratively. Never apply Maroon (light bg) or Gold (dark bg) to non-link text for emphasis — these colors are link semantics. For stats bars and impact numbers, use `bg-asu-gold` with `text-asu-gray-1` (black on gold) — never maroon+gold or maroon+white.
 
-**Typography:** No italics. No Roboto. No all-caps (includes eyebrow labels, context labels — never use `uppercase`). No underline on non-links. No text highlights on body text. All text and content must be left-aligned — never use `text-center`, centered text, or `mx-auto` on text containers.
+**Typography:** No italics. No Roboto. No all-caps (includes eyebrow labels, context labels, never use `uppercase`). No underline on non-links. No text highlights on body text. All text and content must be left-aligned, never use `text-center`, centered text, or `mx-auto` on text containers.
+
+**Dashes in copy:** Never use em dashes (—), en dashes (–), or hyphens (-) as decorative punctuation in generated UI copy. No dash prefixes on attribution lines, no dash separators in labels, no "— Source" patterns. Use commas, periods, or line breaks instead.
 
 **Spacing:** `asu-*` tokens for layout-level spacing (sections, content padding, grid gutters, component-to-component gaps). Tailwind's default 4px-step scale (`p-3`, `py-1.5`, `gap-2`, etc.) is acceptable for component-internal padding only. Section spacing minimum via `py-asu-9` desktop / `py-asu-6` mobile. Never use arbitrary `p-[Xpx]` values.
 
@@ -356,5 +358,6 @@ Load the appropriate reference file when the task involves these components:
 - [ ] WCAG AA contrast met
 - [ ] No generic button/link text
 - [ ] No `uppercase` / `text-center` anywhere
+- [ ] No em dashes (—), en dashes (–), or decorative hyphens in any generated copy
 - [ ] Keyboard accessible
 - [ ] Alt text on images

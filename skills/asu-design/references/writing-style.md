@@ -75,6 +75,7 @@ All materials should reflect inclusion, equity and belonging (based on ASU Chart
 - **Bold:** Use sparingly. Never bold entire paragraphs.
 - **Underline:** Only to indicate a link. Never decoratively.
 - **Italics:** Do not use. Never permitted under any circumstances.
+- **Dashes:** Never use em dashes (—), en dashes (–), or hyphens (-) as decorative punctuation in UI copy. No dash prefixes on attribution, no "— Source" patterns, no dash separators in labels or descriptions. Use commas, periods, or line breaks instead. Hyphens are only acceptable in phone numbers (480-965-1234) and compound adjectives (full-time).
 - **Subscript/Superscript:** Avoid. Use same text type as numeral (✅ "1st" ❌ "1ˢᵗ"). Exception: trademark symbols are always superscript.
 
 ### Headlines Formatting
@@ -126,8 +127,8 @@ All materials should reflect inclusion, equity and belonging (based on ASU Chart
 
 - Use serial (Oxford) comma: red, white, and blue
 - One space after periods
-- Em dash (—) with no spaces on either side
-- Ellipsis: three periods no spaces (...) — avoid in formal copy
+- Never use em dashes (—) or en dashes (–) in generated UI copy. Rewrite sentences to avoid them.
+- Ellipsis: three periods no spaces (...), avoid in formal copy
 
 ### Lists
 - Sentence fragments when possible
