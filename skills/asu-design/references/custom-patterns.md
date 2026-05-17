@@ -70,17 +70,19 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 
 ### Variants
 
-| Variant | Background | Text Color | Link Color |
-|---|---|---|---|
-| Light (default) | White or texture | `text-asu-gray-1` | `text-asu-gray-3` |
-| Dark | `bg-asu-gray-1` | `text-white` | `text-asu-gray-5` |
+| Variant | Background | Background Image | Text Color | Link Color |
+|---|---|---|---|---|
+| Light (default) | White | `/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` (repeating) | `text-asu-gray-1` | `text-asu-gray-3` |
+| Dark | `bg-asu-gray-1` | `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` (repeating) | `text-white` | `text-asu-gray-5` |
+
+Both variants use a topographic line texture as a repeating background pattern by default.
 
 ### Tailwind Class Reference
 
 ```html
-<!-- Block Quote — Light mode with optional background texture -->
+<!-- Block Quote — Light mode (default) -->
 <section class="py-12 md:py-24"
-  style="background-image: url(/backgrounds/topographic-texture.png); background-repeat: repeat;">
+  style="background-image: url(/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png); background-repeat: repeat;">
   <div class="max-w-asu-content mx-auto px-6 md:px-8">
     <p class="text-sm font-bold text-asu-gray-1 mb-4">The ASU difference:</p>
     <h2 class="text-asu-h1-hero font-black text-asu-gray-1">
@@ -94,6 +96,23 @@ A full-width typographic statement used to surface key institutional quotes (e.g
     </p>
   </div>
 </section>
+
+<!-- Block Quote — Dark mode -->
+<section class="py-12 md:py-24 bg-asu-gray-1"
+  style="background-image: url(/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png); background-repeat: repeat;">
+  <div class="max-w-asu-content mx-auto px-6 md:px-8">
+    <p class="text-sm font-bold text-white mb-4">The ASU difference:</p>
+    <h2 class="text-asu-h1-hero font-black text-white">
+      We are measured not by whom we exclude, but by
+      <span class="bg-asu-gold text-asu-gray-1 px-1">whom we include</span> and
+      <span class="bg-asu-gold text-asu-gray-1 px-1">how they succeed</span>
+    </h2>
+    <p class="text-sm text-asu-gray-5 mt-6">
+      — Excerpt from
+      <a href="#" class="text-asu-gray-5 underline hover:text-white transition-colors">ASU charter</a>
+    </p>
+  </div>
+</section>
 ```
 
 ### Rules
@@ -102,7 +121,7 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 - Attribution always uses an em dash prefix
 - The quote itself should never be wrapped in quotation marks — the typography and scale signal it is a quote
 - Use the same type scale as Hero H1 — this is a display-level element
-- Background texture is optional — plain white works fine
+- Background texture is the default — always include the repeating topographic pattern (`/asu/backgrounds/h5fBqGHPdBnWNSjkXQUbHQ.png` for light, `/asu/backgrounds/gIYRGFq7o6-mPadTBNFszg.png` for dark)
 
 ---
 
