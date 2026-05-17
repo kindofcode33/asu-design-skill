@@ -95,6 +95,28 @@ Two size variants based on visual weight needed.
 
 ---
 
+## Placeholder Images
+
+When a component needs an image but the user has no image API configured and no real images available, **never use a broken `<img>` tag or external placeholder service**. Instead, render a grey box with centered text:
+
+```html
+<div class="bg-asu-gray-6 flex items-center justify-center aspect-video w-full">
+  <span class="text-asu-gray-3 text-asu-body font-bold">Image</span>
+</div>
+```
+
+**Placeholder rules:**
+- Background: `bg-asu-gray-6`
+- Text: `text-asu-gray-3 font-bold`, centered both vertically and horizontally
+- Label: always just the word "Image" (nothing else)
+- Aspect ratio: match the expected image dimensions (e.g., `aspect-video` for 16:9, `aspect-square` for 1:1)
+- Never use external placeholder services (placehold.co, picsum, unsplash source URLs) unless the user has explicitly configured one
+- Never render an `<img>` tag with a URL that might not resolve
+
+This is the default behavior when no image source is available. If the user configures a placeholder image API (Unsplash, Pexels), use that instead.
+
+---
+
 ## Decision Protocol
 
 When adding an image to a design:
