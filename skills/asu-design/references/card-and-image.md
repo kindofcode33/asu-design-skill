@@ -27,7 +27,7 @@ A Card and Image block is a full-width section with a large background image, a 
 
 | Property | Token / Value |
 |---|---|
-| Section padding | `py-[96px]` (96px top and bottom) |
+| Section padding | `py-asu-9` (96px top and bottom) |
 | Background image | `bg-cover bg-center` |
 | Gradient overlay | `linear-gradient(rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.79) 100%)` |
 | Card background | `bg-white` |
@@ -37,7 +37,7 @@ A Card and Image block is a full-width section with a large background image, a 
 | Card position | Bottom-left of the image area |
 
 ### Heading
-- `text-[1.5rem] font-bold text-asu-gray-1 leading-tight`
+- `text-asu-h3 font-bold text-asu-gray-1`
 - Sentence case, no dashes
 
 ### Body Copy
@@ -73,7 +73,7 @@ export default function CardAndImage({
   ctaHref,
 }: CardAndImageProps) {
   return (
-    <section className="relative py-[96px] rounded-none overflow-hidden">
+    <section className="relative py-asu-9 rounded-none overflow-hidden">
       {imageSrc ? (
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -88,7 +88,7 @@ export default function CardAndImage({
       )}
       <div className="relative max-w-asu-content mx-auto px-asu-3">
         <div className="bg-white rounded-none p-asu-4 max-w-md">
-          <h3 className="text-[1.5rem] font-bold text-asu-gray-1 leading-tight">
+          <h3 className="text-asu-h3 font-bold text-asu-gray-1">
             {heading}
           </h3>
           <p className="text-asu-body text-asu-gray-2 mt-asu-2">

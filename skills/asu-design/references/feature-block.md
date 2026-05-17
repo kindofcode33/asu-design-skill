@@ -53,7 +53,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 - If no real image available, use the grey placeholder box (see `images.md`)
 
 ### Heading
-- `text-[40px] font-bold text-asu-gray-1 leading-tight`
+- `text-asu-h2 font-bold text-asu-gray-1`
 - Sentence case, no dashes
 
 ### Body Copy
@@ -107,7 +107,7 @@ export default function FeatureBlock({
         )}
       </div>
       <div className="w-full md:w-1/2 p-asu-5">
-        <h3 className="text-[40px] font-bold text-asu-gray-1 leading-tight">{heading}</h3>
+        <h3 className="text-asu-h2 font-bold text-asu-gray-1">{heading}</h3>
         <p className="text-asu-body text-asu-gray-2 mt-asu-2">{body}</p>
         {ctaLabel && ctaHref && (
           <a

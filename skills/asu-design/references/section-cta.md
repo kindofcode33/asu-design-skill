@@ -27,7 +27,7 @@ A Section CTA is a full-width, full-bleed parallax background image with a white
 | Property | Token / Value |
 |---|---|
 | Section | Full-width, `relative overflow-hidden rounded-none` |
-| Section padding | `py-16` (64px top and bottom) |
+| Section padding | `py-asu-8` (72px top and bottom) |
 | Background image | `<img>` element with `absolute inset-0 w-full h-full object-cover will-change-transform` |
 | Parallax effect | Scroll-driven translateY (300px travel) + scale(1.3) via JS |
 | Card background | `bg-white` |
@@ -118,7 +118,7 @@ export default function SectionCta({
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden py-16 rounded-none">
+    <section ref={sectionRef} className="relative overflow-hidden py-asu-8 rounded-none">
       {imageSrc ? (
         <img
           ref={imgRef}

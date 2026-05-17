@@ -36,17 +36,17 @@ A Content Card is a simple bordered container with a heading, short description,
 - Always include a Lucide icon above the heading by default
 - Size: `w-8 h-8` (32px x 32px)
 - Color: `text-asu-gray-1` (ASU black)
-- Spacing: `mt-2 mb-6` (extra breathing room above and below)
+- Spacing: `mt-asu-1 mb-asu-3` (extra breathing room above and below)
 - Position: first element in card, above heading
 - `aria-hidden="true"` (decorative)
 - Choose an icon that represents the card's topic
 
 ### Heading
-- `text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight`
+- `text-asu-h3 font-bold text-asu-gray-1`
 - Sentence case, no dashes
 
 ### Body Copy
-- `text-asu-body text-asu-gray-2 mt-4`
+- `text-asu-body text-asu-gray-2 mt-asu-2`
 - 1-3 sentences max, keep concise
 
 ### CTA Button
@@ -73,8 +73,8 @@ interface ContentCardProps {
 export default function ContentCard({ icon: Icon, heading, body, ctaLabel, ctaHref }: ContentCardProps) {
   return (
     <div className="bg-white border border-asu-gray-4 rounded-none p-asu-4 flex flex-col h-full">
-      <Icon className="w-8 h-8 text-asu-gray-1 mt-2 mb-6" aria-hidden="true" />
-      <h3 className="text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight">
+      <Icon className="w-8 h-8 text-asu-gray-1 mt-asu-1 mb-asu-3" aria-hidden="true" />
+      <h3 className="text-asu-h3 font-bold text-asu-gray-1">
         {heading}
       </h3>
       <p className="text-asu-body text-asu-gray-2 mt-asu-2">

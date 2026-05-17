@@ -50,10 +50,10 @@ Content cards include a Lucide icon by default. The icon provides visual weight 
 ```html
 <div class="bg-white p-asu-4 rounded-none border border-asu-gray-5 flex flex-col h-full">
   <!-- Icon: 32x32, ASU black, always included -->
-  <div class="mt-2 mb-6">
+  <div class="mt-asu-1 mb-asu-3">
     <svg class="w-8 h-8 text-asu-gray-1" aria-hidden="true"><!-- Lucide icon --></svg>
   </div>
-  <h3 class="text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight">Heading</h3>
+  <h3 class="text-asu-h3 font-bold text-asu-gray-1">Heading</h3>
   <p class="text-asu-body text-asu-gray-2 mt-asu-2">Short description of the card content.</p>
   <a href="/path" class="inline-block mt-auto pt-asu-5 pb-asu-2 self-start">
     <span class="bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2 inline-block hover:scale-105 transition-transform">
@@ -67,7 +67,7 @@ Content cards include a Lucide icon by default. The icon provides visual weight 
 - Always include a Lucide icon by default on content cards
 - Size: `w-8 h-8` (32px x 32px)
 - Color: `text-asu-gray-1` (ASU black)
-- Spacing: `mt-2 mb-6` (breathing room above and below)
+- Spacing: `mt-asu-1 mb-asu-3` (breathing room above and below)
 - Position: first element in card, above heading
 - `aria-hidden="true"` (decorative, heading provides meaning)
 - Choose an icon that represents the card's topic
@@ -95,7 +95,7 @@ Full-width bar for showcasing key numbers (faculty count, funding, enrollment). 
   <div class="max-w-asu-content mx-auto grid grid-cols-2 md:grid-cols-4 gap-asu-3">
     <div>
       <div class="text-asu-h2 font-black text-asu-gray-1">200+</div>
-      <span class="bg-asu-gray-1 text-white text-asu-body font-bold px-2 py-1 inline-block mt-2">Faculty researchers</span>
+      <span class="bg-asu-gray-1 text-white text-asu-body font-bold px-asu-1 py-1 inline-block mt-asu-1">Faculty researchers</span>
     </div>
     <!-- repeat for each stat -->
   </div>
