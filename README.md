@@ -1,3 +1,5 @@
+![ASU Logo](skills/asu-design/assets/images/logos/asu-logo-horizontal.png)
+
 # ASU Design System Plugin for Claude Code
 
 > **Proof of Concept / v1** — This plugin is a first version and is not fully complete. It does not yet include all UDS design components. The full ASU Unity Design System UI Kit can be found at: https://zeroheight.com/9f0b32a56/p/5072ce-asu-unity-design-system-ui-kit
