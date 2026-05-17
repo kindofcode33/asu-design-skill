@@ -62,6 +62,24 @@ For day-to-day component work the model never needs the underlying values — on
 
 ---
 
+## Brand Image Paths
+
+After running `/asu-design-init`, brand images are available at these paths in generated markup:
+
+| Asset | Path |
+|---|---|
+| ASU logo (primary) | `/asu/logos/asu-logo.png` |
+| ASU logo horizontal | `/asu/logos/asu-logo-horizontal.png` |
+| ASU logo white (for dark bg) | `/asu/logos/asu-horizontal-white.svg` |
+| ASU logo vertical | `/asu/logos/asu-vertical.svg` |
+| Footer ranking badge | `/asu/logos/footer-rank.webp` |
+| Background textures | `/asu/backgrounds/{filename}.png` |
+| Favicon | `/favicon.png` |
+
+Always use these paths when generating components that reference ASU brand imagery (headers, footers, heroes). If images are missing, tell the user to run `/asu-design-init`.
+
+---
+
 ## Token Layering — Choosing the Right Namespace
 
 When generating ANY element — including new components not covered by the reference files — use these three layers in priority order. Never reach for raw Tailwind defaults (`bg-blue-500`, `text-gray-700`, `border-slate-200`) — they aren't brand-mapped and will produce off-brand output.

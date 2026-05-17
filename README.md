@@ -6,7 +6,7 @@
 
 ---
 
-A Claude Code plugin that provides the ASU Unity Design System as AI-assistive skills. When active, Claude Code applies ASU brand standards — colors, typography, spacing, component specs, and writing style — to any UI work, and can bootstrap a project's CSS theme in one command.
+A Claude Code plugin that provides the ASU Unity Design System as AI-assistive skills. When active, Claude Code applies ASU brand standards — colors, typography, spacing, component specs, and writing style — to any UI work, and can bootstrap a project's theme and brand assets in one command.
 
 ## What it does
 
@@ -31,7 +31,7 @@ This plugin is tuned for:
 |---|---|---|
 | **Tailwind CSS v4** | Required | The bundled theme uses Tailwind v4's `@theme inline` directive. Tailwind v3 is not supported. |
 | **shadcn/ui** | Strongly recommended | The bundled theme maps shadcn's semantic tokens (`--background`, `--card`, `--primary`, etc.) to ASU values, so `<Card>`, `<Button>`, `<Dialog>`, and other shadcn components automatically use ASU brand colors with no per-component overrides. |
-| **Next.js (App Router) or Vite + React** | Primary tested frameworks | The `/asu-design-init` command auto-detects both. Other frameworks (SvelteKit, Vue, Astro) work but you may need to specify your CSS entry file manually. |
+| **Next.js (App Router), Vite + React, or SvelteKit** | Primary tested frameworks | The `/asu-design-init` command auto-detects all three (CSS entry file and public asset directory). Other frameworks (Vue, Astro, Angular) work but you may need to specify paths manually. |
 | **Lucide React** | Recommended for React | Primary icon library for React projects per ASU iconography spec. Install: `npm install lucide-react` |
 | **Font Awesome Free** | Recommended for non-React | Used for utility/navigational icons in HTML, Vue, Svelte, etc. See `references/iconography.md` for usage rules. |
 
@@ -106,35 +106,13 @@ In Claude Code, inside your project:
 /asu-design-init
 ```
 
-This auto-detects your CSS entry file (`src/app/globals.css` for Next.js, `src/index.css` for Vite, etc.) and copies the canonical `asu-theme.css` into it. After this, Tailwind generates utility classes from ASU tokens — `bg-asu-gold`, `text-asu-h1`, `p-asu-3`, `max-w-asu-content`, plus the shadcn semantic mappings.
+This does two things automatically:
+1. **CSS theme** — Detects your CSS entry file (`src/app/globals.css` for Next.js, `src/index.css` for Vite, `src/app.css` for SvelteKit) and copies the canonical `asu-theme.css` into it. Tailwind generates utility classes from ASU tokens — `bg-asu-gold`, `text-asu-h1`, `p-asu-3`, `max-w-asu-content`, plus all shadcn semantic mappings.
+2. **Brand images** — Copies logos, backgrounds, and favicon into `{public-dir}/asu/` (e.g., `public/asu/` for Next.js/Vite, `static/asu/` for SvelteKit). Generated components reference these at `/asu/logos/...`, `/asu/backgrounds/...`, etc.
 
 You only run this **once per project**.
 
-### Step 4: Copy ASU brand images to your project
-
-The header, footer, favicon, and ASU backgrounds use images bundled in the plugin's `images/` folder. The easiest way is to ask Claude:
-
-```
-Copy the ASU brand images from the plugin's images/ folder into my project's public/images/
-```
-
-Claude will resolve the plugin's install path and run the copy. Or do it manually if you know the path:
-
-```bash
-cp -r ~/.claude/plugins/asu-design-plugin/images/* ./public/images/
-```
-
-### Step 5: Tell Claude where the images live
-
-In any session:
-
-```
-The ASU brand images (logos, backgrounds, favicon) are in /public/images/
-```
-
-This lets generated component markup point to the right paths.
-
-### Step 6 (optional): Configure a placeholder image source
+### Step 4 (optional): Configure a placeholder image source
 
 For hero backgrounds, card thumbnails, or other non-brand imagery during prototyping, plug in a free stock photo API:
 
@@ -153,7 +131,7 @@ Or for quick prototyping without a key, use Unsplash's source URL pattern direct
 Use https://images.unsplash.com/photo-<id>?w=800 for placeholder images.
 ```
 
-### Step 7: Start building
+### Step 5: Start building
 
 Just describe what you want. The `asu-design` skill loads automatically:
 
@@ -176,7 +154,7 @@ Style this form to match ASU input field standards — gold focus rings, sharp c
 | Skill | What it does | When it loads |
 |---|---|---|
 | `asu-design` | **Knowledge.** Provides ASU tokens, brand rules, component patterns, writing style. Used to generate brand-correct UI code. | Auto-loads when Claude Code detects ASU/design-related prompts. You don't have to invoke it. |
-| `asu-design-init` | **Action.** Copies the canonical `asu-theme.css` into your project's CSS entry file. One-time setup per project. | Only on `/asu-design-init` or natural init prompts ("set up ASU theme"). |
+| `asu-design-init` | **Action.** Copies the canonical `asu-theme.css` into your project's CSS entry file and brand images (logos, backgrounds, favicon) into `{public-dir}/asu/`. One-time setup per project. | Only on `/asu-design-init` or natural init prompts ("set up ASU theme"). |
 
 Neither skill is always loaded — both activate via description matching only. Zero overhead on unrelated work.
 
@@ -222,6 +200,7 @@ Neither skill is always loaded — both activate via description matching only. 
 | shadcn/ui | ASU overrides for shadcn components |
 | Tailwind v4 theme | Token registry documentation |
 | **Canonical CSS asset** | `skills/asu-design/assets/asu-theme.css` — single source of truth for all token values |
+| **Brand images** | `skills/asu-design/assets/images/` — logos, backgrounds, favicon (copied to project by `/asu-design-init`) |
 
 ---
 
@@ -239,6 +218,9 @@ Run `/asu-design-init` **after** `shadcn init`. The ASU theme includes a `:root`
 **I'm using Tailwind v3, not v4**
 The bundled theme uses Tailwind v4-only syntax (`@theme inline`). Either upgrade to Tailwind v4 or generate a v3-compatible `tailwind.config.js` from the token values manually — see `references/tailwind-v4-theme.md` for the migration table.
 
+**ASU logos/backgrounds aren't showing up in my project**
+Run `/asu-design-init` — it copies brand images into `{public-dir}/asu/`. If you already ran it before this feature was added, run it again. Generated components reference images at `/asu/logos/...` and `/asu/backgrounds/...`.
+
 **Claude is generating components with hardcoded hex (`bg-[#FFC627]`)**
 The skill is loaded but the token discipline rule isn't being enforced in the current context. Remind Claude: "Use ASU tokens, not hardcoded hex." The `asu-design` skill has explicit rules against this, but they need to be in active context.
 
@@ -251,7 +233,7 @@ The skill is loaded but the token discipline rule isn't being enforced in the cu
 - **Tailwind CSS v4** — required for the bundled theme to work
 - **shadcn/ui** — optional but strongly recommended for component-level ASU theming
 
-The skill itself works with any frontend stack (React, Vue, Svelte, plain HTML, etc.) for design knowledge — the init command's auto-detection is tuned for Next.js and Vite.
+The skill itself works with any frontend stack (React, Vue, Svelte, plain HTML, etc.) for design knowledge — the init command's auto-detection is tuned for Next.js, Vite, and SvelteKit.
 
 ## Author
 
