@@ -66,7 +66,7 @@ Highlighted text is a core part of ASU visual identity and is **encouraged** in 
 ### Highlight Rules
 - Highlights may be used on **Headings 1 through 4 only**
 - **Never use highlights on:** body copy, captions, small text, extra small text, or any other type style
-- Highlight colors: `bg-primary-gold` or `bg-primary-black` fill behind the text
+- Highlight colors: `bg-asu-gold` or `bg-asu-gray-1` fill behind the text
 - For full approved highlight combinations table → load `colors.md`
 
 ---

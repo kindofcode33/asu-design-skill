@@ -12,9 +12,9 @@ A horizontal navigation trail showing the user's position within the site hierar
 
 - **Container:** `<nav aria-label="Breadcrumb">` with `py-4`
 - **List:** `<ol>` with `flex items-center gap-4 text-sm`
-- **Links:** `text-primary-maroon underline hover:no-underline` — no visited color (always stays maroon)
-- **Separator:** Forward slash character (`/`), `text-gray-500`, with `gap-4` spacing on both sides
-- **Current page (last item):** `text-primary-black` — no link, no underline
+- **Links:** `text-asu-maroon underline hover:no-underline` — no visited color (always stays maroon)
+- **Separator:** Forward slash character (`/`), `text-asu-gray-3`, with `gap-4` spacing on both sides
+- **Current page (last item):** `text-asu-gray-1` — no link, no underline
 
 ### Placement
 
@@ -26,19 +26,19 @@ Breadcrumbs appear directly below the hero or header section, inside the standar
 <nav aria-label="Breadcrumb" class="py-4">
   <ol class="flex items-center gap-4 text-sm">
     <li class="flex items-center gap-4">
-      <a href="/" class="text-primary-maroon underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-gold transition-colors">
+      <a href="/" class="text-asu-maroon underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold transition-colors">
         Home
       </a>
     </li>
     <li class="flex items-center gap-4">
-      <span class="text-gray-500">/</span>
-      <a href="/section" class="text-primary-maroon underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-gold transition-colors">
+      <span class="text-asu-gray-3">/</span>
+      <a href="/section" class="text-asu-maroon underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold transition-colors">
         Section
       </a>
     </li>
     <li class="flex items-center gap-4">
-      <span class="text-gray-500">/</span>
-      <span class="text-primary-black">Current Page</span>
+      <span class="text-asu-gray-3">/</span>
+      <span class="text-asu-gray-1">Current Page</span>
     </li>
   </ol>
 </nav>
@@ -63,17 +63,17 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 
 - **Section container:** Full width, `py-12 md:py-24`, with optional repeating background image
 - **Content container:** `max-w-[1200px] mx-auto px-6 md:px-8`
-- **Eyebrow label:** `text-sm font-bold text-primary-black mb-4` — sentence case, never `uppercase` or `tracking-wider`
-- **Quote text:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black` — Hero H1 scale (display moment, see "Semantic structure first" in SKILL.md)
-- **Gold highlights:** Key phrases wrapped in `<span class="bg-primary-gold px-1">` — draws attention to the most important words
-- **Attribution:** `text-sm text-gray-600 mt-6` — source with optional link
+- **Eyebrow label:** `text-sm font-bold text-asu-gray-1 mb-4` — sentence case, never `uppercase` or `tracking-wider`
+- **Quote text:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1` — Hero H1 scale (display moment, see "Semantic structure first" in SKILL.md)
+- **Gold highlights:** Key phrases wrapped in `<span class="bg-asu-gold px-1">` — draws attention to the most important words
+- **Attribution:** `text-sm text-asu-gray-3 mt-6` — source with optional link
 
 ### Variants
 
 | Variant | Background | Text Color | Link Color |
 |---|---|---|---|
-| Light (default) | White or texture | `text-primary-black` | `text-gray-600` |
-| Dark | `bg-primary-black` | `text-white` | `text-gray-400` |
+| Light (default) | White or texture | `text-asu-gray-1` | `text-asu-gray-3` |
+| Dark | `bg-asu-gray-1` | `text-white` | `text-asu-gray-5` |
 
 ### Tailwind Class Reference
 
@@ -82,15 +82,15 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 <section class="py-12 md:py-24"
   style="background-image: url(/backgrounds/topographic-texture.png); background-repeat: repeat;">
   <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-    <p class="text-sm font-bold text-primary-black mb-4">The ASU difference:</p>
-    <h2 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black">
+    <p class="text-sm font-bold text-asu-gray-1 mb-4">The ASU difference:</p>
+    <h2 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1">
       We are measured not by whom we exclude, but by
-      <span class="bg-primary-gold px-1">whom we include</span> and
-      <span class="bg-primary-gold px-1">how they succeed</span>
+      <span class="bg-asu-gold px-1">whom we include</span> and
+      <span class="bg-asu-gold px-1">how they succeed</span>
     </h2>
-    <p class="text-sm text-gray-600 mt-6">
+    <p class="text-sm text-asu-gray-3 mt-6">
       — Excerpt from
-      <a href="#" class="text-gray-600 underline hover:text-primary-black transition-colors">ASU charter</a>
+      <a href="#" class="text-asu-gray-3 underline hover:text-asu-gray-1 transition-colors">ASU charter</a>
     </p>
   </div>
 </section>

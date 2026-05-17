@@ -141,14 +141,14 @@ Icons inherit color rules from `colors.md`. Approved background/icon color pairi
 
 | Background | Icon Color | Tailwind Class |
 |---|---|---|
-| White | Black | `text-primary-black` |
-| White | Maroon | `text-primary-maroon` |
+| White | Black | `text-asu-gray-1` |
+| White | Maroon | `text-asu-maroon` |
 | Dark / Black | White | `text-white` |
-| Dark / Black | Gold | `text-primary-gold` |
-| `bg-primary-gold` | Black | `text-primary-black` |
-| `bg-primary-gold` | Maroon | `text-primary-maroon` |
-| `bg-primary-maroon` | Gold | `text-primary-gold` |
-| `bg-primary-maroon` | White | `text-white` |
+| Dark / Black | Gold | `text-asu-gold` |
+| `bg-asu-gold` | Black | `text-asu-gray-1` |
+| `bg-asu-gold` | Maroon | `text-asu-maroon` |
+| `bg-asu-maroon` | Gold | `text-asu-gold` |
+| `bg-asu-maroon` | White | `text-white` |
 
 ### Icon Color Rules
 - Gold and maroon are not typically used as background colors — the combinations above apply specifically to cases where icons appear **on gold or maroon elements** such as buttons

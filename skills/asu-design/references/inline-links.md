@@ -40,9 +40,9 @@ Four color tokens cover the full link and visited-link states across light and d
 
 | Token | Use |
 |---|---|
-| `text-asu-gold` / `text-primary-gold` | Default link on dark backgrounds |
+| `text-asu-gold` / `text-asu-gold` | Default link on dark backgrounds |
 | `text-asu-visited-gold` | Visited link on dark backgrounds |
-| `text-asu-maroon` / `text-primary-maroon` | Default link on light backgrounds |
+| `text-asu-maroon` / `text-asu-maroon` | Default link on light backgrounds |
 | `text-asu-visited-maroon` | Visited link on light backgrounds |
 
 Token hex values are canonical in `SKILL.md`.

@@ -73,11 +73,11 @@ The global header is a full-width, fixed-position component at the top of every 
 ### Navigation Row
 - `flex items-stretch gap-asu-3`
 - **Home icon (first item):** house SVG (16px) linking to `/`
-  - Gold bottom border `border-b-[5px] border-primary-gold` when no nav item is active
+  - Gold bottom border `border-b-[5px] border-asu-gold` when no nav item is active
   - Transparent bottom border `border-b-[5px] border-transparent` otherwise
 - **Text items:** links to site pages
   - `text-asu-body font-normal text-asu-gray-2`
-  - Active item: `text-asu-gray-1 border-b-[5px] border-primary-gold`
+  - Active item: `text-asu-gray-1 border-b-[5px] border-asu-gold`
   - Inactive: `border-b-[5px] border-transparent`
   - Padding: `py-asu-1`
 
@@ -148,7 +148,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
                 <Link
                   to="/"
                   className={`text-asu-gray-2 flex items-center no-underline py-asu-1 border-b-[5px] ${
-                    !activeItem ? 'border-primary-gold' : 'border-transparent'
+                    !activeItem ? 'border-asu-gold' : 'border-transparent'
                   }`}
                 >
                   {/* Home icon SVG */}
@@ -159,7 +159,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
                     to={item.href || '#'}
                     className={`text-asu-body font-normal no-underline flex items-center py-asu-1 border-b-[5px] ${
                       item.label === activeItem
-                        ? 'text-asu-gray-1 border-primary-gold'
+                        ? 'text-asu-gray-1 border-asu-gold'
                         : 'text-asu-gray-2 border-transparent'
                     }`}
                   >
@@ -204,7 +204,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
 
 - ❌ Never constrain the header with a max-width — always 100% viewport width
 - ❌ Never omit the utility bar
-- ❌ Never change the gold underline color on active nav items (`border-primary-gold`)
+- ❌ Never change the gold underline color on active nav items (`border-asu-gold`)
 - ❌ Never use a different logo variant than the vertical ASU logo
 - ❌ Never make the header non-fixed — always `fixed top-0 left-0 right-0 z-50`
 - ❌ Never add `overflow` scroll/hidden to the header

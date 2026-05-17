@@ -44,8 +44,8 @@ Four color options are available to fit light or dark backgrounds. All combos mu
 
 | Color | Token | Default Text | Use Case |
 |---|---|---|---|
-| Maroon | `bg-primary-maroon` | White | **Default color** — standard actions |
-| Gold | `bg-primary-gold` | `text-asu-gray-1` | **High-priority CTAs only** — use sparingly |
+| Maroon | `bg-asu-maroon` | White | **Default color** — standard actions |
+| Gold | `bg-asu-gold` | `text-asu-gray-1` | **High-priority CTAs only** — use sparingly |
 | Black | `bg-asu-gray-1` | White | Dark-themed contexts |
 | Gray | `bg-asu-gray-6` | `text-asu-gray-1` | Low-emphasis or secondary actions |
 

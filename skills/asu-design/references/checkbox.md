@@ -158,7 +158,7 @@ Six states cover the full interaction lifecycle.
     <input
       type="checkbox"
       class="mt-0.5 w-4 h-4 border border-asu-gray-2 rounded-none
-             focus:ring-2 focus:ring-primary-gold focus:ring-offset-1
+             focus:ring-2 focus:ring-asu-gold focus:ring-offset-1
              checked:bg-asu-gray-1 checked:border-asu-gray-1
              disabled:opacity-50 disabled:cursor-not-allowed"
     />

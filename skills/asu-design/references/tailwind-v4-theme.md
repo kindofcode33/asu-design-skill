@@ -2,7 +2,7 @@
 > Source: ASU Unity Design System (UDS) mapped to Tailwind CSS v4
 > Load this file when setting up a new project with Tailwind v4, running `shadcn init`, when the user asks to "remap all ASU design tokens to Tailwind", or when looking up the actual hex/px/rem value behind any ASU token.
 
-> **This file is the single canonical source for token VALUES (hex, px, rem, line-height, letter-spacing).** SKILL.md defines token *names* and *semantic roles*; this file defines what each token resolves to. If a model needs to know "what color is `primary-gold`?", load this file. For day-to-day component work, the model should never need to — it should be writing token names like `bg-primary-gold`, not literal hex.
+> **This file is the single canonical source for token VALUES (hex, px, rem, line-height, letter-spacing).** SKILL.md defines token *names* and *semantic roles*; this file defines what each token resolves to. If a model needs to know "what color is `asu-gold`?", load this file. For day-to-day component work, the model should never need to — it should be writing token names like `bg-asu-gold`, not literal hex.
 
 ---
 
@@ -39,25 +39,16 @@ Copy this entire block into the `@theme inline` section of your CSS file:
 ```css
 @theme inline {
     /* ===== ASU Brand Colors — Primary ===== */
-    --color-primary-maroon: #8C1D40;
-    --color-primary-gold: #FFC627;
-    --color-primary-black: #191919;
-
-    /* asu-* aliases (used in reference component markup) */
     --color-asu-maroon: #8C1D40;
     --color-asu-gold: #FFC627;
     --color-asu-rich-black: #000000;
     --color-asu-white: #FFFFFF;
 
-    /* ===== ASU Brand Colors — Grayscale ===== */
-    --color-gray-50: #FAFAFA;
-    --color-gray-100: #E8E8E8;
-    --color-gray-200: #D0D0D0;
-    --color-gray-300: #BFBFBF;
-    --color-gray-500: #747474;
-    --color-gray-700: #484848;
-
-    /* asu-gray-* aliases (maps to UDS Gray1–Gray7 naming) */
+    /* ===== ASU Brand Colors — Grayscale =====
+       Use asu-gray-1 through asu-gray-7 — never override Tailwind's default
+       gray-* scale, so `text-gray-500` etc. still resolves to Tailwind defaults
+       (not ASU colors). This keeps Tailwind's defaults predictable and forces
+       intentional use of ASU grays via the asu-gray-* namespace. */
     --color-asu-gray-1: #191919;
     --color-asu-gray-2: #484848;
     --color-asu-gray-3: #747474;
@@ -305,8 +296,13 @@ After applying the theme above, the following classes are available:
 `bg-asu-gray-1` through `bg-asu-gray-7`
 `text-asu-maroon`, `text-asu-gold`, `text-asu-gray-1` through `text-asu-gray-7`
 `border-asu-maroon`, `border-asu-gold`, `border-asu-gray-1` through `border-asu-gray-7`
-`ring-asu-gold`, `ring-primary-gold`
-`bg-primary-maroon`, `bg-primary-gold`, `text-primary-black`
+`ring-asu-gold`
+
+**shadcn semantic tokens (mapped to ASU in `:root` — use for general UI surfaces):**
+`bg-background`, `bg-card`, `bg-popover`, `bg-muted`, `bg-accent` (white/grays)
+`bg-primary` (= ASU Gold), `bg-secondary` (= ASU Maroon), `bg-destructive` (= ASU Error)
+`text-foreground` (= Gray1), `text-muted-foreground` (= Gray3)
+`border-border`, `border-input` (= Gray4), `ring-ring` (= Gold)
 
 ### Typography
 `font-sans` (Arial stack), `font-asu` (Neue Haas Grotesk + Arial)
@@ -351,6 +347,7 @@ If a project uses `tailwind.config.js` (v3), these are the key differences:
 
 - ❌ Never use `--max-w-*` in Tailwind v4 — it does NOT generate `max-w-*` utilities. Always use `--container-*`.
 - ❌ Never use `var(--font-sans)` inside `@theme inline` for font — use literal font family names.
-- ❌ Never skip the `asu-*` color aliases — component reference files use them directly.
+- ❌ Never reintroduce `--color-asu-maroon` / `--color-asu-gold` / `--color-asu-gray-1` — those names were dual aliases and have been collapsed into the canonical `--color-asu-*` namespace.
+- ❌ Never override Tailwind's default gray scale by defining `--color-gray-50` through `--color-gray-700` — keep Tailwind defaults intact so `text-gray-500` (etc.) resolves to standard Tailwind, not ASU. Use `asu-gray-*` explicitly when ASU grays are needed.
 - ❌ Never leave shadcn's default `--radius` — set to `0rem` for ASU (sharp containers).
 - ❌ Never leave shadcn's default `--ring` — set to `#FFC627` (ASU Gold) for all focus rings.

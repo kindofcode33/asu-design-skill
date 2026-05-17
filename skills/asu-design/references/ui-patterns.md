@@ -10,21 +10,21 @@ The standard page header pattern used at the top of content pages (below the glo
 
 ### Anatomy
 
-- **Context label (eyebrow):** `text-sm font-bold text-primary-maroon mb-2` — sentence case, never `uppercase`
-- **Page title:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black mb-4`
-- **Supporting description:** `text-lg text-primary-black/70 max-w-xl`
+- **Context label (eyebrow):** `text-sm font-bold text-asu-maroon mb-2` — sentence case, never `uppercase`
+- **Page title:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1 mb-4`
+- **Supporting description:** `text-lg text-asu-gray-1/70 max-w-xl`
 
 ### Tailwind Class Reference
 
 ```html
 <header class="mb-12">
-  <p class="text-sm font-bold text-primary-maroon mb-2">
+  <p class="text-sm font-bold text-asu-maroon mb-2">
     Context label
   </p>
-  <h1 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black mb-4">
+  <h1 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-asu-gray-1 mb-4">
     Page title
   </h1>
-  <p class="text-lg text-primary-black/70 max-w-xl">
+  <p class="text-lg text-asu-gray-1/70 max-w-xl">
     Supporting description text.
   </p>
 </header>
@@ -38,18 +38,18 @@ The gold accent bar is a **categorical marker** paired with a small bold label �
 
 ### Anatomy
 
-- **Gold bar:** `w-1 h-5 bg-primary-gold` — vertical bar inline with the label
-- **Context label:** `text-sm font-bold text-primary-black mb-2` — sentence case, never `uppercase`. Differentiation comes from bold weight, small size, and the adjacent gold bar.
-- **Section title:** `text-3xl font-bold text-primary-black mb-8`
+- **Gold bar:** `w-1 h-5 bg-asu-gold` — vertical bar inline with the label
+- **Context label:** `text-sm font-bold text-asu-gray-1 mb-2` — sentence case, never `uppercase`. Differentiation comes from bold weight, small size, and the adjacent gold bar.
+- **Section title:** `text-3xl font-bold text-asu-gray-1 mb-8`
 
 ### Tailwind Class Reference
 
 ```html
-<p class="flex items-center gap-3 text-sm font-bold text-primary-black mb-2">
-  <span class="w-1 h-5 bg-primary-gold"></span>
+<p class="flex items-center gap-3 text-sm font-bold text-asu-gray-1 mb-2">
+  <span class="w-1 h-5 bg-asu-gold"></span>
   Context label
 </p>
-<h2 class="text-3xl font-bold text-primary-black mb-8">Section title</h2>
+<h2 class="text-3xl font-bold text-asu-gray-1 mb-8">Section title</h2>
 ```
 
 ---
@@ -61,7 +61,7 @@ A fixed gold bar at the bottom of the viewport, used for persistent navigation o
 ### Tailwind Class Reference
 
 ```html
-<div class="fixed bottom-0 left-0 right-0 h-20 bg-primary-gold">
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-asu-gold">
   <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
     <!-- Logo and links -->
   </div>

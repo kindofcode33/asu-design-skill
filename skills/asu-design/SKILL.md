@@ -54,11 +54,59 @@ These govern every output regardless of component or format.
 
 **Never hardcode hex, px, or rem values in generated code.** Always reference tokens below by name. Token values (the actual hex/px/rem) live in `references/tailwind-v4-theme.md` — load that file only when setting up a project's `@theme inline` block or troubleshooting why a token isn't generating a utility class.
 
-- Colors: `bg-primary-gold`, `text-asu-gray-1`, `border-asu-error`, etc.
+- Colors: `bg-asu-gold`, `text-asu-gray-1`, `border-asu-error`, etc.
 - Spacing: `p-asu-3`, `gap-asu-2`, `py-asu-9`, etc.
 - Typography: `text-asu-h1`, `text-asu-body`, `font-asu`, etc.
 
 For day-to-day component work the model never needs the underlying values — only the token names and what each token is *for*.
+
+---
+
+## Token Layering — Choosing the Right Namespace
+
+When generating ANY element — including new components not covered by the reference files — use these three layers in priority order. Never reach for raw Tailwind defaults (`bg-blue-500`, `text-gray-700`, `border-slate-200`) — they aren't brand-mapped and will produce off-brand output.
+
+### Layer 1: shadcn semantic tokens (default for new/generic UI)
+
+shadcn's semantic tokens are pre-mapped to ASU values in `tailwind-v4-theme.md`. When building generic UI surfaces (cards, modals, inputs, popovers, panels, neutral content), prefer these — the model gets ASU-correct colors automatically even without explicit ASU tokens.
+
+| shadcn token | Resolves to | Use for |
+|---|---|---|
+| `bg-background` / `text-foreground` | White / Gray1 | Page and surface defaults |
+| `bg-card` / `text-card-foreground` | White / Gray1 | Card surfaces |
+| `bg-popover` / `text-popover-foreground` | White / Gray1 | Dropdowns, popovers, tooltips |
+| `bg-muted` / `text-muted-foreground` | Gray6 / Gray3 | Subtle backgrounds, secondary text |
+| `bg-accent` / `text-accent-foreground` | Gray7 / Gray1 | Hover states, accent surfaces |
+| `bg-primary` / `text-primary-foreground` | **ASU Gold** / Gray1 | Primary actions (high-emphasis) |
+| `bg-secondary` / `text-secondary-foreground` | **ASU Maroon** / White | Secondary actions |
+| `bg-destructive` / `text-destructive-foreground` | ASU Error / White | Destructive/dangerous actions |
+| `border-border` / `border-input` | Gray4 | Borders, input outlines |
+| `ring-ring` | **ASU Gold** | Focus rings |
+
+### Layer 2: `asu-*` brand tokens (explicit brand moments)
+
+For explicit ASU brand expressions where the color choice IS the design intent — gold accent bars, maroon section dividers, the charter quote highlight, branded set-piece moments, system color states (error/warning/info/success) — use the explicit `asu-*` tokens.
+
+| asu-* token family | Use for |
+|---|---|
+| `bg-asu-gold`, `text-asu-maroon`, `border-asu-gold` | Explicit brand-color application |
+| `bg-asu-gray-6`, `text-asu-gray-3`, `border-asu-gray-4` | Direct grayscale references (when shadcn `muted`/`border` semantic doesn't fit) |
+| `text-asu-error`, `bg-asu-warning-bg`, etc. | System state colors in alerts, validation, status |
+| `text-asu-visited-maroon`, `text-asu-visited-gold` | Link visited states |
+| `p-asu-3`, `gap-asu-2`, `py-asu-9`, etc. | All spacing |
+| `text-asu-h1`, `text-asu-body`, `font-asu` | Typography |
+
+### Layer 3: Tailwind defaults — never use for color
+
+Tailwind's default color palette (`gray-*`, `blue-*`, `red-*`, `yellow-*`, etc.) is **not brand-mapped**. Using `text-gray-700` or `bg-red-500` produces standard Tailwind colors that won't match ASU. Always go through Layer 1 or Layer 2.
+
+Tailwind defaults for non-color utilities (`w-`, `h-`, `flex`, `grid`, `items-`, `justify-`, `rounded-none`, `rounded-full`, `font-bold`, etc.) — fine to use normally.
+
+### Decision rule when building anything new
+
+1. Is this a generic UI surface (card, modal, panel, input)? → **Layer 1** (shadcn semantic)
+2. Is this an explicit ASU brand moment (gold/maroon/state color is the intent)? → **Layer 2** (`asu-*`)
+3. Is this a color from Tailwind defaults? → **Stop.** Re-evaluate via Layer 1 or 2.
 
 ---
 
@@ -68,25 +116,25 @@ For day-to-day component work the model never needs the underlying values — on
 
 | Token | Role |
 |---|---|
-| `primary-maroon` / `asu-maroon` | ASU Maroon — links, secondary actions. Primary brand color. |
-| `primary-gold` / `asu-gold` | ASU Gold — primary CTAs, focus rings, accents. Brand differentiator. |
-| `primary-black` / `asu-gray-1` | ASU Black — body text, text on gold. Use instead of pure black. |
+| `asu-maroon` | ASU Maroon — links, secondary actions. Primary brand color. |
+| `asu-gold` | ASU Gold — primary CTAs, focus rings, accents. Brand differentiator. |
+| `asu-gray-1` | ASU Black — body text, text on gold. Use instead of pure black. |
 | `asu-white` | Primary backgrounds. |
 | `asu-rich-black` | Pure black. Avoid for text — use `asu-gray-1` for better contrast. |
 
-**Rules:** Primary button = `bg-primary-gold`. Links = `text-primary-maroon` (or `text-primary-gold` on dark). Text on gold = `text-primary-black`. Maroon and gold must NOT be used as large background fills.
+**Rules:** Primary button = `bg-asu-gold`. Links = `text-asu-maroon` (or `text-asu-gold` on dark). Text on gold = `text-asu-gray-1`. Maroon and gold must NOT be used as large background fills.
 
 ### Grayscale
 
 | Token | Role |
 |---|---|
-| `asu-gray-1` / `primary-black` | All body text (use instead of black) |
-| `asu-gray-2` / `text-gray-700` | Secondary text; emphasis on body copy |
-| `asu-gray-3` / `text-gray-500` | ASU Gray — tertiary text, labels |
-| `asu-gray-4` / `border-gray-300` | Borders only, never text |
-| `asu-gray-5` / `border-gray-200` | Dark backgrounds only |
-| `asu-gray-6` / `bg-gray-100` | Section backgrounds only |
-| `asu-gray-7` / `bg-gray-50` | Background in lieu of pure white |
+| `asu-gray-1` | All body text (use instead of black) |
+| `asu-gray-2` | Secondary text; emphasis on body copy |
+| `asu-gray-3` | ASU Gray — tertiary text, labels |
+| `asu-gray-4` | Borders only, never text |
+| `asu-gray-5` | Dark backgrounds only |
+| `asu-gray-6` | Section backgrounds only |
+| `asu-gray-7` | Background in lieu of pure white |
 
 ### System Colors (alerts/notifications/validation only — never decorative)
 
@@ -118,11 +166,11 @@ For day-to-day component work the model never needs the underlying values — on
 
 | Background | Text | ✅/❌ |
 |---|---|---|
-| White | `primary-black` / `primary-maroon` | ✅ |
-| `primary-gold` | `primary-black` | ✅ |
-| `primary-maroon` | White | ✅ |
-| White | `primary-gold` | ❌ Insufficient contrast |
-| `primary-maroon` | `primary-gold` | ❌ Insufficient contrast |
+| White | `asu-gray-1` / `asu-maroon` | ✅ |
+| `asu-gold` | `asu-gray-1` | ✅ |
+| `asu-maroon` | White | ✅ |
+| White | `asu-gold` | ❌ Insufficient contrast |
+| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast |
 
 ---
 
@@ -160,7 +208,7 @@ For day-to-day component work the model never needs the underlying values — on
 
 - Headings: sentence case always. Never all-caps.
 - Line length: max `max-w-2xl` for body text.
-- Text highlights: `bg-primary-gold` or `bg-primary-black` fill on H1–H4 only — never on body text.
+- Text highlights: `bg-asu-gold` or `bg-asu-gray-1` fill on H1–H4 only — never on body text.
 - Underline: reserved exclusively for hyperlinks.
 
 ---
@@ -217,7 +265,7 @@ Use `p-asu-2`, `m-asu-3`, `gap-asu-2`, `py-asu-9`, etc. — every spacing utilit
 ## Accessibility
 
 - **WCAG AA minimum:** 4.5:1 normal text, 3:1 large text
-- **All focus rings = ASU Gold:** `focus-visible:ring-2 focus-visible:ring-primary-gold focus-visible:ring-offset-2`
+- **All focus rings = ASU Gold:** `focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2`
 - **Keyboard:** All interactive elements keyboard accessible. Tab follows visual order. Escape closes overlays.
 - **Screen readers:** Semantic HTML. `aria-label` on icon-only buttons. `sr-only` for screen-reader-only text.
 - **Alt text:** Required on all non-decorative images.
@@ -253,7 +301,7 @@ Load the appropriate reference file when the task involves these components:
 | Colors (usage rules) | `references/colors.md` | Resolving "is this combination allowed?" questions, applying system colors functionally, or applying contrast rules. |
 | Typography (extended) | `references/typography.md` | Applying gold/black text highlights, setting paragraph and heading spacing, auditing line length, or accessing the decision protocol for type. |
 | Spacing (extended) | `references/spacing-layout.md` | Handling section separator spacing, resolving max-width behavior, configuring the grid system, or accessing the decision protocol for layout. |
-| Tailwind v4 Theme | `references/tailwind-v4-theme.md` | **Single source of token VALUES (hex, px, rem).** Load when setting up a new project's `@theme inline` block, mirroring tokens into CSS, configuring shadcn semantic tokens, troubleshooting why a utility isn't generating, or answering "what is the hex of `primary-gold`?" |
+| Tailwind v4 Theme | `references/tailwind-v4-theme.md` | **Single source of token VALUES (hex, px, rem).** Load when setting up a new project's `@theme inline` block, mirroring tokens into CSS, configuring shadcn semantic tokens, troubleshooting why a utility isn't generating, or answering "what is the hex of `asu-gold`?" |
 
 ---
 
@@ -280,7 +328,7 @@ Load the appropriate reference file when the task involves these components:
 ## Checklist Before Shipping
 
 - [ ] All values via tokens — no hardcoded hex, px, or rem
-- [ ] Gold CTA present (`bg-primary-gold`)
+- [ ] Gold CTA present (`bg-asu-gold`)
 - [ ] Arial font stack applied
 - [ ] All focus rings use Gold
 - [ ] All buttons pill-shaped (`rounded-full`)

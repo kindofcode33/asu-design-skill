@@ -15,10 +15,10 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 | Property | Value | Tailwind |
 |---|---|---|
 | Background | White | `bg-white` |
-| Border | 1px or 2px gray | `border border-gray-200` or `border-2 border-gray-200` |
+| Border | 1px or 2px gray | `border border-asu-gray-5` or `border-2 border-asu-gray-5` |
 | Radius | None — always | `rounded-none` |
 | Padding | 24px or 32px | `p-6` or `p-8` |
-| Hover | Gold border + shadow | `hover:border-primary-gold hover:shadow-lg transition-all` |
+| Hover | Gold border + shadow | `hover:border-asu-gold hover:shadow-lg transition-all` |
 
 ---
 
@@ -27,7 +27,7 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 ### Standard Card
 
 ```html
-<div class="bg-white p-6 rounded-none border-2 border-gray-200 hover:border-primary-gold hover:shadow-lg transition-all">
+<div class="bg-white p-6 rounded-none border-2 border-asu-gray-5 hover:border-asu-gold hover:shadow-lg transition-all">
   <!-- content -->
 </div>
 ```
@@ -35,8 +35,8 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 ### Interactive / Link Card
 
 ```html
-<a href="/path" class="group block bg-white border-2 border-gray-200 rounded-none p-6 transition-all duration-200 hover:border-primary-gold hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-gold focus-visible:ring-offset-2">
-  <div class="flex items-center text-primary-maroon font-bold text-sm group-hover:text-primary-black transition-colors">
+<a href="/path" class="group block bg-white border-2 border-asu-gray-5 rounded-none p-6 transition-all duration-200 hover:border-asu-gold hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2">
+  <div class="flex items-center text-asu-maroon font-bold text-sm group-hover:text-asu-gray-1 transition-colors">
     Start
     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"><!-- ArrowRight --></svg>
   </div>
@@ -48,9 +48,9 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 Number leads, label follows. Number is the headline, not the supporting copy — give it weight and scale relative to the label.
 
 ```html
-<div class="bg-white p-4 rounded-none border border-gray-200">
-  <div class="text-2xl font-black text-primary-black">86%</div>
-  <div class="text-xs font-bold text-gray-500">Score</div>
+<div class="bg-white p-4 rounded-none border border-asu-gray-5">
+  <div class="text-2xl font-black text-asu-gray-1">86%</div>
+  <div class="text-xs font-bold text-asu-gray-3">Score</div>
 </div>
 ```
 

@@ -10,7 +10,7 @@
 - **Token values** (hex, RGB, what each token resolves to) → `references/tailwind-v4-theme.md`
 
 Color tokens covered by the canonical sources:
-- **Primary:** `primary-maroon`, `primary-gold`, `primary-black`, `asu-white`, `asu-rich-black`
+- **Primary:** `asu-maroon`, `asu-gold`, `asu-gray-1`, `asu-white`, `asu-rich-black`
 - **Grayscale:** `asu-gray-1` through `asu-gray-7`
 - **System:** `asu-error`, `asu-warning`, `asu-info`, `asu-success` (+ `-bg` and `-text-light`/`-text-dark` variants)
 - **Link visited:** `asu-visited-maroon`, `asu-visited-gold`
@@ -59,10 +59,10 @@ Secondary colors should be used **sparingly in digital use**. They must **not** 
 | `asu-gray-7` | `asu-gray-1` | ✅ Do |
 | `asu-gray-6` | `asu-gray-1` | ✅ Do |
 | `asu-gray-1` (Black) | `asu-gray-7` | ✅ Do |
-| `primary-gold` | `primary-black` | ✅ Do |
-| `primary-maroon` | White | ✅ Do |
+| `asu-gold` | `asu-gray-1` | ✅ Do |
+| `asu-maroon` | White | ✅ Do |
 
-For inline link colors → ASU Maroon (`primary-maroon`) on light backgrounds; ASU Gold (`primary-gold`) on dark backgrounds.
+For inline link colors → ASU Maroon (`asu-maroon`) on light backgrounds; ASU Gold (`asu-gold`) on dark backgrounds.
 
 ---
 
@@ -70,11 +70,11 @@ For inline link colors → ASU Maroon (`primary-maroon`) on light backgrounds; A
 
 | Background | Text | Reason |
 |---|---|---|
-| White | `primary-gold` | ❌ Insufficient contrast |
-| `primary-maroon` | `primary-gold` | ❌ Insufficient contrast |
-| `primary-maroon` | White | ❌ Insufficient contrast (per UDS — confirm with brand if questioned) |
-| `primary-gold` | `primary-maroon` | ❌ Insufficient contrast |
-| `primary-gold` | White | ❌ Insufficient contrast |
+| White | `asu-gold` | ❌ Insufficient contrast |
+| `asu-maroon` | `asu-gold` | ❌ Insufficient contrast |
+| `asu-maroon` | White | ❌ Insufficient contrast (per UDS — confirm with brand if questioned) |
+| `asu-gold` | `asu-maroon` | ❌ Insufficient contrast |
+| `asu-gold` | White | ❌ Insufficient contrast |
 
 ### Black vs Gray Contrast Rule
 Always use `asu-gray-1` rather than `asu-rich-black` for body text. Rich Black creates contrast that is too high and fails the brand standard.
@@ -100,20 +100,20 @@ Highlighted text is a core part of ASU visual identity and is **encouraged** in 
 ### Highlight Rules
 - Highlights may be used on **Headings 1 through 4 only**
 - **Never use highlights on:** body copy, captions, small text, extra small text, or any other type style
-- Highlight colors: **ASU Gold** (`bg-primary-gold`) or **Rich Black** (`bg-primary-black`) background fill behind the text
+- Highlight colors: **ASU Gold** (`bg-asu-gold`) or **Rich Black** (`bg-asu-gray-1`) background fill behind the text
 
 ### Approved Highlight Combinations
 
 | Page Background | Highlight | Text on Highlight |
 |---|---|---|
-| White | `primary-gold` | `asu-gray-1` ✅ |
-| White | `primary-black` | White ✅ |
-| `asu-gray-7` | `primary-gold` | `asu-gray-1` ✅ |
-| `asu-gray-7` | `primary-black` | White ✅ |
-| `asu-gray-6` | `primary-gold` | `asu-gray-1` ✅ |
-| `asu-gray-6` | `primary-black` | White ✅ |
-| `primary-black` | `primary-gold` | `asu-gray-1` ✅ |
-| `primary-black` | `asu-gray-7` | `asu-gray-1` ✅ |
+| White | `asu-gold` | `asu-gray-1` ✅ |
+| White | `asu-gray-1` | White ✅ |
+| `asu-gray-7` | `asu-gold` | `asu-gray-1` ✅ |
+| `asu-gray-7` | `asu-gray-1` | White ✅ |
+| `asu-gray-6` | `asu-gold` | `asu-gray-1` ✅ |
+| `asu-gray-6` | `asu-gray-1` | White ✅ |
+| `asu-gray-1` | `asu-gold` | `asu-gray-1` ✅ |
+| `asu-gray-1` | `asu-gray-7` | `asu-gray-1` ✅ |
 
 ---
 
@@ -122,7 +122,7 @@ Highlighted text is a core part of ASU visual identity and is **encouraged** in 
 When choosing color for any element:
 
 1. **What surface am I coloring?** → Background, text, border, icon, accent
-2. **Is this a brand element?** → Use primary tokens (`primary-maroon`, `primary-gold`, `primary-black`)
+2. **Is this a brand element?** → Use primary tokens (`asu-maroon`, `asu-gold`, `asu-gray-1`)
 3. **Is this a functional state (validation, alert, status)?** → Use system color tokens (`asu-error`, `asu-warning`, `asu-info`, `asu-success`)
 4. **Is this a structural element (border, divider, label)?** → Use grayscale tokens (`asu-gray-2` through `asu-gray-6`)
 5. **Check the approved combinations table above** — never pair tokens that aren't on the approved list

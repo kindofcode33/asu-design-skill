@@ -18,7 +18,7 @@ The global footer is a full-width component at the bottom of every page. It cons
 │ Dark row (bg-asu-gray-1, height 128px)                                   │
 │  [ASU Logo white]                          [fb] [ig] [yt] [li]           │
 ├──────────────────────────────────────────────────────────────────────────┤
-│ Gold bar (bg-primary-gold, height 100px)                                 │
+│ Gold bar (bg-asu-gold, height 100px)                                 │
 │  Maps and Locations  Jobs  Directory  Contact ASU  My ASU    [rank img]  │
 ├──────────────────────────────────────────────────────────────────────────┤
 │ Grey bar (bg-asu-gray-6, height 56px)                                    │
@@ -52,7 +52,7 @@ The global footer is a full-width component at the bottom of every page. It cons
 
 | Property | Token / Value |
 |---|---|
-| Background | `bg-primary-gold` |
+| Background | `bg-asu-gold` |
 | Height | `h-[100px]` (UDS-specified) |
 | Content max-width | `max-w-asu-content`, centered |
 | Padding | `px-asu-3` |
@@ -112,7 +112,7 @@ export default function GlobalFooter() {
       </div>
 
       {/* Innovation footer — gold bar with utility links and ranking badge */}
-      <div className="bg-primary-gold h-[100px]">
+      <div className="bg-asu-gold h-[100px]">
         <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-between">
           <nav aria-label="University Services" className="flex items-center gap-asu-2 flex-wrap">
             <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">Maps and Locations</a>
@@ -162,7 +162,7 @@ import GlobalFooter from '../components/GlobalFooter'
 
 - ❌ Never constrain the footer with a max-width — always 100% viewport width
 - ❌ Never omit any of the three rows
-- ❌ Never change the gold bar background color (`bg-primary-gold`)
+- ❌ Never change the gold bar background color (`bg-asu-gold`)
 - ❌ Never omit aria-labels on social media icon links
 - ❌ Never hardcode hex/px — always reference tokens
 
