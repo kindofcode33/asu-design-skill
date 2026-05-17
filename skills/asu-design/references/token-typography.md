@@ -1,13 +1,13 @@
 # ASU Typography — Implementation Guidance
 > Source: ASU Unity Design System (UDS) — ZeroHeight brand guide
-> **Token names and roles are canonical in `SKILL.md`. Actual sizes, line-heights, and letter-spacing values are canonical in `references/tailwind-v4-theme.md`.** Load this file for line-length rules, paragraph/heading spacing, text highlights, and the *how* of applying typography. Never duplicate token values here.
+> **Token names and roles are canonical in `SKILL.md`. Actual sizes, line-heights, and letter-spacing values are canonical in `references/token-tailwind-theme.md`.** Load this file for line-length rules, paragraph/heading spacing, text highlights, and the *how* of applying typography. Never duplicate token values here.
 
 ---
 
 ## Source of Truth
 
 - **Token names + roles** (Hero H1, `text-asu-h1` through `text-asu-h5`, body scale, weight rules) → `SKILL.md`
-- **Actual sizes, line-heights, letter-spacing** (the px/rem each token resolves to) → `references/tailwind-v4-theme.md`
+- **Actual sizes, line-heights, letter-spacing** (the px/rem each token resolves to) → `references/token-tailwind-theme.md`
 
 Reference tokens by name in code. Never write `text-[64px]` or `font-size: 2.5rem` — always use the token.
 
@@ -67,7 +67,7 @@ Highlighted text is a core part of ASU visual identity and is **encouraged** in 
 - Highlights may be used on **Headings 1 through 4 only**
 - **Never use highlights on:** body copy, captions, small text, extra small text, or any other type style
 - Highlight colors: `bg-asu-gold` or `bg-asu-gray-1` fill behind the text
-- For full approved highlight combinations table → load `colors.md`
+- For full approved highlight combinations table → load `token-color.md`
 
 ---
 
@@ -88,7 +88,7 @@ When applying typography to any design element:
 ## What This File Does Not Cover
 
 - Token sizes, line-heights, letter-spacing values → see `SKILL.md`
-- Full color palette and contrast rules → load `colors.md`
+- Full color palette and contrast rules → load `token-color.md`
 - Spacing scale tokens → see `SKILL.md`
-- Icon pairing with text labels → load `iconography.md`
+- Icon pairing with text labels → load `media-icon.md`
 - Component-specific type application → load the relevant component file

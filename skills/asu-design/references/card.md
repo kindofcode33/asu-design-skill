@@ -121,7 +121,7 @@ Full-width bar for showcasing key numbers (faculty count, funding, enrollment). 
 
 ## What This File Does Not Cover
 
-- Button styling inside cards → load `buttons.md`
-- Link styling inside cards → load `inline-links.md`
-- Spacing between cards → load `spacing-layout.md`
-- shadcn card overrides → load `shadcn.md`
+- Button styling inside cards → load `button.md`
+- Link styling inside cards → load `link-inline.md`
+- Spacing between cards → load `token-spacing.md`
+- shadcn card overrides → load `config-shadcn.md`

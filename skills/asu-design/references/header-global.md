@@ -216,7 +216,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
 
 ## What This File Does Not Cover
 
-- Footer component → load `global-footer.md`
-- Navigation patterns beyond the header → load `custom-patterns.md`
+- Footer component → load `footer-global.md`
+- Navigation patterns beyond the header → load `pattern-custom.md`
 - Logo usage rules → refer to ASU brand identity guide
 - Token values → see `SKILL.md`

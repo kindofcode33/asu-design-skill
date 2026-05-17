@@ -86,7 +86,7 @@ Three states for the table component.
 
 ### Links in Cells
 - Inline links can be used within table cells
-- Follow inline link rules from `inline-links.md` — Maroon color, underlined, external icon if off-site
+- Follow inline link rules from `link-inline.md` — Maroon color, underlined, external icon if off-site
 
 ---
 
@@ -165,7 +165,7 @@ When adding a table to a design:
 
 ## What This File Does Not Cover
 
-- Inline links within table cells → load `inline-links.md`
-- Spacing and column grid → load `spacing-layout.md`
-- Typography for table text → load `typography.md`
-- Colors used in table states → load `colors.md`
+- Inline links within table cells → load `link-inline.md`
+- Spacing and column grid → load `token-spacing.md`
+- Typography for table text → load `token-typography.md`
+- Colors used in table states → load `token-color.md`

@@ -81,7 +81,7 @@ A fixed gold bar at the bottom of the viewport, used for persistent navigation o
 
 ## What This File Does Not Cover
 
-- Global header → load `global-header.md`
-- Global footer → load `global-footer.md`
-- Breadcrumbs and block quotes → load `custom-patterns.md`
-- Typography scale details → load `typography.md`
+- Global header → load `header-global.md`
+- Global footer → load `footer-global.md`
+- Breadcrumbs and block quotes → load `pattern-custom.md`
+- Typography scale details → load `token-typography.md`

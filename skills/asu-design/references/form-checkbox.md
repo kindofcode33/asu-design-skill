@@ -201,7 +201,7 @@ When adding checkboxes to a design:
 ## What This File Does Not Cover
 
 - Radio button (single-selection) → load `radio-button.md`
-- Text input fields → load `text-input.md`
-- System colors for error/success → load `colors.md`
-- Form layout and spacing → load `spacing-layout.md`
-- Typography for labels and messages → load `typography.md`
+- Text input fields → load `form-text-input.md`
+- System colors for error/success → load `token-color.md`
+- Form layout and spacing → load `token-spacing.md`
+- Typography for labels and messages → load `token-typography.md`

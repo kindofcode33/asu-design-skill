@@ -50,7 +50,7 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 - Aspect ratio: 4:3 recommended (`aspect-[4/3]`)
 - Object fit: `object-cover` to fill the container without distortion
 - Full height of the block: `h-full w-full object-cover`
-- If no real image available, use the grey placeholder box (see `images.md`)
+- If no real image available, use the grey placeholder box (see `media-image.md`)
 
 ### Heading
 - `text-asu-h2 font-bold text-asu-gray-1`
@@ -161,7 +161,7 @@ export default function FeatureBlock({
 
 ## What This File Does Not Cover
 
-- Card components (contained, bordered surfaces) → load `cards.md`
-- Hero sections (full-bleed, above the fold) → load `heroes.md`
-- Button styling details → load `buttons.md`
-- Image sizing specs → load `images.md`
+- Card components (contained, bordered surfaces) → load `card.md`
+- Hero sections (full-bleed, above the fold) → load `hero.md`
+- Button styling details → load `button.md`
+- Image sizing specs → load `media-image.md`

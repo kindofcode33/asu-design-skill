@@ -1,13 +1,13 @@
 # ASU Color — Usage Rules & Combinations
 > Source: ASU Unity Design System (UDS) — ZeroHeight brand guide
-> **Token names and semantic roles are canonical in `SKILL.md`. Actual hex/RGB values are canonical in `references/tailwind-v4-theme.md`.** This file holds usage rules, approved/prohibited combinations, and decision protocols only — never values.
+> **Token names and semantic roles are canonical in `SKILL.md`. Actual hex/RGB values are canonical in `references/token-tailwind-theme.md`.** This file holds usage rules, approved/prohibited combinations, and decision protocols only — never values.
 
 ---
 
 ## Source of Truth
 
 - **Token names + roles** (what to use, what it's for) → `SKILL.md`
-- **Token values** (hex, RGB, what each token resolves to) → `references/tailwind-v4-theme.md`
+- **Token values** (hex, RGB, what each token resolves to) → `references/token-tailwind-theme.md`
 
 Color tokens covered by the canonical sources:
 - **Primary:** `asu-maroon`, `asu-gold`, `asu-gray-1`, `asu-white`, `asu-rich-black`
@@ -135,5 +135,5 @@ When choosing color for any element:
 ## What This File Does Not Cover
 
 - Token hex/RGB values → see `SKILL.md`
-- Tailwind v4 `@theme inline` configuration → load `tailwind-v4-theme.md`
+- Tailwind v4 `@theme inline` configuration → load `token-tailwind-theme.md`
 - Component-specific color application → load the relevant component file

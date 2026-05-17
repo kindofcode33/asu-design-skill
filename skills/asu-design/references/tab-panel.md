@@ -189,7 +189,7 @@ When adding a tabbed panel to a design:
 ## What This File Does Not Cover
 
 - Accordion (alternative for show/hide content) → load `accordion.md`
-- Spacing around the tabbed panel → load `spacing-layout.md`
-- Typography for tab labels and body content → load `typography.md`
-- Colors and contrast → load `colors.md`
-- Inline links within tab content → load `inline-links.md`
+- Spacing around the tabbed panel → load `token-spacing.md`
+- Typography for tab labels and body content → load `token-typography.md`
+- Colors and contrast → load `token-color.md`
+- Inline links within tab content → load `link-inline.md`

@@ -1,13 +1,13 @@
 # ASU Spacing and Layout — Implementation Guidance
 > Source: ASU Unity Design System (UDS) — ZeroHeight brand guide
-> **Token names and roles are canonical in `SKILL.md`. Actual px values are canonical in `references/tailwind-v4-theme.md`.** Load this file for separator rules, grid implementation detail, max-width behavior, and the *how* of applying spacing.
+> **Token names and roles are canonical in `SKILL.md`. Actual px values are canonical in `references/token-tailwind-theme.md`.** Load this file for separator rules, grid implementation detail, max-width behavior, and the *how* of applying spacing.
 
 ---
 
 ## Source of Truth
 
 - **Token names + roles** (the `asu-1` through `asu-9` scale, `max-w-asu-content`, `max-w-asu-max`, grid configuration) → `SKILL.md`
-- **Actual px values** (what each token resolves to) → `references/tailwind-v4-theme.md`
+- **Actual px values** (what each token resolves to) → `references/token-tailwind-theme.md`
 
 Reference tokens by name in code. Never write `p-[24px]` or `max-width: 1200px` — always use the token.
 
@@ -99,6 +99,6 @@ When applying spacing to any design element:
 ## What This File Does Not Cover
 
 - Token values (8px scale, 1200px, 1920px) → see `SKILL.md`
-- Typography line-height and letter-spacing → load `typography.md`
+- Typography line-height and letter-spacing → load `token-typography.md`
 - Component-internal spacing specs → load the relevant component file
-- Background color rules for section backgrounds → load `colors.md`
+- Background color rules for section backgrounds → load `token-color.md`

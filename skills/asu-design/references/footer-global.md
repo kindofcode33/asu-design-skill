@@ -170,7 +170,7 @@ import GlobalFooter from '../components/GlobalFooter'
 
 ## What This File Does Not Cover
 
-- Header component → load `global-header.md`
-- Icon usage and sizing → load `iconography.md`
-- Link styling details → load `inline-links.md`
+- Header component → load `header-global.md`
+- Icon usage and sizing → load `media-icon.md`
+- Link styling details → load `link-inline.md`
 - Token values → see `SKILL.md`

@@ -10,7 +10,7 @@ These are ASU project-level decisions that override the base UDS styling:
 
 - **Focus ring:** Use `focus:border-asu-gold focus:ring-2 focus:ring-asu-gold/10` (gold, not gray)
 - **Border radius:** `rounded-none` on all inputs — never rounded
-- **Native `<select>`:** Never use the native browser `<select>` dropdown. Always use the shadcn Select component (with ASU overrides from `shadcn.md`).
+- **Native `<select>`:** Never use the native browser `<select>` dropdown. Always use the shadcn Select component (with ASU overrides from `config-shadcn.md`).
 
 ### Project Text Input
 
@@ -290,9 +290,9 @@ When adding a text input to a design:
 
 ## What This File Does Not Cover
 
-- Checkbox (multi-selection) → load `checkbox.md`
+- Checkbox (multi-selection) → load `form-checkbox.md`
 - Radio button (single-selection) → load `radio-button.md`
-- System colors for error/success → load `colors.md`
-- Form layout, column grid, spacing → load `spacing-layout.md`
-- Typography for labels and helper text → load `typography.md`
-- Icon classes for trailing icons → load `iconography.md`
+- System colors for error/success → load `token-color.md`
+- Form layout, column grid, spacing → load `token-spacing.md`
+- Typography for labels and helper text → load `token-typography.md`
+- Icon classes for trailing icons → load `media-icon.md`

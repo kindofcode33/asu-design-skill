@@ -140,7 +140,7 @@ All materials should reflect inclusion, equity and belonging (based on ASU Chart
 
 ## What This File Does Not Cover
 
-- Typography sizes and weights → load `typography.md`
-- Link styling and states → load `inline-links.md`
-- Button label rules → load `buttons.md`
-- Design philosophy and intent → load `design-philosophy.md`
+- Typography sizes and weights → load `token-typography.md`
+- Link styling and states → load `link-inline.md`
+- Button label rules → load `button.md`
+- Design philosophy and intent → load `guide-philosophy.md`

@@ -219,7 +219,7 @@ export default function SectionCta({
 
 ## What This File Does Not Cover
 
-- Card and Image (gradient overlay, no parallax) → load `card-and-image.md`
-- Hero sections (full-bleed, above the fold) → load `heroes.md`
-- Feature blocks (image + text side by side) → load `feature-block.md`
-- Button styling details → load `buttons.md`
+- Card and Image (gradient overlay, no parallax) → load `card-image-overlay.md`
+- Hero sections (full-bleed, above the fold) → load `hero.md`
+- Feature blocks (image + text side by side) → load `block-feature.md`
+- Button styling details → load `button.md`

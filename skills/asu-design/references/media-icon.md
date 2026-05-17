@@ -137,7 +137,7 @@ ASU Awesome **builds on Font Awesome Solid** and is the approved marketing icon 
 
 ## Icon Color Combinations
 
-Icons inherit color rules from `colors.md`. Approved background/icon color pairings:
+Icons inherit color rules from `token-color.md`. Approved background/icon color pairings:
 
 | Background | Icon Color | Tailwind Class |
 |---|---|---|
@@ -152,7 +152,7 @@ Icons inherit color rules from `colors.md`. Approved background/icon color pairi
 
 ### Icon Color Rules
 - Gold and maroon are not typically used as background colors — the combinations above apply specifically to cases where icons appear **on gold or maroon elements** such as buttons
-- Always follow the accessibility contrast requirements in `colors.md`
+- Always follow the accessibility contrast requirements in `token-color.md`
 - Never use gray-scale icon colors on maroon or gold backgrounds
 - Icon-only buttons always require `aria-label`
 
@@ -178,6 +178,6 @@ When a design task requires an icon, follow this order:
 
 ## What This File Does Not Cover
 
-- Typography sizing for icon labels → load `typography.md`
-- Button icon integration → load `buttons.md`
-- Spacing around icons → load `spacing.md`
+- Typography sizing for icon labels → load `token-typography.md`
+- Button icon integration → load `button.md`
+- Spacing around icons → load `token-spacing.md`

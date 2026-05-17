@@ -129,7 +129,7 @@ Both variants use a topographic line texture as a repeating background pattern b
 
 ## What This File Does Not Cover
 
-- Inline link styling details → load `inline-links.md`
-- Typography scale specs → load `typography.md`
-- Spacing and layout rules → load `spacing-layout.md`
+- Inline link styling details → load `link-inline.md`
+- Typography scale specs → load `token-typography.md`
+- Spacing and layout rules → load `token-spacing.md`
 - Color tokens → covered in the router (SKILL.md)

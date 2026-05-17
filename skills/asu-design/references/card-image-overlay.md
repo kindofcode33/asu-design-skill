@@ -150,7 +150,7 @@ export default function CardAndImage({
 
 ## What This File Does Not Cover
 
-- Hero sections (full-bleed, above the fold) → load `heroes.md`
-- Feature blocks (image + text side by side) → load `feature-block.md`
-- Button styling details → load `buttons.md`
-- Image sizing specs → load `images.md`
+- Hero sections (full-bleed, above the fold) → load `hero.md`
+- Feature blocks (image + text side by side) → load `block-feature.md`
+- Button styling details → load `button.md`
+- Image sizing specs → load `media-image.md`

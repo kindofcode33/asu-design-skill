@@ -33,7 +33,7 @@ This plugin is tuned for:
 | **shadcn/ui** | Strongly recommended | The bundled theme maps shadcn's semantic tokens (`--background`, `--card`, `--primary`, etc.) to ASU values, so `<Card>`, `<Button>`, `<Dialog>`, and other shadcn components automatically use ASU brand colors with no per-component overrides. |
 | **Next.js (App Router), Vite + React, or SvelteKit** | Primary tested frameworks | The `/asu-design-init` command auto-detects all three (CSS entry file and public asset directory). Other frameworks (Vue, Astro, Angular) work but you may need to specify paths manually. |
 | **Lucide React** | Recommended for React | Primary icon library for React projects per ASU iconography spec. Install: `npm install lucide-react` |
-| **Font Awesome Free** | Recommended for non-React | Used for utility/navigational icons in HTML, Vue, Svelte, etc. See `references/iconography.md` for usage rules. |
+| **Font Awesome Free** | Recommended for non-React | Used for utility/navigational icons in HTML, Vue, Svelte, etc. See `references/media-icon.md` for usage rules. |
 
 Works with plain HTML/CSS or other frameworks too — just not as automatically.
 
@@ -226,7 +226,7 @@ The theme isn't installed in your CSS yet. Run `/asu-design-init` in the project
 Run `/asu-design-init` **after** `shadcn init`. The ASU theme includes a `:root` block that overrides shadcn's default semantic tokens; if shadcn writes its own `:root` later, run the init again to restore ASU mappings.
 
 **I'm using Tailwind v3, not v4**
-The bundled theme uses Tailwind v4-only syntax (`@theme inline`). Either upgrade to Tailwind v4 or generate a v3-compatible `tailwind.config.js` from the token values manually — see `references/tailwind-v4-theme.md` for the migration table.
+The bundled theme uses Tailwind v4-only syntax (`@theme inline`). Either upgrade to Tailwind v4 or generate a v3-compatible `tailwind.config.js` from the token values manually — see `references/token-tailwind-theme.md` for the migration table.
 
 **ASU logos/backgrounds aren't showing up in my project**
 Run `/asu-design-init` — it copies brand images into `{public-dir}/asu/`. If you already ran it before this feature was added, run it again. Generated components reference images at `/asu/logos/...` and `/asu/backgrounds/...`.

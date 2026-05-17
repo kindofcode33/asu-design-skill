@@ -65,7 +65,7 @@ The Styles tab shows color options are available but the specific color swatches
 - Modal content block: **White background**
 - Overlay: **Dark semi-transparent backdrop** covering the full viewport
 - Close button: **50% opacity** at rest; **100% opacity** on hover
-- CTA button: follows standard button color rules from `buttons.md` — Maroon default
+- CTA button: follows standard button color rules from `button.md` — Maroon default
 
 ---
 
@@ -117,7 +117,7 @@ Two states for the modal component.
 ### CTA Button
 - Use **clear call-to-action buttons** — label must make the action obvious
 - CTA button is optional — include only when an action is required
-- Follow button rules from `buttons.md` — Maroon default, Gold for highest-priority action
+- Follow button rules from `button.md` — Maroon default, Gold for highest-priority action
 
 ### Close Controls
 - **Always provide multiple controls to close** the modal:
@@ -206,8 +206,8 @@ When adding a modal to a design:
 ## What This File Does Not Cover
 
 - Notification banners (less disruptive alerts) → load `notification-banners.md`
-- System alerts → load `system-alerts.md`
+- System alerts → load `alert-system.md`
 - Tooltip (lightweight info overlays) → load `tooltip.md`
-- Button rules for CTA inside modal → load `buttons.md`
-- Colors and contrast → load `colors.md`
-- Spacing inside modal content → load `spacing-layout.md`
+- Button rules for CTA inside modal → load `button.md`
+- Colors and contrast → load `token-color.md`
+- Spacing inside modal content → load `token-spacing.md`

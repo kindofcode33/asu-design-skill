@@ -114,6 +114,6 @@ export default function RelatedLinks({ heading = "Related Links", links }: Relat
 
 ## What This File Does Not Cover
 
-- Full sidebar navigation menus → load `sidebar-menu.md`
-- Inline link styling details → load `inline-links.md`
-- Page layout with sidebars → load `spacing-layout.md`
+- Full sidebar navigation menus → load `nav-sidebar.md`
+- Inline link styling details → load `link-inline.md`
+- Page layout with sidebars → load `token-spacing.md`

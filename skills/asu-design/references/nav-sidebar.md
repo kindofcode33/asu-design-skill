@@ -209,6 +209,6 @@ On mobile, the sidebar menu collapses to a dropdown select pattern:
 
 ## What This File Does Not Cover
 
-- Global header navigation → load `global-header.md`
-- Breadcrumbs → load `custom-patterns.md`
-- Tabbed panels (alternative for sectioned content) → load `tabbed-panel.md`
+- Global header navigation → load `header-global.md`
+- Breadcrumbs → load `pattern-custom.md`
+- Tabbed panels (alternative for sectioned content) → load `tab-panel.md`

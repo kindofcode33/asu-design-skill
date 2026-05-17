@@ -33,7 +33,7 @@ Four alert types — each has a fixed color and icon that **must never be altere
 ### Color Rules
 - Colors for system alerts are determined by the type of information being portrayed
 - Colors and icons **must never be altered** — they provide consistent meaning across asu.edu regardless of where users are on the domain
-- For specific color hex values → reference `colors.md` system colors section
+- For specific color hex values → reference `token-color.md` system colors section
 
 ---
 
@@ -206,5 +206,5 @@ When adding a system alert to a design:
 - Modal (for critical information requiring action before proceeding) → load `modal.md`
 - Notification banners → load `notification-banners.md`
 - Tooltip (lightweight hover info) → load `tooltip.md`
-- System color tokens → load `colors.md`
-- Spacing and positioning → load `spacing-layout.md`
+- System color tokens → load `token-color.md`
+- Spacing and positioning → load `token-spacing.md`

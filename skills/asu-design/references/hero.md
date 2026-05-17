@@ -12,7 +12,7 @@
 | Medium | `h-asu-hero-md` (512px = 64×8) | |
 | Small | `h-asu-hero-sm` (352px = 44×8) | |
 
-**Default is Large (`h-asu-hero-lg`)** unless a smaller size is explicitly requested. All three heights are aligned to the 8px grid; values are canonical in `tailwind-v4-theme.md`.
+**Default is Large (`h-asu-hero-lg`)** unless a smaller size is explicitly requested. All three heights are aligned to the 8px grid; values are canonical in `token-tailwind-theme.md`.
 
 ---
 
@@ -55,6 +55,6 @@ All hero sections use `flex items-end` to position content at the bottom of the 
 
 ## What This File Does Not Cover
 
-- Hero typography and text patterns → load `ui-patterns.md`
-- General image specs (file size, alt text) → load `images.md`
-- Spacing around hero sections → load `spacing-layout.md`
+- Hero typography and text patterns → load `pattern-page.md`
+- General image specs (file size, alt text) → load `media-image.md`
+- Spacing around hero sections → load `token-spacing.md`

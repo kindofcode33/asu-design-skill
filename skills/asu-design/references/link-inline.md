@@ -186,8 +186,8 @@ When adding a link to a design:
 
 ## What This File Does Not Cover
 
-- Button CTAs → load `buttons.md`
+- Button CTAs → load `button.md`
 - Grid link component → load `grid-link.md`
-- Color tokens and contrast rules → load `colors.md`
-- Typography sizing for link text → load `typography.md`
-- Icon classes for external link indicator → load `iconography.md`
+- Color tokens and contrast rules → load `token-color.md`
+- Typography sizing for link text → load `token-typography.md`
+- Icon classes for external link indicator → load `media-icon.md`

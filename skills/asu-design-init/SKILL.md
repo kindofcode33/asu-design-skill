@@ -175,7 +175,7 @@ These paths assume the init skill has been run. If the user has a non-standard s
 
 | Situation | Handling |
 |---|---|
-| Project uses Tailwind v3 | Tell the user this skill is for Tailwind v4 only. Point them to `references/tailwind-v4-theme.md` migration table. |
+| Project uses Tailwind v3 | Tell the user this skill is for Tailwind v4 only. Point them to `references/token-tailwind-theme.md` migration table. |
 | Project has no Tailwind at all | Tell the user to install Tailwind v4 first. Do not proceed. |
 | User is in a non-web project (e.g., Python, Go) | Tell the user this skill is for web projects. Do not proceed. |
 | Multiple candidate CSS files exist | List them, ask the user which is the entry point. |

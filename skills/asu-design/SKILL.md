@@ -5,7 +5,7 @@ description: Use when building, styling, or reviewing UI that should follow ASU 
 
 # ASU Design System — Router
 
-This skill provides the ASU Unity Design System tokens and component specifications. **All values (hex, px, rem, line-height) live in `references/tailwind-v4-theme.md`** — never hardcode values in generated code; always reference tokens by name. Component-specific details load on demand from reference files.
+This skill provides the ASU Unity Design System tokens and component specifications. **All values (hex, px, rem, line-height) live in `references/token-tailwind-theme.md`** — never hardcode values in generated code; always reference tokens by name. Component-specific details load on demand from reference files.
 
 ---
 
@@ -52,7 +52,7 @@ These govern every output regardless of component or format.
 
 ## Token Discipline
 
-**Never hardcode hex, px, or rem values in generated code.** Always reference tokens below by name. Token values (the actual hex/px/rem) are canonical in `assets/asu-theme.css` — for project setup, use the `/asu-design-init` slash command, which copies that asset into the project's CSS entry file. `references/tailwind-v4-theme.md` documents what's in the asset (load it only to explain or extend the token system).
+**Never hardcode hex, px, or rem values in generated code.** Always reference tokens below by name. Token values (the actual hex/px/rem) are canonical in `assets/asu-theme.css` — for project setup, use the `/asu-design-init` slash command, which copies that asset into the project's CSS entry file. `references/token-tailwind-theme.md` documents what's in the asset (load it only to explain or extend the token system).
 
 - Colors: `bg-asu-gold`, `text-asu-gray-1`, `border-asu-error`, etc.
 - Spacing: `p-asu-3`, `gap-asu-2`, `py-asu-9`, etc.
@@ -86,7 +86,7 @@ When generating ANY element — including new components not covered by the refe
 
 ### Layer 1: shadcn semantic tokens (default for new/generic UI)
 
-shadcn's semantic tokens are pre-mapped to ASU values in `tailwind-v4-theme.md`. When building generic UI surfaces (cards, modals, inputs, popovers, panels, neutral content), prefer these — the model gets ASU-correct colors automatically even without explicit ASU tokens.
+shadcn's semantic tokens are pre-mapped to ASU values in `token-tailwind-theme.md`. When building generic UI surfaces (cards, modals, inputs, popovers, panels, neutral content), prefer these — the model gets ASU-correct colors automatically even without explicit ASU tokens.
 
 | shadcn token | Resolves to | Use for |
 |---|---|---|
@@ -298,42 +298,42 @@ Load the appropriate reference file when the task involves these components:
 
 | Component | Reference File | Load When |
 |---|---|---|
-| Design Philosophy | `references/design-philosophy.md` | Any task involving tone, voice, audience framing, or the "why" behind a choice — including writing headlines/CTAs, choosing imagery, deciding what to lead with, or justifying a trade-off. Re-load when copy feels generic or when stuck between "refined" and "bold". |
-| Writing Style | `references/writing-style.md` | Generating UI strings — headlines, CTAs, body copy, labels — or formatting dates, times, phone numbers, capitalization. |
-| Global Header | `references/global-header.md` | Building the site-wide top chrome — ASU logo, university title, primary nav, utility bar. Load when adding the persistent header that appears across every page. |
-| Global Footer | `references/global-footer.md` | Building the site-wide bottom chrome — branded logo + social icons, gold utility links + ranking badge, legal/compliance bar. |
-| UI Patterns | `references/ui-patterns.md` | Starting a new content page, dividing a long page into labeled sections, or adding persistent in-page navigation/branding strips. Load before writing any `<h1>` or section-level `<h2>` to get the canonical scaffold. |
-| Cards | `references/cards.md` | Any contained content surface — cards, panels, stat blocks, repeating grid items, bordered boxes. Load when deciding how to group or contain a chunk of content. |
-| Content Cards | `references/content-card.md` | Text-only cards with heading, body copy, and maroon CTA button. Used in grids to present programs, resources, or topics without images. Fires on "content card", "text card", "card grid without images", or when building a row of simple resource/topic cards. |
-| Image Cards | `references/image-card.md` | Cards with a top image, icon + heading row, body copy, and arrow link. Used in grids to showcase research areas, programs, or topics with imagery. Fires on "image card", "card with image", "research card", or any card grid that pairs photos with content. |
-| shadcn/ui | `references/shadcn.md` | Initializing a project with shadcn/ui, generating any shadcn component, or fixing shadcn defaults to ASU standards (radius, focus rings, color tokens, font). Load before running `shadcn add` so generated output matches brand before you ship. |
-| Buttons | `references/buttons.md` | Adding any clickable action — primary CTAs, secondary actions, buttons with icons — or deciding between a button vs a text link. Load when scaffolding any interactive surface where a user needs to "do" something. |
-| Text Inputs | `references/text-input.md` | Adding any freeform data entry — text fields, text areas, date pickers, dropdowns — or implementing input validation and feedback states. Load when scaffolding forms, login screens, or anywhere the user types information. |
-| Checkboxes | `references/checkbox.md` | Adding multi-select form controls — checkboxes, option groups where users can pick zero, one, or many. Load when users choose from a list and can pick more than one. |
-| Inline Links | `references/inline-links.md` | Adding any text-embedded hyperlink, deciding "button vs link" for an action, or linking to external (non-asu.edu) URLs. |
+| Design Philosophy | `references/guide-philosophy.md` | Any task involving tone, voice, audience framing, or the "why" behind a choice — including writing headlines/CTAs, choosing imagery, deciding what to lead with, or justifying a trade-off. Re-load when copy feels generic or when stuck between "refined" and "bold". |
+| Writing Style | `references/guide-writing.md` | Generating UI strings — headlines, CTAs, body copy, labels — or formatting dates, times, phone numbers, capitalization. |
+| Global Header | `references/header-global.md` | Building the site-wide top chrome — ASU logo, university title, primary nav, utility bar. Load when adding the persistent header that appears across every page. |
+| Global Footer | `references/footer-global.md` | Building the site-wide bottom chrome — branded logo + social icons, gold utility links + ranking badge, legal/compliance bar. |
+| UI Patterns | `references/pattern-page.md` | Starting a new content page, dividing a long page into labeled sections, or adding persistent in-page navigation/branding strips. Load before writing any `<h1>` or section-level `<h2>` to get the canonical scaffold. |
+| Cards | `references/card.md` | Any contained content surface — cards, panels, stat blocks, repeating grid items, bordered boxes. Load when deciding how to group or contain a chunk of content. |
+| Content Cards | `references/card-content.md` | Text-only cards with heading, body copy, and maroon CTA button. Used in grids to present programs, resources, or topics without images. Fires on "content card", "text card", "card grid without images", or when building a row of simple resource/topic cards. |
+| Image Cards | `references/card-image.md` | Cards with a top image, icon + heading row, body copy, and arrow link. Used in grids to showcase research areas, programs, or topics with imagery. Fires on "image card", "card with image", "research card", or any card grid that pairs photos with content. |
+| shadcn/ui | `references/config-shadcn.md` | Initializing a project with shadcn/ui, generating any shadcn component, or fixing shadcn defaults to ASU standards (radius, focus rings, color tokens, font). Load before running `shadcn add` so generated output matches brand before you ship. |
+| Buttons | `references/button.md` | Adding any clickable action — primary CTAs, secondary actions, buttons with icons — or deciding between a button vs a text link. Load when scaffolding any interactive surface where a user needs to "do" something. |
+| Text Inputs | `references/form-text-input.md` | Adding any freeform data entry — text fields, text areas, date pickers, dropdowns — or implementing input validation and feedback states. Load when scaffolding forms, login screens, or anywhere the user types information. |
+| Checkboxes | `references/form-checkbox.md` | Adding multi-select form controls — checkboxes, option groups where users can pick zero, one, or many. Load when users choose from a list and can pick more than one. |
+| Inline Links | `references/link-inline.md` | Adding any text-embedded hyperlink, deciding "button vs link" for an action, or linking to external (non-asu.edu) URLs. |
 | Modals | `references/modal.md` | Deciding whether to interrupt the user with a blocking overlay — destructive action confirmations, required input collection, critical warnings. Load when "should this be a modal?" is the question, not just "how do I style this modal?" |
-| System Alerts | `references/system-alerts.md` | Showing the user that something happened — form validation results, system status changes, success/error feedback, time-sensitive notices. |
-| Tabbed Panels | `references/tabbed-panel.md` | Organizing related-but-supplementary content into alternating views within the same context. Load when "should this be tabs or stacked sections?" is the question, or when tempted to use tabs as top-level navigation. |
-| Related Links | `references/related-links.md` | A bordered block with a heading and vertical list of maroon links. Used as a sidebar or inline element for contextual cross-references. Fires on "related links", "sidebar links", "resource links", or any grouped link list within a page. |
-| Sidebar Menu | `references/sidebar-menu.md` | Building in-section wayfinding within a long page — vertical link lists for deep content or related-content navigation. Load when adding secondary navigation that complements (never replaces) the global header. |
+| System Alerts | `references/alert-system.md` | Showing the user that something happened — form validation results, system status changes, success/error feedback, time-sensitive notices. |
+| Tabbed Panels | `references/tab-panel.md` | Organizing related-but-supplementary content into alternating views within the same context. Load when "should this be tabs or stacked sections?" is the question, or when tempted to use tabs as top-level navigation. |
+| Related Links | `references/nav-related-links.md` | A bordered block with a heading and vertical list of maroon links. Used as a sidebar or inline element for contextual cross-references. Fires on "related links", "sidebar links", "resource links", or any grouped link list within a page. |
+| Sidebar Menu | `references/nav-sidebar.md` | Building in-section wayfinding within a long page — vertical link lists for deep content or related-content navigation. Load when adding secondary navigation that complements (never replaces) the global header. |
 | Data Tables | `references/table.md` | Presenting dense reference data in rows and columns — when the user needs to scan, compare, or look up values. Load when "should this be a table or a chart/list/stat blocks?" is the question, before defaulting to `<table>`. |
-| Icons | `references/iconography.md` | Choosing an icon — picking the library (Lucide React / Font Awesome Free / ASU Awesome) by context, selecting from pre-defined navigational/social/contact sets, or pairing icons with semantic content. |
-| Card and Image | `references/card-and-image.md` | Full-width background image section with a dark gradient overlay and an overlaid content card (heading, body, CTA). Fires on "card and image", "image with overlay card", "background image with card", or any layout with text card positioned over a large photo. |
+| Icons | `references/media-icon.md` | Choosing an icon — picking the library (Lucide React / Font Awesome Free / ASU Awesome) by context, selecting from pre-defined navigational/social/contact sets, or pairing icons with semantic content. |
+| Card and Image | `references/card-image-overlay.md` | Full-width background image section with a dark gradient overlay and an overlaid content card (heading, body, CTA). Fires on "card and image", "image with overlay card", "background image with card", or any layout with text card positioned over a large photo. |
 | Section CTA | `references/section-cta.md` | Full-width parallax background image with a white content card (heading, body, multiple CTA buttons). Fires on "section CTA", "parallax section", "CTA section with image", or any full-bleed image section with multiple action buttons overlaid. |
-| Feature Block | `references/feature-block.md` | Building a side-by-side image + text content block with heading, body copy, and optional CTA. Used for program highlights, research features, initiative callouts. Fires on "feature block", "image and text block", "side-by-side", or any paired image+content layout that isn't a hero or card. |
-| Heroes | `references/heroes.md` | Building any full-bleed top-of-page image-and-text composition, choosing above-the-fold imagery, or scaffolding a landing page. Fires on "hero", "banner", or any task involving a full-width image with overlaid text. |
-| Images | `references/images.md` | Choosing or specifying any image — file size limits, column-grid sizing, alt text, captions, or photography style (authentic ASU vs stock). Load before adding any image, especially when scaffolding placeholder visuals. |
-| Custom Patterns | `references/custom-patterns.md` | Adding wayfinding within a deep site hierarchy (breadcrumbs), surfacing institutional quotes or values statements at display scale, or building branded set-piece moments. |
-| Colors (usage rules) | `references/colors.md` | Resolving "is this combination allowed?" questions, applying system colors functionally, or applying contrast rules. |
-| Typography (extended) | `references/typography.md` | Applying gold/black text highlights, setting paragraph and heading spacing, auditing line length, or accessing the decision protocol for type. |
-| Spacing (extended) | `references/spacing-layout.md` | Handling section separator spacing, resolving max-width behavior, configuring the grid system, or accessing the decision protocol for layout. |
-| Tailwind v4 Theme | `references/tailwind-v4-theme.md` | Documentation for the token registry. **The canonical CSS lives in `assets/asu-theme.css`** — this markdown describes what's in it and why. Load when looking up token values, understanding the namespace system, or migrating from Tailwind v3. **For project bootstrap, use the `/asu-design-init` slash command** — it copies the canonical asset directly. |
+| Feature Block | `references/block-feature.md` | Building a side-by-side image + text content block with heading, body copy, and optional CTA. Used for program highlights, research features, initiative callouts. Fires on "feature block", "image and text block", "side-by-side", or any paired image+content layout that isn't a hero or card. |
+| Heroes | `references/hero.md` | Building any full-bleed top-of-page image-and-text composition, choosing above-the-fold imagery, or scaffolding a landing page. Fires on "hero", "banner", or any task involving a full-width image with overlaid text. |
+| Images | `references/media-image.md` | Choosing or specifying any image — file size limits, column-grid sizing, alt text, captions, or photography style (authentic ASU vs stock). Load before adding any image, especially when scaffolding placeholder visuals. |
+| Custom Patterns | `references/pattern-custom.md` | Adding wayfinding within a deep site hierarchy (breadcrumbs), surfacing institutional quotes or values statements at display scale, or building branded set-piece moments. |
+| Colors (usage rules) | `references/token-color.md` | Resolving "is this combination allowed?" questions, applying system colors functionally, or applying contrast rules. |
+| Typography (extended) | `references/token-typography.md` | Applying gold/black text highlights, setting paragraph and heading spacing, auditing line length, or accessing the decision protocol for type. |
+| Spacing (extended) | `references/token-spacing.md` | Handling section separator spacing, resolving max-width behavior, configuring the grid system, or accessing the decision protocol for layout. |
+| Tailwind v4 Theme | `references/token-tailwind-theme.md` | Documentation for the token registry. **The canonical CSS lives in `assets/asu-theme.css`** — this markdown describes what's in it and why. Load when looking up token values, understanding the namespace system, or migrating from Tailwind v3. **For project bootstrap, use the `/asu-design-init` slash command** — it copies the canonical asset directly. |
 
 ---
 
 ## Hard Rules — Never Violate
 
-**Tokens:** Never hardcode hex, px, or rem values in generated code. Always reference tokens by name. Values live in `tailwind-v4-theme.md` only.
+**Tokens:** Never hardcode hex, px, or rem values in generated code. Always reference tokens by name. Values live in `token-tailwind-theme.md` only.
 
 **Colors:** No gold text on white. No maroon background with gold text (fails WCAG contrast). No secondary colors without gold/maroon present. No system colors used decoratively. Never apply Maroon (light bg) or Gold (dark bg) to non-link text for emphasis — these colors are link semantics. For stats bars and impact numbers, use `bg-asu-gold` with `text-asu-gray-1` (black on gold) — never maroon+gold or maroon+white.
 

@@ -82,7 +82,7 @@ const buttonVariants = cva(
 )
 ```
 
-For button design rules (when to use gold vs maroon, icon rules, text rules) → load `buttons.md`.
+For button design rules (when to use gold vs maroon, icon rules, text rules) → load `button.md`.
 
 ---
 
@@ -150,8 +150,8 @@ After running `npx shadcn@latest add <component>`, verify and fix:
 
 ## What This File Does Not Cover
 
-- Button design rules beyond shadcn → load `buttons.md`
-- Card design patterns → load `cards.md`
+- Button design rules beyond shadcn → load `button.md`
+- Card design patterns → load `card.md`
 - Modal/dialog UX rules → load `modal.md`
-- Form input design → load `text-input.md`
+- Form input design → load `form-text-input.md`
 - Color token values → covered in the router (SKILL.md)

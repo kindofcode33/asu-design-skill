@@ -147,8 +147,8 @@ When adding an image to a design:
 
 ## What This File Does Not Cover
 
-- Hero images and hero sections → load `heroes.md`
-- Cards with images → load `cards.md`
-- Spacing around images → load `spacing-layout.md`
-- Maximum page width for background images → load `spacing-layout.md` (1920px max rule)
+- Hero images and hero sections → load `hero.md`
+- Cards with images → load `card.md`
+- Spacing around images → load `token-spacing.md`
+- Maximum page width for background images → load `token-spacing.md` (1920px max rule)
 - Carousel/slideshow images → load `carousel.md`

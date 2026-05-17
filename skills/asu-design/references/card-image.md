@@ -186,7 +186,7 @@ Always use `h-full` on each card so they stretch to equal height within the row.
 
 ## What This File Does Not Cover
 
-- Text-only cards (no image) → load `content-card.md`
-- Card surfaces and stat blocks → load `cards.md`
-- Feature blocks (image + text side by side) → load `feature-block.md`
-- Button styling details → load `buttons.md`
+- Text-only cards (no image) → load `card-content.md`
+- Card surfaces and stat blocks → load `card.md`
+- Feature blocks (image + text side by side) → load `block-feature.md`
+- Button styling details → load `button.md`

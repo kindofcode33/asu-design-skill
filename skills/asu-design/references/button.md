@@ -55,7 +55,7 @@ Four color options are available to fit light or dark backgrounds. All combos mu
 - **Maroon is the default color** — always start here unless there is a specific reason to deviate
 - **Gold is reserved for high-priority callouts only** — use sparingly; it signals the single most important action
 - When multiple CTAs are needed, make the primary CTA Gold and other CTAs text links
-- All color combinations must meet WCAG AA contrast — reference `colors.md`
+- All color combinations must meet WCAG AA contrast — reference `token-color.md`
 
 ---
 
@@ -197,8 +197,8 @@ When adding a button to a design:
 ## What This File Does Not Cover
 
 - Grid link component → load `grid-link.md`
-- Inline links → load `inline-links.md`
-- Icon selection and approved icon classes → load `iconography.md`
-- Color tokens and contrast rules → load `colors.md`
-- Spacing and padding scale → load `spacing-layout.md`
-- Typography for button labels → load `typography.md`
+- Inline links → load `link-inline.md`
+- Icon selection and approved icon classes → load `media-icon.md`
+- Color tokens and contrast rules → load `token-color.md`
+- Spacing and padding scale → load `token-spacing.md`
+- Typography for button labels → load `token-typography.md`

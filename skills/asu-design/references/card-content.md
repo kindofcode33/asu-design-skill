@@ -157,7 +157,7 @@ Always use `h-full` on each card so they stretch to equal height within the row.
 
 ## What This File Does Not Cover
 
-- Cards with images → load `cards.md`
-- Feature blocks (image + text side by side) → load `feature-block.md`
-- Button styling details → load `buttons.md`
-- Grid spacing → load `spacing-layout.md`
+- Cards with images → load `card.md`
+- Feature blocks (image + text side by side) → load `block-feature.md`
+- Button styling details → load `button.md`
+- Grid spacing → load `token-spacing.md`
