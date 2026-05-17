@@ -26,8 +26,9 @@ A Feature Block is a horizontal layout that pairs an image with a text content a
 | Property | Token / Value |
 |---|---|
 | Container | Full content width, `max-w-asu-content mx-auto` |
+| Border | `border-2 border-asu-gray-5 rounded-none` |
 | Direction | `flex flex-col md:flex-row` (stacks on mobile) |
-| Gap | `gap-asu-3` |
+| Gap | none (image and text sit flush within the border) |
 | Image width | `md:w-1/2` (50% on desktop) |
 | Text width | `md:w-1/2` (50% on desktop) |
 | Text padding | `p-asu-3` |
@@ -88,7 +89,7 @@ export default function FeatureBlock({
   imageRight = false,
 }: FeatureBlockProps) {
   return (
-    <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-asu-3`}>
+    <div className={`flex flex-col ${imageRight ? 'md:flex-row-reverse' : 'md:flex-row'} items-center border-2 border-asu-gray-5 rounded-none`}>
       <div className="w-full md:w-1/2">
         {imageSrc ? (
           <img
