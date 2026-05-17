@@ -43,19 +43,19 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 </a>
 ```
 
-### Icon Card
+### Icon Card (default for content cards)
 
-Card with an optional icon above the heading. Icon sits centered at the top of the card, followed by a heading, body copy, and optional CTA button.
+Content cards include a Lucide icon by default. The icon provides visual weight above the heading, followed by body copy and a CTA button.
 
 ```html
 <div class="bg-white p-asu-4 rounded-none border border-asu-gray-5 flex flex-col h-full">
-  <!-- Optional icon: 32x32, ASU black -->
-  <div class="mb-asu-2">
-    <svg class="w-8 h-8 text-asu-gray-1" aria-hidden="true"><!-- icon --></svg>
+  <!-- Icon: 32x32, ASU black, always included -->
+  <div class="mt-2 mb-6">
+    <svg class="w-8 h-8 text-asu-gray-1" aria-hidden="true"><!-- Lucide icon --></svg>
   </div>
   <h3 class="text-[1.5rem] font-bold text-asu-gray-1 leading-tight tracking-tight">Heading</h3>
   <p class="text-asu-body text-asu-gray-2 mt-asu-2">Short description of the card content.</p>
-  <a href="/path" class="inline-block mt-auto pt-asu-3 self-start">
+  <a href="/path" class="inline-block mt-auto pt-asu-5 pb-asu-2 self-start">
     <span class="bg-asu-maroon text-white font-bold rounded-full px-asu-3 py-asu-2 inline-block hover:scale-105 transition-transform">
       Explore program
     </span>
@@ -64,12 +64,16 @@ Card with an optional icon above the heading. Icon sits centered at the top of t
 ```
 
 **Icon rules:**
+- Always include a Lucide icon by default on content cards
 - Size: `w-8 h-8` (32px x 32px)
 - Color: `text-asu-gray-1` (ASU black)
-- Position: top of card, left-aligned, before the heading
-- `aria-hidden="true"` (icon is decorative, heading provides meaning)
+- Spacing: `mt-2 mb-6` (breathing room above and below)
+- Position: first element in card, above heading
+- `aria-hidden="true"` (decorative, heading provides meaning)
+- Choose an icon that represents the card's topic
 - ❌ Never make icons larger than 32x32 in cards
 - ❌ Never use maroon or gold for card icons
+- ❌ Never omit the icon unless explicitly told to
 
 ### Score / Stat Card
 
