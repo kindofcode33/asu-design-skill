@@ -37,7 +37,7 @@ The global footer is a full-width component at the bottom of every page. It cons
 | Content max-width | `max-w-asu-content`, centered |
 | Padding | `px-asu-3` |
 
-- **Left:** ASU horizontal white logo (`/logos/logos/asu-horizontal-white.svg`), `h-12` (48px), links to `https://www.asu.edu`
+- **Left:** ASU horizontal white logo (`/asu/logos/asu-horizontal-white.svg`), `h-12` (48px), links to `https://www.asu.edu`
 - **Right:** Social media icons
   - Container: `w-10 h-10` square, `bg-asu-gray-2`, no rounded corners
   - Icon: `w-7 h-7`, `fill="white"` (white SVG icon inside dark square)
@@ -62,7 +62,7 @@ The global footer is a full-width component at the bottom of every page. It cons
   - Gap: `gap-asu-2`
   - No underline by default; **underline on hover**
   - Links: "Maps and Locations", "Jobs", "Directory", "Contact ASU", "My ASU"
-- **Right:** Ranking badge image (`/logos/footer-rank.webp`), `h-8` (32px), links to `https://www.asu.edu/rankings`
+- **Right:** Ranking badge image (`/asu/logos/footer-rank.webp`), `h-[50px]` (50px tall, matching ASU.edu), links to `https://www.asu.edu/rankings`
 
 ---
 
@@ -92,7 +92,7 @@ export default function GlobalFooter() {
       <div className="bg-asu-gray-1 h-32">
         <div className="max-w-asu-content mx-auto px-asu-3 h-full flex items-center justify-between">
           <a href="https://www.asu.edu">
-            <img src="/logos/logos/asu-horizontal-white.svg" alt="Arizona State University." className="h-12 w-auto" />
+            <img src="/asu/logos/asu-horizontal-white.svg" alt="Arizona State University." className="h-12 w-auto" />
           </a>
           <nav aria-label="Social Media" className="flex items-center gap-asu-3">
             <a href="#" aria-label="Facebook" className="w-10 h-10 flex items-center justify-center bg-asu-gray-2 hover:bg-white/20 transition-colors">
@@ -122,7 +122,7 @@ export default function GlobalFooter() {
             <a href="#" className="text-asu-body text-asu-gray-1 font-bold no-underline hover:[text-decoration:underline]">My ASU</a>
           </nav>
           <a href="https://www.asu.edu/rankings">
-            <img src="/logos/footer-rank.webp" alt="Repeatedly ranked #1 on 30+ lists in the last 3 years" className="h-8 w-auto" />
+            <img src="/asu/logos/footer-rank.webp" alt="Repeatedly ranked #1 in innovation" className="h-[50px] w-auto" />
           </a>
         </div>
       </div>
