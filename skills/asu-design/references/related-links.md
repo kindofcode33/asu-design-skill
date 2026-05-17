@@ -25,9 +25,9 @@ A Related Links block is a simple bordered container with a heading and a vertic
 |---|---|
 | Container | `border border-asu-gray-4 rounded-none` |
 | Background | `bg-white` |
-| Heading | `text-asu-h4 font-bold text-asu-gray-1 p-asu-3 border-b border-asu-gray-4` |
+| Heading | `text-asu-h4 font-bold text-asu-gray-1 p-asu-3` (no border) |
 | Link container | `py-asu-3 px-asu-3 border-b border-asu-gray-4 last:border-b-0` |
-| Link style | `text-asu-body text-asu-maroon underline hover:no-underline` |
+| Link style | `text-asu-body text-asu-gray-1 no-underline hover:underline` |
 | Width | Flexible, typically `w-full` in a sidebar or `max-w-sm` inline |
 
 ---
@@ -43,7 +43,7 @@ interface RelatedLinksProps {
 export default function RelatedLinks({ heading = "Related Links", links }: RelatedLinksProps) {
   return (
     <div className="border border-asu-gray-4 rounded-none bg-white">
-      <h3 className="text-asu-h4 font-bold text-asu-gray-1 p-asu-3 border-b border-asu-gray-4">
+      <h3 className="text-asu-h4 font-bold text-asu-gray-1 p-asu-3">
         {heading}
       </h3>
       <nav aria-label={heading}>
@@ -54,7 +54,7 @@ export default function RelatedLinks({ heading = "Related Links", links }: Relat
           >
             <a
               href={link.href}
-              className="text-asu-body text-asu-maroon underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2"
+              className="text-asu-body text-asu-gray-1 no-underline hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-asu-gold focus-visible:ring-offset-2"
             >
               {link.label}
             </a>
@@ -106,7 +106,7 @@ export default function RelatedLinks({ heading = "Related Links", links }: Relat
 - ❌ Never use generic link text ("Click here", "Read more")
 - ❌ Never use dashes in link labels
 - ❌ Never omit the `<nav>` wrapper with `aria-label` for accessibility
-- ❌ Never use gold or other colors for links (always maroon on light backgrounds)
+- ❌ Never use maroon or gold for link text in this component (use black/gray-1)
 - ❌ Never remove the border separators between links
 
 ---
