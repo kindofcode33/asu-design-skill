@@ -9,7 +9,7 @@
       "name": "asu-design",
       "description": "ASU Unity Design System skill for Claude Code. Provides brand tokens, component specs, and implementation guidance for building ASU-branded interfaces.",
       "version": "1.0.0",
-      "source": "./",
+      "source": ".",
       "author": {
         "name": "Joel Longie"
       }

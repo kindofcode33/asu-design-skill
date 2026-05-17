@@ -2,16 +2,9 @@
   "name": "asu-design",
   "version": "1.0.0",
   "description": "ASU Unity Design System skill for Claude Code. Provides brand tokens, component specs, and implementation guidance for building ASU-branded interfaces.",
-  "skills": [
-    {
-      "name": "asu-design",
-      "description": "Use when building, styling, or reviewing UI that should follow ASU (Arizona State University) brand standards. Triggers on any mention of ASU branding, ASU design system, ASU colors, ASU components, or when creating web pages/components that need to follow the ASU Unity Design System.",
-      "path": "skills/asu-design/SKILL.md"
-    },
-    {
-      "name": "asu-design-init",
-      "description": "Bootstrap a project with the ASU Unity Design System by copying the canonical asu-theme.css into the project's CSS entry file and brand images into the public directory. Use when initializing a new ASU project, setting up Tailwind v4 with ASU tokens, remapping all ASU design tokens, or when the user types /asu-design-init. Triggers on phrases like \"initialize ASU theme\", \"set up ASU tokens\", \"bootstrap ASU design\", \"install ASU design system\", \"set up ASU design\".",
-      "path": "skills/asu-design-init/SKILL.md"
-    }
-  ]
+  "author": {
+    "name": "Joel Longie"
+  },
+  "repository": "https://github.com/kindofcode33/asu-design-skill",
+  "license": "MIT"
 }
