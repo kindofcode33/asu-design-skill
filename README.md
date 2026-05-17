@@ -69,19 +69,35 @@ git submodule add https://github.com/kindofcode33/asu-design-skill.git .claude/p
 
 ---
 
+## Quick start
+
+For Tailwind v4 projects, the fastest setup is one command:
+
+```
+/asu-design-init
+```
+
+This auto-detects your CSS entry file (Next.js `src/app/globals.css`, Vite `src/index.css`, etc.) and copies the canonical `asu-theme.css` into it. The asset bundles every ASU token (colors, typography, spacing, component dimensions) plus the shadcn semantic-token mappings — so `<Card>`, `<Button>`, `<DropdownMenu>`, and other shadcn components automatically pick up ASU brand values without per-component overrides.
+
+After init, the `asu-design` skill loads automatically when you ask Claude to build or style UI.
+
+---
+
 ## Setup after installation
 
 ### Step 1: Map design tokens to your CSS
 
-After installing the plugin, ask Claude to remap all ASU design tokens to your project's CSS framework. For Tailwind CSS projects this is streamlined — use a prompt like:
+The `/asu-design-init` slash command above handles this in one step. If you'd rather do it manually or you're not using Tailwind v4, ask Claude:
 
 ```
-Load the ASU design skill and remap all design tokens to Tailwind. Read every reference
-file and make sure all asu-* class names from the component markup resolve. Comprehensively
-map ALL tokens across all references.
+Load the ASU design skill and apply the canonical CSS theme to my project's globals.css.
 ```
 
-This generates your Tailwind theme config (or CSS custom properties) so that ASU color, spacing, and typography tokens work throughout your project.
+The canonical CSS lives at `skills/asu-design/assets/asu-theme.css` in this plugin. Direct copy works too:
+
+```bash
+cp <plugin-path>/skills/asu-design/assets/asu-theme.css <your-project>/src/app/globals.css
+```
 
 ### Step 2: Copy brand images to your project
 
@@ -120,20 +136,28 @@ Use https://images.unsplash.com/photo-<id>?w=800 for placeholder images.
 
 ## Usage
 
-The skill triggers automatically when Claude Code detects ASU-related UI work — mentions of ASU branding, ASU components, or requests to build pages/components following the ASU design system.
+This plugin ships **two skills** with distinct purposes:
 
-You can also invoke it explicitly:
+| Skill | Purpose | How to invoke |
+|---|---|---|
+| `asu-design` | Knowledge — ASU tokens, brand rules, component patterns, writing style. Loads automatically when Claude Code detects design/styling work. | `/asu-design` or any UI prompt that mentions ASU |
+| `asu-design-init` | Action — one-step project bootstrap. Copies the canonical `asu-theme.css` into your CSS entry file. | `/asu-design-init` or natural prompts like "set up ASU theme" |
 
-```
-/asu-design
-```
+Neither skill is always loaded — both activate only when their description matches your prompt, so they impose zero overhead on unrelated work.
 
-### Example prompts that activate the skill
+### Example prompts that activate the design skill
 
 - "Build a hero section for an ASU department page"
 - "Create a global header following ASU brand standards"
 - "Style this button using ASU design tokens"
 - "Review this component for ASU brand compliance"
+
+### Example prompts that activate the init skill
+
+- "/asu-design-init"
+- "Initialize this project with the ASU design system"
+- "Set up Tailwind with ASU tokens"
+- "Bootstrap the ASU theme"
 
 ---
 

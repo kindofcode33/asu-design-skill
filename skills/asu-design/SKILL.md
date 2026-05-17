@@ -52,7 +52,7 @@ These govern every output regardless of component or format.
 
 ## Token Discipline
 
-**Never hardcode hex, px, or rem values in generated code.** Always reference tokens below by name. Token values (the actual hex/px/rem) live in `references/tailwind-v4-theme.md` — load that file only when setting up a project's `@theme inline` block or troubleshooting why a token isn't generating a utility class.
+**Never hardcode hex, px, or rem values in generated code.** Always reference tokens below by name. Token values (the actual hex/px/rem) are canonical in `assets/asu-theme.css` — for project setup, use the `/asu-design-init` slash command, which copies that asset into the project's CSS entry file. `references/tailwind-v4-theme.md` documents what's in the asset (load it only to explain or extend the token system).
 
 - Colors: `bg-asu-gold`, `text-asu-gray-1`, `border-asu-error`, etc.
 - Spacing: `p-asu-3`, `gap-asu-2`, `py-asu-9`, etc.
@@ -301,7 +301,7 @@ Load the appropriate reference file when the task involves these components:
 | Colors (usage rules) | `references/colors.md` | Resolving "is this combination allowed?" questions, applying system colors functionally, or applying contrast rules. |
 | Typography (extended) | `references/typography.md` | Applying gold/black text highlights, setting paragraph and heading spacing, auditing line length, or accessing the decision protocol for type. |
 | Spacing (extended) | `references/spacing-layout.md` | Handling section separator spacing, resolving max-width behavior, configuring the grid system, or accessing the decision protocol for layout. |
-| Tailwind v4 Theme | `references/tailwind-v4-theme.md` | **Single source of token VALUES (hex, px, rem).** Load when setting up a new project's `@theme inline` block, mirroring tokens into CSS, configuring shadcn semantic tokens, troubleshooting why a utility isn't generating, or answering "what is the hex of `asu-gold`?" |
+| Tailwind v4 Theme | `references/tailwind-v4-theme.md` | Documentation for the token registry. **The canonical CSS lives in `assets/asu-theme.css`** — this markdown describes what's in it and why. Load when looking up token values, understanding the namespace system, or migrating from Tailwind v3. **For project bootstrap, use the `/asu-design-init` slash command** — it copies the canonical asset directly. |
 
 ---
 

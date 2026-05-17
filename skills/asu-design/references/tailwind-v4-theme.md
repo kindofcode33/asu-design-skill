@@ -1,16 +1,24 @@
-# ASU Tailwind v4 Theme — Complete `@theme inline` Configuration
+# ASU Tailwind v4 Theme — Documentation & Token Registry
 > Source: ASU Unity Design System (UDS) mapped to Tailwind CSS v4
 > Load this file when setting up a new project with Tailwind v4, running `shadcn init`, when the user asks to "remap all ASU design tokens to Tailwind", or when looking up the actual hex/px/rem value behind any ASU token.
 
-> **This file is the single canonical source for token VALUES (hex, px, rem, line-height, letter-spacing).** SKILL.md defines token *names* and *semantic roles*; this file defines what each token resolves to. If a model needs to know "what color is `asu-gold`?", load this file. For day-to-day component work, the model should never need to — it should be writing token names like `bg-asu-gold`, not literal hex.
+> **The canonical CSS lives in `../assets/asu-theme.css`.** That file is the single source of truth for all token values (hex, px, rem, line-height, letter-spacing). This document explains *what's in it and why*. SKILL.md defines token *names* and *semantic roles*; the asset file defines what each token resolves to.
+
+> **For project bootstrap, prefer the `/asu-design-init` slash command** — it copies `asu-theme.css` into your project's globals.css in one step. This file is for understanding and reference.
 
 ---
 
 ## Overview
 
-Tailwind v4 uses CSS-native `@theme inline` blocks instead of `tailwind.config.js`. All ASU tokens must be defined using the correct CSS custom property namespaces so that Tailwind generates the corresponding utility classes.
+Tailwind v4 uses CSS-native `@theme inline` blocks instead of `tailwind.config.js`. All ASU tokens are defined in `assets/asu-theme.css` using the correct CSS custom property namespaces so that Tailwind generates the corresponding utility classes.
 
-**After running `shadcn init -d`, replace the entire contents of `src/index.css` (or `app/globals.css` for Next.js) with the configuration below.**
+The asset file is structured in five sections:
+
+1. **`@theme inline`** — ASU brand tokens (colors, typography, spacing, dimensions, animations)
+2. **`:root`** — shadcn semantic token overrides (light mode) — all via `var(--color-asu-*)` references
+3. **`.dark`** — shadcn semantic token overrides (dark mode)
+4. **`@keyframes`** — animation definitions (fade-in, slide-alert)
+5. **`@layer base`** — reset styles using semantic tokens
 
 ---
 
@@ -24,292 +32,100 @@ Tailwind v4 uses CSS-native `@theme inline` blocks instead of `tailwind.config.j
 | `--text-*--line-height` | line-height paired with font-size | auto-applied with `text-asu-h1` |
 | `--text-*--letter-spacing` | letter-spacing paired with font-size | auto-applied with `text-asu-h1` |
 | `--spacing-*` | `p-*`, `m-*`, `gap-*`, `w-*`, `h-*` | `--spacing-asu-9` → `p-asu-9` |
-| `--container-*` | `max-w-*` | `--container-asu-content` → `max-w-asu-content` |
+| `--container-*` | `max-w-*`, `min-w-*` | `--container-asu-content` → `max-w-asu-content` |
 | `--animate-*` | `animate-*` | `--animate-fade-in` → `animate-fade-in` |
 | `--radius-*` | `rounded-*` | `--radius-sm` → `rounded-sm` |
 
-**IMPORTANT:** `--max-w-*` does NOT work in Tailwind v4. You must use `--container-*` for max-width utilities.
+**IMPORTANT:** `--max-w-*` does NOT work in Tailwind v4. You must use `--container-*` for max-width and min-width utilities.
 
 ---
 
-## Complete `@theme inline` Block
+## How to install in a new project
 
-Copy this entire block into the `@theme inline` section of your CSS file:
+### Recommended: `/asu-design-init` slash command
 
-```css
-@theme inline {
-    /* ===== ASU Brand Colors — Primary ===== */
-    --color-asu-maroon: #8C1D40;
-    --color-asu-gold: #FFC627;
-    --color-asu-rich-black: #000000;
-    --color-asu-white: #FFFFFF;
-
-    /* ===== ASU Brand Colors — Grayscale =====
-       Use asu-gray-1 through asu-gray-7 — never override Tailwind's default
-       gray-* scale, so `text-gray-500` etc. still resolves to Tailwind defaults
-       (not ASU colors). This keeps Tailwind's defaults predictable and forces
-       intentional use of ASU grays via the asu-gray-* namespace. */
-    --color-asu-gray-1: #191919;
-    --color-asu-gray-2: #484848;
-    --color-asu-gray-3: #747474;
-    --color-asu-gray-4: #BFBFBF;
-    --color-asu-gray-5: #D0D0D0;
-    --color-asu-gray-6: #E8E8E8;
-    --color-asu-gray-7: #FAFAFA;
-
-    /* ===== ASU System Colors (values canonical in SKILL.md) ===== */
-    --color-asu-error: #CC2F2F;
-    --color-asu-error-text-light: #B72A42;
-    --color-asu-error-text-dark: #FF7B8E;
-    --color-asu-error-bg: #F7DDDD;
-
-    --color-asu-warning: #BD4800;
-    --color-asu-warning-text-light: #8D4800;
-    --color-asu-warning-text-dark: #FFB034;
-    --color-asu-warning-bg: #FFEADE;
-
-    --color-asu-success: #446D12;
-    --color-asu-success-text: #446D12;
-    --color-asu-success-bg: #E9F5DB;
-
-    --color-asu-info: #126877;
-    --color-asu-info-text-blue: #008FF3;
-    --color-asu-info-bg: #D6F0FA;
-
-    /* Short aliases for system colors */
-    --color-error: #CC2F2F;
-    --color-error-text-light: #B72A42;
-    --color-error-text-dark: #FF7B8E;
-    --color-error-bg: #F7DDDD;
-    --color-warning: #BD4800;
-    --color-warning-text-light: #8D4800;
-    --color-warning-text-dark: #FFB034;
-    --color-warning-bg: #FFEADE;
-    --color-success: #446D12;
-    --color-success-text: #446D12;
-    --color-success-bg: #E9F5DB;
-    --color-info: #126877;
-    --color-info-text: #126877;
-    --color-info-bg: #D6F0FA;
-
-    /* ===== ASU Link Colors (Visited States) ===== */
-    --color-asu-visited-maroon: #440E22;
-    --color-asu-visited-gold: #D3A524;
-
-    /* ===== ASU Typography ===== */
-    --font-sans: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
-    --font-heading: Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
-    --font-asu: "Neue Haas Grotesk", Arial, Helvetica, "Nimbus Sans L", "Liberation Sans", FreeSans, sans-serif;
-
-    /* Heading scale */
-    --text-asu-h1-hero: clamp(36px, 5vw, 56px);
-    --text-asu-h1-hero--line-height: 1.1;
-    --text-asu-h1-hero--letter-spacing: -0.02em;
-
-    --text-asu-h1: 4rem;
-    --text-asu-h1--line-height: 4.25rem;
-    --text-asu-h1--letter-spacing: -0.035em;
-
-    --text-asu-h1-article: 3rem;
-    --text-asu-h1-article--line-height: 3.25rem;
-    --text-asu-h1-article--letter-spacing: -0.035em;
-
-    --text-asu-h1-mobile: 2.25rem;
-    --text-asu-h1-mobile--line-height: 2.5rem;
-    --text-asu-h1-mobile--letter-spacing: -0.035em;
-
-    --text-asu-h2: 2.5rem;
-    --text-asu-h2--line-height: 2.75rem;
-    --text-asu-h2--letter-spacing: -0.035em;
-
-    --text-asu-h2-mobile: 2rem;
-    --text-asu-h2-mobile--line-height: 2.125rem;
-    --text-asu-h2-mobile--letter-spacing: -0.035em;
-
-    --text-asu-h3: 1.5rem;
-    --text-asu-h3--line-height: 1.75rem;
-    --text-asu-h3--letter-spacing: -0.035em;
-
-    --text-asu-h4: 1.25rem;
-    --text-asu-h4--line-height: 1.625rem;
-    --text-asu-h4--letter-spacing: 0em;
-
-    --text-asu-h5: 1rem;
-    --text-asu-h5--line-height: 1.5rem;
-    --text-asu-h5--letter-spacing: 0em;
-
-    /* Body scale */
-    --text-asu-body-lg: 1.25rem;
-    --text-asu-body-lg--line-height: 1.75rem;
-
-    --text-asu-body: 1rem;
-    --text-asu-body--line-height: 1.5rem;
-
-    --text-asu-body-sm: 0.875rem;
-    --text-asu-body-sm--line-height: 1.125rem;
-
-    --text-asu-body-xs: 0.75rem;
-    --text-asu-body-xs--line-height: 1.125rem;
-
-    /* ===== ASU Spacing (8px base unit) ===== */
-    --spacing-asu-1: 8px;
-    --spacing-asu-2: 16px;
-    --spacing-asu-3: 24px;
-    --spacing-asu-4: 32px;
-    --spacing-asu-5: 40px;
-    --spacing-asu-6: 48px;
-    --spacing-asu-7: 56px;
-    --spacing-asu-8: 72px;
-    --spacing-asu-9: 96px;
-
-    /* ===== ASU Component-Specific Dimensions =====
-       UDS-specified component dimensions, all aligned to the 8px grid.
-       Use h-asu-hero-{lg,md,sm} for hero heights;
-       use max-w-asu-alert / max-w-asu-tab-max / min-w-asu-tab-min for component containers. */
-    --spacing-asu-hero-lg: 648px;   /* 81×8 — large hero, default */
-    --spacing-asu-hero-md: 512px;   /* 64×8 — medium hero */
-    --spacing-asu-hero-sm: 352px;   /* 44×8 — small hero */
-
-    /* ===== ASU Layout (max-widths) ===== */
-    /* CRITICAL: Use --container-* NOT --max-w-* for Tailwind v4 */
-    --container-asu-content: 1200px;
-    --container-asu-max: 1920px;
-    --container-asu-alert: 704px;     /* 88×8 — system alert max-w */
-    --container-asu-modal: 704px;     /* 88×8 — modal content block max-w */
-    --container-asu-tab-max: 688px;   /* 86×8 — tabbed-panel max-w (honors body line-length ≤700px) */
-    --container-asu-tab-min: 280px;   /* 35×8 — tabbed-panel min-w (honors body line-length ≥252px) */
-
-    /* ===== ASU Animations ===== */
-    --animate-fade-in: fade-in 0.1s linear;
-    --animate-slide-alert: slide-alert 0.5s cubic-bezier(0.19, 1, 0.19, 1);
-}
 ```
+/asu-design-init
+```
+
+The init skill auto-detects your CSS entry file (Next.js: `src/app/globals.css`, Vite: `src/index.css`, etc.), copies the canonical `asu-theme.css`, and reports what changed.
+
+### Manual: direct copy
+
+```bash
+cp <path-to-skill>/asu-design/assets/asu-theme.css <your-project>/src/app/globals.css
+# Or for Vite projects:
+cp <path-to-skill>/asu-design/assets/asu-theme.css <your-project>/src/index.css
+```
+
+Whatever you do, **never duplicate the token values into your project's CSS by hand**. Always copy the asset or include it. That's the whole point of the canonical-source architecture.
 
 ---
 
-## shadcn Semantic Token Overrides (`:root` block)
+## What's in the @theme inline block
 
-These map shadcn's semantic tokens to ASU values via `var()` references — so every shadcn component (`<Card>`, `<Button>`, `<Dialog>`, `<DropdownMenu>`, `<Sidebar>`, `<Chart>`, etc.) automatically picks up ASU brand values without per-component overrides. Place in `:root` after the `@theme inline` block:
+The asset file's `@theme inline { ... }` defines every ASU token. Categories:
 
-```css
-/* Every shadcn semantic token resolves through a var() reference to a canonical
-   asu-* token defined in @theme inline above. Update a value once there;
-   every shadcn-themed component picks it up. Never reintroduce hex literals here. */
+### Primary Colors
+`--color-asu-maroon` `--color-asu-gold` `--color-asu-rich-black` `--color-asu-white`
 
-:root {
-    --background: var(--color-asu-white);
-    --foreground: var(--color-asu-gray-1);
-    --card: var(--color-asu-white);
-    --card-foreground: var(--color-asu-gray-1);
-    --popover: var(--color-asu-white);
-    --popover-foreground: var(--color-asu-gray-1);
-    --primary: var(--color-asu-gold);
-    --primary-foreground: var(--color-asu-gray-1);
-    --secondary: var(--color-asu-maroon);
-    --secondary-foreground: var(--color-asu-white);
-    --muted: var(--color-asu-gray-6);
-    --muted-foreground: var(--color-asu-gray-3);
-    --accent: var(--color-asu-gray-7);
-    --accent-foreground: var(--color-asu-gray-1);
-    --destructive: var(--color-asu-error);
-    --border: var(--color-asu-gray-4);
-    --input: var(--color-asu-gray-4);
-    --ring: var(--color-asu-gold);
-    --chart-1: var(--color-asu-maroon);
-    --chart-2: var(--color-asu-gold);
-    --chart-3: var(--color-asu-gray-1);
-    --chart-4: var(--color-asu-gray-3);
-    --chart-5: var(--color-asu-gray-6);
-    --radius: 0rem;
-    --sidebar: var(--color-asu-gray-7);
-    --sidebar-foreground: var(--color-asu-gray-1);
-    --sidebar-primary: var(--color-asu-maroon);
-    --sidebar-primary-foreground: var(--color-asu-white);
-    --sidebar-accent: var(--color-asu-gray-6);
-    --sidebar-accent-foreground: var(--color-asu-gray-1);
-    --sidebar-border: var(--color-asu-gray-4);
-    --sidebar-ring: var(--color-asu-gold);
-}
+### Grayscale (`asu-gray-1` through `asu-gray-7`)
+Defined explicitly under the `asu-gray-*` namespace — does NOT override Tailwind's default gray scale.
 
-.dark {
-    --background: var(--color-asu-gray-1);
-    --foreground: var(--color-asu-gray-7);
-    --card: var(--color-asu-gray-2);
-    --card-foreground: var(--color-asu-gray-7);
-    --popover: var(--color-asu-gray-2);
-    --popover-foreground: var(--color-asu-gray-7);
-    --primary: var(--color-asu-gold);
-    --primary-foreground: var(--color-asu-gray-1);
-    --secondary: var(--color-asu-maroon);
-    --secondary-foreground: var(--color-asu-white);
-    --muted: var(--color-asu-gray-2);
-    --muted-foreground: var(--color-asu-gray-4);
-    --accent: var(--color-asu-gray-2);
-    --accent-foreground: var(--color-asu-gray-7);
-    --destructive: var(--color-asu-error-text-dark);
-    --border: var(--color-asu-gray-3);
-    --input: var(--color-asu-gray-3);
-    --ring: var(--color-asu-gold);
-    --chart-1: var(--color-asu-gold);
-    --chart-2: var(--color-asu-maroon);
-    --chart-3: var(--color-asu-gray-7);
-    --chart-4: var(--color-asu-gray-4);
-    --chart-5: var(--color-asu-gray-3);
-    --sidebar: var(--color-asu-gray-2);
-    --sidebar-foreground: var(--color-asu-gray-7);
-    --sidebar-primary: var(--color-asu-gold);
-    --sidebar-primary-foreground: var(--color-asu-gray-1);
-    --sidebar-accent: var(--color-asu-gray-3);
-    --sidebar-accent-foreground: var(--color-asu-gray-7);
-    --sidebar-border: var(--color-asu-gray-3);
-    --sidebar-ring: var(--color-asu-gold);
-}
-```
+### System Colors
+Error, Warning, Info, Success — each with default, background, and text-on-light/dark variants. Short aliases (`--color-error` etc.) provided for convenience.
+
+### Link Visited States
+`--color-asu-visited-maroon` (light bg), `--color-asu-visited-gold` (dark bg)
+
+### Typography
+- Font stacks: `--font-sans`, `--font-heading`, `--font-asu`
+- Heading scale: `--text-asu-h1-hero` (clamp scale), `--text-asu-h1`, `--text-asu-h1-article`, `--text-asu-h1-mobile`, `--text-asu-h2` (+ mobile), `--text-asu-h3`, `--text-asu-h4`, `--text-asu-h5`
+- Body scale: `--text-asu-body-lg`, `--text-asu-body`, `--text-asu-body-sm`, `--text-asu-body-xs`
+- Each `--text-*` has paired `--line-height` and `--letter-spacing` baked in
+
+### Spacing — 8px grid
+`--spacing-asu-1` (8px) through `--spacing-asu-9` (96px)
+
+### Component-Specific Dimensions (8px-aligned)
+- Hero heights: `--spacing-asu-hero-lg` (648), `--spacing-asu-hero-md` (512), `--spacing-asu-hero-sm` (352)
+- Component widths: `--container-asu-alert` (704), `--container-asu-modal` (704), `--container-asu-tab-max` (688), `--container-asu-tab-min` (280)
+
+### Layout
+`--container-asu-content` (1200px), `--container-asu-max` (1920px)
+
+### Animations
+`--animate-fade-in` (modal entry), `--animate-slide-alert` (alert entry)
 
 ---
 
-## Keyframe Animations
+## How shadcn semantic tokens map to ASU
 
-Place after the `:root` / `.dark` blocks:
+In the `:root` block (and parallel `.dark` block), every shadcn semantic token resolves through a `var(--color-asu-*)` reference. This means any shadcn component (`<Card>`, `<Button>`, `<Dialog>`, `<DropdownMenu>`, `<Sidebar>`, `<Chart>`, etc.) automatically picks up ASU brand values without per-component overrides.
 
-```css
-@keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+| shadcn token | Light mode | Dark mode |
+|---|---|---|
+| `--background` | `--color-asu-white` | `--color-asu-gray-1` |
+| `--foreground` | `--color-asu-gray-1` | `--color-asu-gray-7` |
+| `--card` | `--color-asu-white` | `--color-asu-gray-2` |
+| `--popover` | `--color-asu-white` | `--color-asu-gray-2` |
+| `--primary` | `--color-asu-gold` | `--color-asu-gold` |
+| `--secondary` | `--color-asu-maroon` | `--color-asu-maroon` |
+| `--muted` | `--color-asu-gray-6` | `--color-asu-gray-2` |
+| `--muted-foreground` | `--color-asu-gray-3` | `--color-asu-gray-4` |
+| `--accent` | `--color-asu-gray-7` | `--color-asu-gray-2` |
+| `--destructive` | `--color-asu-error` | `--color-asu-error-text-dark` |
+| `--border` / `--input` | `--color-asu-gray-4` | `--color-asu-gray-3` |
+| `--ring` | `--color-asu-gold` | `--color-asu-gold` |
+| `--radius` | `0rem` (sharp ASU edges) | `0rem` |
 
-@keyframes slide-alert {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-32px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
-}
-```
-
----
-
-## Base Layer
-
-```css
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground font-sans;
-    }
-}
-```
+Sidebar and chart palettes follow the same pattern. Update a value once in `@theme inline` and every shadcn component using a semantic token picks it up.
 
 ---
 
 ## Utility Class Quick Reference
 
-After applying the theme above, the following classes are available:
+After applying the theme, these classes are available:
 
 ### Colors
 `bg-asu-maroon`, `bg-asu-gold`, `bg-asu-rich-black`, `bg-asu-white`
@@ -326,6 +142,7 @@ After applying the theme above, the following classes are available:
 
 ### Typography
 `font-sans` (Arial stack), `font-asu` (Neue Haas Grotesk + Arial)
+`text-asu-h1-hero` (clamp scale — page-level heading)
 `text-asu-h1`, `text-asu-h1-article`, `text-asu-h1-mobile`
 `text-asu-h2`, `text-asu-h2-mobile`
 `text-asu-h3`, `text-asu-h4`, `text-asu-h5`
@@ -372,10 +189,12 @@ If a project uses `tailwind.config.js` (v3), these are the key differences:
 
 ## Hard Rules
 
+- ❌ Never edit token values in this markdown — values are canonical in `../assets/asu-theme.css`. Edit there.
 - ❌ Never use `--max-w-*` in Tailwind v4 — it does NOT generate `max-w-*` utilities. Always use `--container-*`.
 - ❌ Never use `var(--font-sans)` inside `@theme inline` for font — use literal font family names.
-- ❌ Never reintroduce `--color-asu-maroon` / `--color-asu-gold` / `--color-asu-gray-1` — those names were dual aliases and have been collapsed into the canonical `--color-asu-*` namespace.
+- ❌ Never reintroduce `--color-primary-maroon` / `--color-primary-gold` / `--color-primary-black` — those names were dual aliases and have been collapsed into the canonical `--color-asu-*` namespace.
 - ❌ Never override Tailwind's default gray scale by defining `--color-gray-50` through `--color-gray-700` — keep Tailwind defaults intact so `text-gray-500` (etc.) resolves to standard Tailwind, not ASU. Use `asu-gray-*` explicitly when ASU grays are needed.
 - ❌ Never leave shadcn's default `--radius` — set to `0rem` for ASU (sharp containers).
 - ❌ Never leave shadcn's default `--ring` — set via `var(--color-asu-gold)` for all focus rings.
 - ❌ Never reintroduce hex literals inside the `:root` or `.dark` blocks — every shadcn semantic token must resolve through a `var(--color-asu-*)` reference so values flow from `@theme inline`. One source, no drift.
+- ❌ Never hand-duplicate the token values into a project's CSS. Always copy/include the canonical asset file.
