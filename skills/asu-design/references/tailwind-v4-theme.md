@@ -1,6 +1,8 @@
 # ASU Tailwind v4 Theme — Complete `@theme inline` Configuration
 > Source: ASU Unity Design System (UDS) mapped to Tailwind CSS v4
-> Load this file when setting up a new project with Tailwind v4, running `shadcn init`, or when the user asks to "remap all ASU design tokens to Tailwind."
+> Load this file when setting up a new project with Tailwind v4, running `shadcn init`, when the user asks to "remap all ASU design tokens to Tailwind", or when looking up the actual hex/px/rem value behind any ASU token.
+
+> **This file is the single canonical source for token VALUES (hex, px, rem, line-height, letter-spacing).** SKILL.md defines token *names* and *semantic roles*; this file defines what each token resolves to. If a model needs to know "what color is `primary-gold`?", load this file. For day-to-day component work, the model should never need to — it should be writing token names like `bg-primary-gold`, not literal hex.
 
 ---
 
@@ -64,39 +66,40 @@ Copy this entire block into the `@theme inline` section of your CSS file:
     --color-asu-gray-6: #E8E8E8;
     --color-asu-gray-7: #FAFAFA;
 
-    /* ===== ASU System Colors ===== */
-    --color-asu-error: #CC2135;
+    /* ===== ASU System Colors (values canonical in SKILL.md) ===== */
+    --color-asu-error: #CC2F2F;
     --color-asu-error-text-light: #B72A42;
     --color-asu-error-text-dark: #FF7B8E;
-    --color-asu-error-bg: #FFDDE0;
+    --color-asu-error-bg: #F7DDDD;
 
     --color-asu-warning: #BD4800;
     --color-asu-warning-text-light: #8D4800;
     --color-asu-warning-text-dark: #FFB034;
     --color-asu-warning-bg: #FFEADE;
 
-    --color-asu-success-text: #446012;
+    --color-asu-success: #446D12;
+    --color-asu-success-text: #446D12;
     --color-asu-success-bg: #E9F5DB;
 
     --color-asu-info: #126877;
-    --color-asu-info-text-white: #0DB877;
     --color-asu-info-text-blue: #008FF3;
-    --color-asu-info-bg: #DEF0FA;
+    --color-asu-info-bg: #D6F0FA;
 
     /* Short aliases for system colors */
-    --color-error: #CC2135;
+    --color-error: #CC2F2F;
     --color-error-text-light: #B72A42;
     --color-error-text-dark: #FF7B8E;
-    --color-error-bg: #FFDDE0;
+    --color-error-bg: #F7DDDD;
     --color-warning: #BD4800;
     --color-warning-text-light: #8D4800;
     --color-warning-text-dark: #FFB034;
     --color-warning-bg: #FFEADE;
-    --color-success-text: #446012;
+    --color-success: #446D12;
+    --color-success-text: #446D12;
     --color-success-bg: #E9F5DB;
     --color-info: #126877;
     --color-info-text: #126877;
-    --color-info-bg: #DEF0FA;
+    --color-info-bg: #D6F0FA;
 
     /* ===== ASU Link Colors (Visited States) ===== */
     --color-asu-visited-maroon: #440E22;
@@ -197,7 +200,7 @@ These map shadcn's semantic tokens to ASU values. Place in `:root` after the `@t
     --muted-foreground: #747474;
     --accent: #FAFAFA;
     --accent-foreground: #191919;
-    --destructive: #CC2135;
+    --destructive: #CC2F2F;
     --border: #BFBFBF;
     --input: #BFBFBF;
     --ring: #FFC627;

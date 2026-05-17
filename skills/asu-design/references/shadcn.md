@@ -61,12 +61,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:     "bg-gray-200 text-gray-700 hover:scale-105 hover:shadow-md",
+        default:     "bg-primary-maroon text-white hover:scale-105 hover:shadow-md",
         gold:        "bg-primary-gold text-primary-black hover:scale-105 hover:shadow-md",
         maroon:      "bg-primary-maroon text-white hover:scale-105 hover:shadow-md",
         dark:        "bg-primary-black text-white hover:scale-105 hover:shadow-md",
-        outline:     "border border-gray-300 text-gray-700 hover:scale-105",
-        destructive: "border border-error text-error hover:scale-105",
+        outline:     "border border-asu-gray-4 text-asu-gray-1 hover:scale-105",
+        destructive: "border border-asu-error text-asu-error hover:scale-105",
         ghost:       "text-primary-maroon hover:text-primary-black hover:bg-transparent",
         link:        "text-primary-maroon underline hover:no-underline",
       },

@@ -109,12 +109,12 @@ Both animations fire at the same time from the top of the page.
 <!-- Alert / Warning — orange -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
             w-full max-w-[700px] mx-4
-            bg-[#FFEADE] border border-[#8D4800] rounded px-4 py-3
+            bg-asu-warning-bg border border-asu-warning-text-light rounded-none px-4 py-3
             flex items-start gap-3
             animate-[slideAlert_0.5s_cubic-bezier(.19,1,.19,1)]">
-  <i class="fa fa-bell text-[#8D4800] mt-0.5 flex-shrink-0"></i>
-  <p class="text-[#8D4800] text-asu-body flex-1">Alert message text here.</p>
-  <button class="text-[#8D4800] opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
+  <i class="fa fa-bell text-asu-warning-text-light mt-0.5 flex-shrink-0"></i>
+  <p class="text-asu-warning-text-light text-asu-body flex-1">Alert message text here.</p>
+  <button class="text-asu-warning-text-light opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
     <i class="fa fa-times"></i>
   </button>
 </div>
@@ -122,9 +122,9 @@ Both animations fire at the same time from the top of the page.
 <!-- Information — blue -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
             w-full max-w-[700px] mx-4
-            bg-[#DEF0FA] border border-[#008OF3] rounded px-4 py-3
+            bg-asu-info-bg border border-asu-info rounded-none px-4 py-3
             flex items-start gap-3">
-  <i class="fa fa-info-circle text-[#008OF3] mt-0.5 flex-shrink-0"></i>
+  <i class="fa fa-info-circle text-asu-info mt-0.5 flex-shrink-0"></i>
   <p class="text-asu-gray-1 text-asu-body flex-1">Information message text here.</p>
   <button class="text-asu-gray-1 opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
     <i class="fa fa-times"></i>
@@ -134,11 +134,11 @@ Both animations fire at the same time from the top of the page.
 <!-- Success — green -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
             w-full max-w-[700px] mx-4
-            bg-[#E9F009] border border-[#446012] rounded px-4 py-3
+            bg-asu-success-bg border border-asu-success rounded-none px-4 py-3
             flex items-start gap-3">
-  <i class="fa fa-check-circle text-[#446012] mt-0.5 flex-shrink-0"></i>
-  <p class="text-[#446012] text-asu-body flex-1">Success message text here.</p>
-  <button class="text-[#446012] opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
+  <i class="fa fa-check-circle text-asu-success mt-0.5 flex-shrink-0"></i>
+  <p class="text-asu-success text-asu-body flex-1">Success message text here.</p>
+  <button class="text-asu-success opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
     <i class="fa fa-times"></i>
   </button>
 </div>
@@ -146,11 +146,11 @@ Both animations fire at the same time from the top of the page.
 <!-- Error — red -->
 <div class="fixed top-8 left-1/2 -translate-x-1/2 z-50
             w-full max-w-[700px] mx-4
-            bg-[#FFDDE0] border border-[#CC2135] rounded px-4 py-3
+            bg-asu-error-bg border border-asu-error rounded-none px-4 py-3
             flex items-start gap-3">
-  <i class="fa fa-exclamation-triangle text-[#CC2135] mt-0.5 flex-shrink-0"></i>
-  <p class="text-[#CC2135] text-asu-body flex-1">Error message text here.</p>
-  <button class="text-[#CC2135] opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
+  <i class="fa fa-exclamation-triangle text-asu-error mt-0.5 flex-shrink-0"></i>
+  <p class="text-asu-error text-asu-body flex-1">Error message text here.</p>
+  <button class="text-asu-error opacity-70 hover:opacity-100 transition-opacity ml-2 flex-shrink-0">
     <i class="fa fa-times"></i>
   </button>
 </div>

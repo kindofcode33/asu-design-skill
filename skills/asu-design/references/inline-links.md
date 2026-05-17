@@ -38,21 +38,23 @@ Links to pages that are **not on an asu.edu domain** must always include the "op
 
 Four color tokens cover the full link and visited-link states across light and dark backgrounds.
 
-| Token | Hex | RGB | Use |
-|---|---|---|---|
-| Link \| Gold | `#FFC627` | rgb(255, 198, 39) | Default link on dark backgrounds |
-| Visited link \| Gold | `#D3A524` | rgb(211, 165, 36) | Visited link on dark backgrounds |
-| Link \| Maroon | `#8C1D40` | rgb(140, 29, 64) | Default link on light backgrounds |
-| Visited link \| Maroon | `#440E22` | rgb(68, 14, 34) | Visited link on light backgrounds |
+| Token | Use |
+|---|---|
+| `text-asu-gold` / `text-primary-gold` | Default link on dark backgrounds |
+| `text-asu-visited-gold` | Visited link on dark backgrounds |
+| `text-asu-maroon` / `text-primary-maroon` | Default link on light backgrounds |
+| `text-asu-visited-maroon` | Visited link on light backgrounds |
+
+Token hex values are canonical in `SKILL.md`.
 
 ### Color by Background
 
 | Background | Default Link | Visited Link |
 |---|---|---|
-| White | Maroon `#8C1D40` | Visited Maroon `#440E22` |
-| Gray7 `#FAFAFA` | Maroon `#8C1D40` | Visited Maroon `#440E22` |
-| Gray6 `#E8E8E8` | Maroon `#8C1D40` | Visited Maroon `#440E22` |
-| Gray1 / Black `#191919` | Gold `#FFC627` | Visited Gold `#D3A524` |
+| White | `text-asu-maroon` | `text-asu-visited-maroon` |
+| `bg-asu-gray-7` | `text-asu-maroon` | `text-asu-visited-maroon` |
+| `bg-asu-gray-6` | `text-asu-maroon` | `text-asu-visited-maroon` |
+| `bg-asu-gray-1` | `text-asu-gold` | `text-asu-visited-gold` |
 
 ---
 
@@ -97,13 +99,13 @@ Five states define the full interaction lifecycle of an inline link.
 ```html
 <!-- Default inline link — light background (Maroon) -->
 <a href="#"
-   class="text-asu-maroon underline hover:no-underline visited:text-[#440E22] focus:bg-asu-maroon focus:text-white transition-colors">
+   class="text-asu-maroon underline hover:no-underline visited:text-asu-visited-maroon focus:bg-asu-maroon focus:text-white transition-colors">
   Link text
 </a>
 
 <!-- Default inline link — dark background (Gold) -->
 <a href="#"
-   class="text-asu-gold underline hover:no-underline visited:text-[#D3A524] focus:bg-asu-gold focus:text-asu-gray-1 transition-colors">
+   class="text-asu-gold underline hover:no-underline visited:text-asu-visited-gold focus:bg-asu-gold focus:text-asu-gray-1 transition-colors">
   Link text
 </a>
 
@@ -111,7 +113,7 @@ Five states define the full interaction lifecycle of an inline link.
 <a href="https://external-site.com"
    target="_blank"
    rel="noopener noreferrer"
-   class="text-asu-maroon underline hover:no-underline visited:text-[#440E22] focus:bg-asu-maroon focus:text-white transition-colors inline-flex items-center gap-1">
+   class="text-asu-maroon underline hover:no-underline visited:text-asu-visited-maroon focus:bg-asu-maroon focus:text-white transition-colors inline-flex items-center gap-1">
   Link text <i class="fa fa-external-link-alt text-xs"></i>
 </a>
 
@@ -119,7 +121,7 @@ Five states define the full interaction lifecycle of an inline link.
 <a href="https://external-site.com"
    target="_blank"
    rel="noopener noreferrer"
-   class="text-asu-gold underline hover:no-underline visited:text-[#D3A524] focus:bg-asu-gold focus:text-asu-gray-1 transition-colors inline-flex items-center gap-1">
+   class="text-asu-gold underline hover:no-underline visited:text-asu-visited-gold focus:bg-asu-gold focus:text-asu-gray-1 transition-colors inline-flex items-center gap-1">
   Link text <i class="fa fa-external-link-alt text-xs"></i>
 </a>
 ```

@@ -42,12 +42,12 @@ Three sizes are available. Minimum widths must always be respected.
 
 Four color options are available to fit light or dark backgrounds. All combos must follow accessibility standards.
 
-| Color | Hex | Default Text | Use Case |
+| Color | Token | Default Text | Use Case |
 |---|---|---|---|
-| Maroon | `#8C1D40` | White | **Default color** — standard actions |
-| Gold | `#FFC627` | Gray1 `#191919` | **High-priority CTAs only** — use sparingly |
-| Black | `#191919` | White | Dark-themed contexts |
-| Gray | `#E8E8E8` | Gray1 `#191919` | Low-emphasis or secondary actions |
+| Maroon | `bg-primary-maroon` | White | **Default color** — standard actions |
+| Gold | `bg-primary-gold` | `text-asu-gray-1` | **High-priority CTAs only** — use sparingly |
+| Black | `bg-asu-gray-1` | White | Dark-themed contexts |
+| Gray | `bg-asu-gray-6` | `text-asu-gray-1` | Low-emphasis or secondary actions |
 
 ### Color Rules
 - **Maroon is the default color** — always start here unless there is a specific reason to deviate

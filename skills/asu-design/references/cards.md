@@ -45,10 +45,12 @@ Cards and all containers use **zero border radius**. No rounded corners on any c
 
 ### Score / Stat Card
 
+Number leads, label follows. Number is the headline, not the supporting copy — give it weight and scale relative to the label.
+
 ```html
-<div class="bg-white p-4 rounded-none border border-gray-200 text-center">
+<div class="bg-white p-4 rounded-none border border-gray-200">
   <div class="text-2xl font-black text-primary-black">86%</div>
-  <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Score</div>
+  <div class="text-xs font-bold text-gray-500">Score</div>
 </div>
 ```
 

@@ -65,7 +65,7 @@ All materials should reflect inclusion, equity and belonging (based on ASU Chart
 - Always lowercase: asu.edu, amazon.com
 
 ### All-Caps Rule
-**Never use all-caps for any text in UI.** The only permitted exception is small uppercase context labels (`text-xs uppercase tracking-wider`) used as section category markers.
+**Never use all-caps for any text in UI.** This is absolute — no exceptions for eyebrow labels, context labels, or section category markers. Never apply `uppercase` (or use `tracking-wider` as a shortcut to fake small-caps). Use sentence case at the appropriate type size instead.
 
 ---
 
@@ -81,7 +81,6 @@ All materials should reflect inclusion, equity and belonging (based on ASU Chart
 - Sentence case always
 - Use figures for all numerals, including those less than 10 (✅ "5 ASU students win...")
 - Do not use periods/dots at end, even after a complete sentence
-- If uppercase marks needed, use small-caps (never full uppercase)
 
 ### Links and URLs in Copy
 - ✅ "asu.edu" — ❌ "ASU.edu" or "https://www.asu.edu"

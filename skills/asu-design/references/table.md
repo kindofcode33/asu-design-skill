@@ -44,7 +44,7 @@ Three layout variants — default plus two optional locked-header configurations
 | State | Visual |
 |---|---|
 | Default row | White background |
-| Hovered row | Background changes to **Gray6** `#E8E8E8` |
+| Hovered row | Background changes to `bg-asu-gray-6` |
 | Header row | Darker background (system-defined, not alterable) |
 | Hovered with scrollable content | **72% opacity shadow** + icon button overlay appears |
 

@@ -87,18 +87,18 @@ Colors for text input fields are **predetermined and cannot be altered**. Set ac
 | Background | Behavior |
 |---|---|
 | White | Default input styling |
-| Gray7 `#FAFAFA` | Default input styling |
-| Gray6 `#E8E8E8` | Default input styling |
-| Gray1 / Black `#191919` | Inverted input styling for dark backgrounds |
+| `bg-asu-gray-7` | Default input styling |
+| `bg-asu-gray-6` | Default input styling |
+| `bg-asu-gray-1` | Inverted input styling for dark backgrounds |
 
 ### State Colors
-| State | Visual |
+| State | Token |
 |---|---|
-| Focused border | Gray1 `#191919` |
-| Success bar | Green `#446012` — appears underneath the field |
-| Error bar | Red `#CC2135` — appears underneath the field |
-| Disabled background | Gray6 `#E8E8E8` |
-| Disabled label | Gray3 `#747474` (ASU Gray) |
+| Focused border | `border-primary-gold` (with gold focus ring) |
+| Success bar | `bg-asu-success` — appears underneath the field |
+| Error bar | `bg-asu-error` — appears underneath the field |
+| Disabled background | `bg-asu-gray-6` |
+| Disabled label | `text-asu-gray-3` (ASU Gray) |
 
 ---
 
@@ -204,10 +204,10 @@ Helper text appears inside the input field as placeholder guidance. Two uses:
   <input
     type="text"
     placeholder="Helper text"
-    class="w-full border border-asu-gray-4 rounded px-3 py-2
+    class="w-full border border-asu-gray-4 rounded-none px-3 py-2
            text-asu-gray-1 text-asu-body bg-white
            placeholder:text-asu-gray-3
-           focus:outline-none focus:border-2 focus:border-asu-gray-1
+           focus:outline-none focus:border-primary-gold focus:ring-2 focus:ring-primary-gold/10
            disabled:bg-asu-gray-6 disabled:text-asu-gray-3 disabled:cursor-not-allowed"
   />
 
@@ -231,9 +231,9 @@ Helper text appears inside the input field as placeholder guidance. Two uses:
     <input
       type="date"
       placeholder="Helper text"
-      class="w-full border border-asu-gray-4 rounded px-3 py-2 pr-10
+      class="w-full border border-asu-gray-4 rounded-none px-3 py-2 pr-10
              text-asu-gray-1 text-asu-body bg-white
-             focus:outline-none focus:border-2 focus:border-asu-gray-1"
+             focus:outline-none focus:border-primary-gold focus:ring-2 focus:ring-primary-gold/10"
     />
     <i class="fa fa-calendar absolute right-3 top-1/2 -translate-y-1/2 text-asu-gray-3 pointer-events-none"></i>
   </div>

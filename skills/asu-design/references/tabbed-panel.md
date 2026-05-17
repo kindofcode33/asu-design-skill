@@ -45,14 +45,14 @@ Four background color options — tabs adapt to the page background.
 | Background | Tab styling |
 |---|---|
 | White | Default tab styling |
-| Gray7 `#FAFAFA` | Default tab styling |
-| Gray6 `#E8E8E8` | Default tab styling |
-| Gray1 / Black `#191919` | Inverted tab styling for dark backgrounds |
+| `bg-asu-gray-7` | Default tab styling |
+| `bg-asu-gray-6` | Default tab styling |
+| `bg-asu-gray-1` | Inverted tab styling for dark backgrounds |
 
 ### Active Tab Indicator
-- Active tab label: **ASU Maroon** `#8C1D40`
-- Active tab underline: **ASU Maroon** `#8C1D40` — appears below the active tab label
-- Inactive tab labels: Gray1 (light backgrounds) or White (dark backgrounds)
+- Active tab label: `text-asu-maroon`
+- Active tab underline: `border-b-2 border-asu-maroon` — appears below the active tab label
+- Inactive tab labels: `text-asu-gray-1` (light backgrounds) or `text-white` (dark backgrounds)
 
 ---
 

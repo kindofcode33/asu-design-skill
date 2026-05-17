@@ -63,8 +63,8 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 
 - **Section container:** Full width, `py-12 md:py-24`, with optional repeating background image
 - **Content container:** `max-w-[1200px] mx-auto px-6 md:px-8`
-- **Eyebrow label:** `text-sm font-semibold text-primary-black tracking-wider mb-4`
-- **Quote text:** `text-[clamp(32px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black` — same scale as Hero H1
+- **Eyebrow label:** `text-sm font-bold text-primary-black mb-4` — sentence case, never `uppercase` or `tracking-wider`
+- **Quote text:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black` — Hero H1 scale (display moment, see "Semantic structure first" in SKILL.md)
 - **Gold highlights:** Key phrases wrapped in `<span class="bg-primary-gold px-1">` — draws attention to the most important words
 - **Attribution:** `text-sm text-gray-600 mt-6` — source with optional link
 
@@ -82,8 +82,8 @@ A full-width typographic statement used to surface key institutional quotes (e.g
 <section class="py-12 md:py-24"
   style="background-image: url(/backgrounds/topographic-texture.png); background-repeat: repeat;">
   <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-    <p class="text-sm font-semibold text-primary-black tracking-wider mb-4">The ASU difference:</p>
-    <h2 class="text-[clamp(32px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black">
+    <p class="text-sm font-bold text-primary-black mb-4">The ASU difference:</p>
+    <h2 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black">
       We are measured not by whom we exclude, but by
       <span class="bg-primary-gold px-1">whom we include</span> and
       <span class="bg-primary-gold px-1">how they succeed</span>

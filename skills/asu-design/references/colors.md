@@ -1,103 +1,83 @@
-# ASU Color System — Extended Reference
+# ASU Color — Usage Rules & Combinations
 > Source: ASU Unity Design System (UDS) — ZeroHeight brand guide
-> **Note:** Primary colors, grayscale hex/tokens, system color summary, and approved combinations are already in the router (SKILL.md). This file covers: RGB values, extended system color variants, usage proportions, prohibited combinations detail, and full Tailwind config.
+> **Token names and semantic roles are canonical in `SKILL.md`. Actual hex/RGB values are canonical in `references/tailwind-v4-theme.md`.** This file holds usage rules, approved/prohibited combinations, and decision protocols only — never values.
 
 ---
 
-## Primary Color Details
+## Source of Truth
 
-> Hex values and tokens are in the router. This section adds RGB and usage rules.
+- **Token names + roles** (what to use, what it's for) → `SKILL.md`
+- **Token values** (hex, RGB, what each token resolves to) → `references/tailwind-v4-theme.md`
 
-| Name | RGB | Notes |
-|---|---|---|
-| ASU Maroon | rgb(140, 29, 64) | Do not use as large background fill |
-| ASU Gold | rgb(255, 198, 39) | Do not use as large background fill |
-| ASU Rich Black | rgb(0, 0, 0) | Avoid for text — use Gray1 instead |
-| ASU White | rgb(255, 255, 255) | — |
+Color tokens covered by the canonical sources:
+- **Primary:** `primary-maroon`, `primary-gold`, `primary-black`, `asu-white`, `asu-rich-black`
+- **Grayscale:** `asu-gray-1` through `asu-gray-7`
+- **System:** `asu-error`, `asu-warning`, `asu-info`, `asu-success` (+ `-bg` and `-text-light`/`-text-dark` variants)
+- **Link visited:** `asu-visited-maroon`, `asu-visited-gold`
 
-### Primary Color Rules
+Reference tokens by name in code. Never duplicate values in this file.
+
+---
+
+## Color Usage Rules
+
+### Primary Colors
 - Approved uses for maroon/gold: buttons, callouts, accents, borders, icons
-- Rich Black (`#000000`) should be avoided for text — use Gray1 instead
+- Maroon and gold must **not** be used as large background fills
+- Rich Black (`asu-rich-black`) should be avoided for text — use Gray1 (`asu-gray-1`) instead
 
----
-
-## Secondary Colors
-
+### Secondary Colors
 Secondary colors should be used **sparingly in digital use**. They must **not** be used for illustrations, graphics, or other supporting graphic elements.
 
-> No specific secondary color hex values were specified in this reference capture. Load secondary color values from the full brand guide before using.
+> Secondary color hex values are not yet captured in the canonical token registry. Reference the full UDS brand guide before using.
 
----
+### Grayscale Constraints
 
-## Grayscale — Extended Usage Rules
-
-> Hex values and basic usage are in the router. This section adds RGB values and detailed constraints.
-
-| Name | RGB | Constraint detail |
-|---|---|---|
-| Gray1 | rgb(25, 25, 25) | Use in lieu of black for text |
-| Gray2 | rgb(72, 72, 72) | Accessible on white; not for text on color blocks; not on dark backgrounds |
-| Gray3 | rgb(116, 116, 116) | **ASU Gray** — primary gray; accessible on white; not for text on color blocks; not on dark backgrounds |
-| Gray4 | rgb(191, 191, 191) | Not for text use |
-| Gray5 | rgb(208, 208, 208) | For use on dark backgrounds only; not for text use |
-| Gray6 | rgb(232, 232, 232) | Section background color use only; not for text use |
-| Gray7 | rgb(250, 250, 250) | Use in lieu of white text |
-
----
-
-## System Colors — Full Variants
-
-> The router has a summary table (default + background per state). This section adds all sub-variants for implementation.
-
-### Error
-| Name | Hex | RGB |
-|---|---|---|
-| Error | `#CC2135` | rgb(204, 33, 47) |
-| Error / Text on light | `#B72A42` | rgb(183, 42, 66) |
-| Error / Text on dark | `#FF7B8E` | rgb(255, 123, 142) |
-| Error / Background | `#FFDDE0` | rgb(247, 221, 224) |
-
-### Info
-| Name | Hex | RGB |
-|---|---|---|
-| Info / Text on white | `#0DB877` | rgb(13, 184, 119) |
-| Info / Text on blue | `#008OF3` | rgb(0, 143, 243) |
-| Info / Background | `#DEF0FA` | rgb(222, 240, 250) |
-
-### Warning
-| Name | Hex | RGB |
-|---|---|---|
-| Warning / Text on light | `#8D4800` | rgb(141, 72, 0) |
-| Warning / Text on dark | `#FFB034` | rgb(255, 176, 52) |
-| Warning / Background | `#FFEADE` | rgb(255, 234, 222) |
-
-### Success
-| Name | Hex | RGB |
-|---|---|---|
-| Success / Text on light | `#446012` | rgb(68, 96, 18) |
-| Success / Background | `#E9F009` | rgb(233, 240, 9) |
+| Token | Constraint |
+|---|---|
+| `asu-gray-1` | Use in lieu of black for text |
+| `asu-gray-2` | Accessible on white; not for text on color blocks; not on dark backgrounds |
+| `asu-gray-3` | Accessible on white; not for text on color blocks; not on dark backgrounds |
+| `asu-gray-4` | Borders only, never text |
+| `asu-gray-5` | Dark backgrounds only; not for text |
+| `asu-gray-6` | Section background color use only; not for text |
+| `asu-gray-7` | Use in lieu of white; not for text |
 
 ### System Color Rules
 - **Never use system colors for decorative or brand purposes**
 - Use only in functional UI contexts: form validation, alerts, notifications, status indicators
 - Always pair text and background variants from the same state group
+- For text-on-light vs text-on-dark contexts, use the appropriate variant token (e.g., `asu-error-text-light` vs `asu-error-text-dark`)
 
 ---
 
-## Prohibited Combinations — Full List
+## Approved Color Combinations
 
-> The router lists key approved/prohibited combos. This section provides the complete prohibited list with reasons.
+| Background | Text | Status |
+|---|---|---|
+| White | `asu-gray-1` | ✅ Do |
+| `asu-gray-7` | `asu-gray-1` | ✅ Do |
+| `asu-gray-6` | `asu-gray-1` | ✅ Do |
+| `asu-gray-1` (Black) | `asu-gray-7` | ✅ Do |
+| `primary-gold` | `primary-black` | ✅ Do |
+| `primary-maroon` | White | ✅ Do |
+
+For inline link colors → ASU Maroon (`primary-maroon`) on light backgrounds; ASU Gold (`primary-gold`) on dark backgrounds.
+
+---
+
+## Prohibited Combinations
 
 | Background | Text | Reason |
 |---|---|---|
-| White | ASU Gold | ❌ Insufficient contrast |
-| ASU Maroon | ASU Gold | ❌ Insufficient contrast |
-| ASU Maroon | White | ❌ Insufficient contrast |
-| ASU Gold | ASU Maroon | ❌ Insufficient contrast |
-| ASU Gold | White | ❌ Insufficient contrast |
+| White | `primary-gold` | ❌ Insufficient contrast |
+| `primary-maroon` | `primary-gold` | ❌ Insufficient contrast |
+| `primary-maroon` | White | ❌ Insufficient contrast (per UDS — confirm with brand if questioned) |
+| `primary-gold` | `primary-maroon` | ❌ Insufficient contrast |
+| `primary-gold` | White | ❌ Insufficient contrast |
 
 ### Black vs Gray Contrast Rule
-> Always use **Gray1 (`#191919`)** rather than Rich Black (`#000000`) for body text. Rich Black creates contrast that is too high and fails the brand standard.
+Always use `asu-gray-1` rather than `asu-rich-black` for body text. Rich Black creates contrast that is too high and fails the brand standard.
 
 ---
 
@@ -113,41 +93,45 @@ The ASU brand pie chart indicates approximate color usage weighting:
 
 ---
 
-## Tailwind Config Reference
+## Text Highlights
 
-```js
-// tailwind.config.js — ASU Color Tokens
-colors: {
-  'asu-maroon': '#8C1D40',
-  'asu-gold': '#FFC627',
-  'asu-rich-black': '#000000',
-  'asu-white': '#FFFFFF',
-  'asu-gray-1': '#191919',
-  'asu-gray-2': '#484848',
-  'asu-gray-3': '#747474',
-  'asu-gray-4': '#BFBFBF',
-  'asu-gray-5': '#D0D0D0',
-  'asu-gray-6': '#E8E8E8',
-  'asu-gray-7': '#FAFAFA',
-  'asu-error': '#CC2135',
-  'asu-error-text-light': '#B72A42',
-  'asu-error-text-dark': '#FF7B8E',
-  'asu-error-bg': '#FFDDE0',
-  'asu-warning-text-light': '#8D4800',
-  'asu-warning-text-dark': '#FFB034',
-  'asu-warning-bg': '#FFEADE',
-  'asu-success-text': '#446012',
-  'asu-success-bg': '#E9F009',
-  'asu-info-text-white': '#0DB877',
-  'asu-info-text-blue': '#008OF3',
-  'asu-info-bg': '#DEF0FA',
-}
-```
+Highlighted text is a core part of ASU visual identity and is **encouraged** in all web projects.
+
+### Highlight Rules
+- Highlights may be used on **Headings 1 through 4 only**
+- **Never use highlights on:** body copy, captions, small text, extra small text, or any other type style
+- Highlight colors: **ASU Gold** (`bg-primary-gold`) or **Rich Black** (`bg-primary-black`) background fill behind the text
+
+### Approved Highlight Combinations
+
+| Page Background | Highlight | Text on Highlight |
+|---|---|---|
+| White | `primary-gold` | `asu-gray-1` ✅ |
+| White | `primary-black` | White ✅ |
+| `asu-gray-7` | `primary-gold` | `asu-gray-1` ✅ |
+| `asu-gray-7` | `primary-black` | White ✅ |
+| `asu-gray-6` | `primary-gold` | `asu-gray-1` ✅ |
+| `asu-gray-6` | `primary-black` | White ✅ |
+| `primary-black` | `primary-gold` | `asu-gray-1` ✅ |
+| `primary-black` | `asu-gray-7` | `asu-gray-1` ✅ |
+
+---
+
+## Decision Protocol
+
+When choosing color for any element:
+
+1. **What surface am I coloring?** → Background, text, border, icon, accent
+2. **Is this a brand element?** → Use primary tokens (`primary-maroon`, `primary-gold`, `primary-black`)
+3. **Is this a functional state (validation, alert, status)?** → Use system color tokens (`asu-error`, `asu-warning`, `asu-info`, `asu-success`)
+4. **Is this a structural element (border, divider, label)?** → Use grayscale tokens (`asu-gray-2` through `asu-gray-6`)
+5. **Check the approved combinations table above** — never pair tokens that aren't on the approved list
+6. **Reference SKILL.md for exact hex/RGB if needed** — never invent values
 
 ---
 
 ## What This File Does Not Cover
 
-- `typography.md` — font families, type scale, heading rules
-- `spacing-layout.md` — spacing scale, layout rules
+- Token hex/RGB values → see `SKILL.md`
+- Tailwind v4 `@theme inline` configuration → load `tailwind-v4-theme.md`
 - Component-specific color application → load the relevant component file

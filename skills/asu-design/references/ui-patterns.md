@@ -10,7 +10,7 @@ The standard page header pattern used at the top of content pages (below the glo
 
 ### Anatomy
 
-- **Context label (eyebrow):** `text-sm font-semibold text-primary-maroon uppercase tracking-wider mb-2`
+- **Context label (eyebrow):** `text-sm font-bold text-primary-maroon mb-2` — sentence case, never `uppercase`
 - **Page title:** `text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black mb-4`
 - **Supporting description:** `text-lg text-primary-black/70 max-w-xl`
 
@@ -18,11 +18,11 @@ The standard page header pattern used at the top of content pages (below the glo
 
 ```html
 <header class="mb-12">
-  <p class="text-sm font-semibold text-primary-maroon uppercase tracking-wider mb-2">
+  <p class="text-sm font-bold text-primary-maroon mb-2">
     Context label
   </p>
   <h1 class="text-[clamp(36px,5vw,56px)] font-black tracking-[-0.02em] leading-[1.1] text-primary-black mb-4">
-    Page Title
+    Page title
   </h1>
   <p class="text-lg text-primary-black/70 max-w-xl">
     Supporting description text.
@@ -34,22 +34,22 @@ The standard page header pattern used at the top of content pages (below the glo
 
 ## Section Header with Gold Accent Bar
 
-The gold accent bar is a **label** (uppercase, small text) — not the heading itself. The actual `<h2>` follows at the correct type scale.
+The gold accent bar is a **categorical marker** paired with a small bold label — never the heading itself. The actual `<h2>` follows at the correct type scale and carries the semantic hierarchy.
 
 ### Anatomy
 
 - **Gold bar:** `w-1 h-5 bg-primary-gold` — vertical bar inline with the label
-- **Context label:** `text-sm font-bold text-primary-black uppercase tracking-wider mb-2`
+- **Context label:** `text-sm font-bold text-primary-black mb-2` — sentence case, never `uppercase`. Differentiation comes from bold weight, small size, and the adjacent gold bar.
 - **Section title:** `text-3xl font-bold text-primary-black mb-8`
 
 ### Tailwind Class Reference
 
 ```html
-<p class="flex items-center gap-3 text-sm font-bold text-primary-black uppercase tracking-wider mb-2">
+<p class="flex items-center gap-3 text-sm font-bold text-primary-black mb-2">
   <span class="w-1 h-5 bg-primary-gold"></span>
-  Context Label
+  Context label
 </p>
-<h2 class="text-3xl font-bold text-primary-black mb-8">Section Title</h2>
+<h2 class="text-3xl font-bold text-primary-black mb-8">Section title</h2>
 ```
 
 ---
@@ -73,7 +73,7 @@ A fixed gold bar at the bottom of the viewport, used for persistent navigation o
 ## Rules
 
 - The gold accent bar is always a **vertical bar** (`w-1 h-5`), never a horizontal rule
-- Context labels above headings use `uppercase tracking-wider` — this is the only permitted all-caps exception
+- Context labels above headings use **sentence case** with bold weight, small size, and (for section headers) an adjacent gold accent bar. Never `uppercase` — there are no exceptions to the no-all-caps rule.
 - Page titles use the Hero H1 scale with `clamp()` for responsive sizing
 - Section titles use `text-3xl font-bold` — never the hero scale
 
