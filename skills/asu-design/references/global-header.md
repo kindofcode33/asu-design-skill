@@ -59,7 +59,7 @@ The global header is a full-width, fixed-position component at the top of every 
 | Layout | `flex items-stretch` |
 
 ### Logo
-- ASU vertical logo (`/logos/logos/asu-vertical.svg`)
+- ASU vertical logo (`/asu/logos/asu-vertical.svg`)
 - `h-16` (64px), width auto
 - Links to `/` (home/index page)
 - `flex-shrink-0 mr-asu-3`
@@ -78,6 +78,7 @@ The global header is a full-width, fixed-position component at the top of every 
 - **Text items:** links to site pages
   - `text-asu-body font-normal text-asu-gray-2`
   - Active item: `text-asu-gray-1 border-b-[5px] border-asu-gold`
+  - **Default labels:** Use generic placeholders (`Link 01`, `Link 02`, `Link 03`, `Link 04`) unless the user specifies actual page names. Never invent specific nav labels like "About", "Research", "Academics", etc.
   - Inactive: `border-b-[5px] border-transparent`
   - Padding: `py-asu-1`
 
@@ -135,7 +136,7 @@ export default function Header({ nav = [], activeItem }: HeaderProps) {
       <div className="bg-white border-b border-asu-gray-5">
         <div className="max-w-asu-content mx-auto px-asu-3 flex items-stretch">
           <Link to="/" className="flex items-center flex-shrink-0 mr-asu-3">
-            <img src="/logos/logos/asu-vertical.svg" alt="ASU" className="h-16 w-auto" />
+            <img src="/asu/logos/asu-vertical.svg" alt="ASU" className="h-16 w-auto" />
           </Link>
 
           <div className="flex flex-col justify-center">
